@@ -2,7 +2,7 @@ import React from 'react';
 
 const Projects = () => {
   const projects = [
-    { name: 'Agniastra', category: 'Competition Rocket', status: 'Active', description: 'Our flagship competition rocket designed for the 30,000ft altitude challenge', image: '/public/agni.png' },
+    { name: 'Agniastra', category: 'Competition Rocket', status: 'Active', description: 'Our flagship competition rocket designed for the 30,000ft altitude challenge', image: '/agni.png' },
     { name: 'Altair', category: 'Research Platform', status: 'Testing', description: 'Experimental testbed for new propulsion technologies', image: '/altair.png' },
     { name: 'Rayquaza', category: 'High Altitude', status: 'Complete', description: 'Record-breaking flight achieving 28,000ft altitude', image: '/ray.png' },
     { name: 'Phoenix', category: 'Reusable System', status: 'Development', description: 'Next-generation reusable rocket platform', image: '/pheo.png' },

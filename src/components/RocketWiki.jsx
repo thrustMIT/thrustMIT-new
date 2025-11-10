@@ -526,9 +526,6 @@ Each method has trade-offs in complexity, weight, reliability, and landing speed
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-600/0 to-blue-600/0 group-hover:from-blue-600/10 group-hover:to-blue-600/5 rounded-2xl transition-opacity" />
                     
                     <div className="relative">
-                      <div className="w-14 h-14 bg-blue-600/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-600/30 transition-colors">
-                        <Icon className="w-7 h-7 text-blue-600" />
-                      </div>
                       
                       <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                         {topic.title}

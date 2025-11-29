@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Book, ChevronRight, Home, Search, Rocket, Flame, Wind, Zap, Target, Settings } from 'lucide-react';
 import Footer from './Footer';
-import Header from './Header';
 
-const RocketryWiki = () => {
+const RocketryWiki = ({ Header, headerProps }) => {
   const [selectedTopic, setSelectedTopic] = useState(null);
   const [selectedChapter, setSelectedChapter] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -20,7 +19,6 @@ const RocketryWiki = () => {
     {
       id: 'rocket-basics',
       title: 'Rocket Basics',
-      icon: Rocket,
       description: 'Fundamental principles of rocketry',
       chapters: [
         {
@@ -59,7 +57,6 @@ The Space Age began with the launch of Sputnik 1 in 1957, followed by Yuri Gagar
     {
       id: 'propulsion',
       title: 'Rocket Propulsion',
-      icon: Flame,
       description: 'Engines, motors, and thrust generation',
       chapters: [
         {
@@ -112,7 +109,6 @@ The nozzle expansion ratio (exit area to throat area) is optimized for the opera
     {
       id: 'aerodynamics',
       title: 'Aerodynamics',
-      icon: Wind,
       description: 'Stability, drag, and flight dynamics',
       chapters: [
         {
@@ -171,7 +167,6 @@ The drag coefficient (Cd) quantifies drag efficiency. Lower Cd values indicate b
     {
       id: 'avionics',
       title: 'Avionics & Electronics',
-      icon: Zap,
       description: 'Flight computers, sensors, and telemetry',
       chapters: [
         {
@@ -248,7 +243,6 @@ Robust telemetry is crucial for high-altitude flights where visual tracking beco
     {
       id: 'structures',
       title: 'Structures & Materials',
-      icon: Settings,
       description: 'Airframe design and construction',
       chapters: [
         {
@@ -315,7 +309,6 @@ Material properties to consider: tensile strength, compressive strength, modulus
     {
       id: 'recovery',
       title: 'Recovery Systems',
-      icon: Target,
       description: 'Parachutes and landing systems',
       chapters: [
         {
@@ -386,7 +379,7 @@ Each method has trade-offs in complexity, weight, reliability, and landing speed
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Header */}
+      <Header {...headerProps} />
 
       {/* Breadcrumb */}
       {(selectedTopic || selectedChapter) && (
@@ -427,7 +420,7 @@ Each method has trade-offs in complexity, weight, reliability, and landing speed
       )}
 
       {/* Main Content */}
-      <main className="container mx-auto px-6 py-12 flex gap-8">
+      <main className="container mx-auto px-6 pt-32 pb-12 flex gap-8">
         {/* Sidebar Navigation */}
         {(selectedTopic || selectedChapter) && (
           <aside className="hidden lg:block w-64 flex-shrink-0">
@@ -489,8 +482,8 @@ Each method has trade-offs in complexity, weight, reliability, and landing speed
         {!selectedTopic && !selectedChapter && (
           <div>
             {/* Welcome Section */}
-            <div className="mb-12 text-center max-w-4xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            <div className="mb-12 text-center max-w-4xl mx-auto px-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                 Welcome to the <span className="text-blue-600">Rocketry Knowledge Base</span>
               </h2>
               <p className="text-gray-400 text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400, letterSpacing: '0.05em' }}>
@@ -516,7 +509,6 @@ Each method has trade-offs in complexity, weight, reliability, and landing speed
             {/* Topics Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredTopics.map((topic) => {
-                const Icon = topic.icon;
                 return (
                   <button
                     key={topic.id}
@@ -551,9 +543,6 @@ Each method has trade-offs in complexity, weight, reliability, and landing speed
           <div className="max-w-5xl mx-auto">
             <div className="mb-8">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-16 h-16 bg-blue-600/20 rounded-2xl flex items-center justify-center">
-                  {React.createElement(selectedTopic.icon, { className: "w-8 h-8 text-blue-600" })}
-                </div>
                 <div>
                   <h2 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                     {selectedTopic.title}

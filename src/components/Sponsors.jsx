@@ -78,7 +78,7 @@ const Sponsors = () => {
   const activeSponsor = sponsors[activeIndex];
   const needleAngle = activeSponsor.angle;
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  const radius = isMobile ? 160 : 300;
+  const radius = isMobile ? 140 : 300;
 
   return (
     <section id="sponsors" className="relative min-h-screen bg-black py-20 px-4 overflow-hidden">
@@ -129,7 +129,7 @@ const Sponsors = () => {
                         setIsTransitioning(false);
                       }, 400);
                     }}
-                    className={`p-3 md:p-4 rounded-lg border transition-all duration-500 hover:scale-110 ${
+                    className={`p-2 md:p-4 rounded-lg border transition-all duration-500 hover:scale-110 ${
                       isActive
                         ? "bg-blue-600/20 border-blue-400 shadow-[0_0_25px_rgba(37,99,235,0.5)] scale-110"
                         : "bg-gray-900/80 backdrop-blur-sm border-gray-700/50 hover:border-blue-400/50 hover:bg-gray-800/80"
@@ -138,7 +138,7 @@ const Sponsors = () => {
                     <img 
                       src={sponsor.logo} 
                       alt={sponsor.name}
-                      className={`h-8 md:h-12 w-auto object-contain transition-all duration-500 ${
+                      className={`h-6 md:h-12 w-auto object-contain transition-all duration-500 ${
                         isActive ? "brightness-125" : "brightness-90 hover:brightness-110"
                       }`}
                     />
@@ -148,15 +148,15 @@ const Sponsors = () => {
             })}
 
             {/* Center Description Card */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[280px] md:w-[420px]">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[160px] md:w-[420px]">
               <div
-                className={`bg-gradient-to-br from-gray-900/95 via-black/95 to-gray-900/95 backdrop-blur-xl border border-blue-600/30 rounded-3xl p-6 md:p-8 shadow-2xl transition-all duration-500 ${
+                className={`bg-gradient-to-br from-gray-900/95 via-black/95 to-gray-900/95 backdrop-blur-xl border border-blue-600/30 rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-2xl transition-all duration-500 ${
                   isTransitioning ? "opacity-0 scale-90" : "opacity-100 scale-100"
                 }`}
               >
                 {/* Icon/Logo placeholder */}
-                <div className="flex items-center justify-center mb-4">
-                  <div className="w-20 h-20 md:w-24 md:h-24 bg-gray-800/50 rounded-2xl flex items-center justify-center p-3">
+                <div className="flex items-center justify-center mb-2 md:mb-4">
+                  <div className="w-12 h-12 md:w-24 md:h-24 bg-gray-800/50 rounded-xl md:rounded-2xl flex items-center justify-center p-2 md:p-3">
                     <img 
                       src={activeSponsor.logo} 
                       alt={activeSponsor.name}
@@ -166,12 +166,12 @@ const Sponsors = () => {
                 </div>
                 
                 {/* Company name */}
-                <h3 className="text-xl md:text-2xl font-bold text-center mb-3 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                <h3 className="text-sm md:text-2xl font-bold text-center mb-1 md:mb-3 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                   {activeSponsor.name}
                 </h3>
                 
                 {/* Description */}
-                <p className="text-xs md:text-sm text-gray-400 leading-relaxed text-center" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                <p className="text-[10px] md:text-sm text-gray-400 leading-relaxed text-center" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                   {activeSponsor.description}
                 </p>
                 

@@ -162,22 +162,14 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
       <Header {...headerProps} />
 
       {/* Hero Section */}
-      <section className="relative py-20 px-4 overflow-hidden pt-32">
+      <section className="relative pt-32 pb-20 px-4 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
-        <div className="relative max-w-7xl mx-auto">
-          <button
-            onClick={onNavigateToProjects}
-            className="flex items-center gap-2 text-blue-400 hover:text-blue-300 mb-8 transition-colors"
-            style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500 }}
-          >
-            <ArrowLeft size={20} />
-            Back to Projects
-          </button>
+        <div className="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>

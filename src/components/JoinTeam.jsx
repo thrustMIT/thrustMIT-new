@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Rocket, User, Mail, Phone, BookOpen, Award, Send, CheckCircle } from 'lucide-react';
 
-const JoinTeam = ({ Header, Footer, onNavigateHome }) => {
+const JoinTeam = ({ Header, Footer, onNavigateHome, headerProps }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -76,17 +76,17 @@ const JoinTeam = ({ Header, Footer, onNavigateHome }) => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
+      <Header {...headerProps} />
       
       {/* Hero Section */}
-      <section className="relative py-20 px-4 overflow-hidden">
+      <section className="relative pt-32 pb-20 px-4 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
-        <div className="relative max-w-7xl mx-auto text-center pt-2">
+        <div className="relative max-w-7xl mx-auto text-center px-4 md:px-6 lg:px-8">
           <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ fontFamily: 'Orbitron, sans-serif' }}>
             Join <span className="text-blue-600">Our Team</span>
           </h1>
@@ -97,7 +97,7 @@ const JoinTeam = ({ Header, Footer, onNavigateHome }) => {
       </section>
 
       {/* Form Section */}
-      <section className="relative py-12 px-4 pb-20">
+      <section className="relative pt-12 pb-20 px-4">
         <div className="max-w-4xl mx-auto">
           {submitted ? (
             <div className="bg-gradient-to-br from-green-600/20 to-green-800/20 backdrop-blur-xl border border-green-600/50 rounded-3xl p-12 text-center">
@@ -112,7 +112,7 @@ const JoinTeam = ({ Header, Footer, onNavigateHome }) => {
             <div className="bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl border border-gray-800/50 rounded-3xl p-8 md:p-12">
               {/* Personal Information */}
               <div className="mb-10">
-                <h2 className="text-3xl font-bold mb-6 flex items-center gap-3" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                   Personal Information
                 </h2>
                 
@@ -200,7 +200,7 @@ const JoinTeam = ({ Header, Footer, onNavigateHome }) => {
 
               {/* Interests */}
               <div className="mb-10">
-                <h2 className="text-3xl font-bold mb-6 flex items-center gap-3" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                   Subsystem Interests
                 </h2>
                 <p className="text-gray-400 mb-4" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
@@ -228,7 +228,7 @@ const JoinTeam = ({ Header, Footer, onNavigateHome }) => {
 
               {/* Experience & Motivation */}
               <div className="mb-10">
-                <h2 className="text-3xl font-bold mb-6 flex items-center gap-3" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                   Additional Information
                 </h2>
                 

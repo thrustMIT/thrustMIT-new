@@ -15,12 +15,25 @@ import Team from './components/Team';
 import Alumni from './components/Alumni';
 import WikiCard from './components/WikiCard';
 import ProjectDetail from './components/ProjectDetail';
+import Blog from './components/Blog';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [selectedAlumniYear, setSelectedAlumniYear] = useState(null);
   const [selectedProjectId, setSelectedProjectId] = useState(null);
   const [pendingSection, setPendingSection] = useState(null);
+
+  // Prevent overscroll bounce effect
+  useEffect(() => {
+    // Prevent bounce/rubber-band scrolling on the entire page
+    document.body.style.overscrollBehavior = 'none';
+    document.documentElement.style.overscrollBehavior = 'none';
+    
+    return () => {
+      document.body.style.overscrollBehavior = '';
+      document.documentElement.style.overscrollBehavior = '';
+    };
+  }, []);
 
   // Handle browser back/forward buttons
   useEffect(() => {
@@ -34,6 +47,8 @@ export default function App() {
         setCurrentPage('alumni');
       } else if (path === '/join' || path.includes('join')) {
         setCurrentPage('join');
+      } else if (path === '/blog' || path.includes('blog')) {
+        setCurrentPage('blog');
       } else if (path.includes('/projects/')) {
         const projectId = path.split('/projects/')[1];
         setCurrentPage('project-detail');
@@ -76,6 +91,8 @@ export default function App() {
       }
     } else if (page === 'join') {
       window.history.pushState({}, '', '/join');
+    } else if (page === 'blog') {
+      window.history.pushState({}, '', '/blog');
     } else if (page === 'project-detail') {
       if (dataParam) {
         setSelectedProjectId(dataParam);
@@ -123,7 +140,9 @@ export default function App() {
     onNavigateToAlumni: (year) => navigate('alumni', year),
     onNavigateToJoin: () => navigate('join'),
     onNavigateToRocketWiki: () => navigate('rocket-wiki'),
+    onNavigateToBlog: () => navigate('blog'),
     onNavigateHome: navigateHome,
+    onScrollToSection: scrollToSection,
     currentPage: currentPage
   };
 
@@ -181,6 +200,17 @@ export default function App() {
   if (currentPage === 'join') {
     return (
       <JoinTeam 
+        Header={Header}
+        Footer={Footer}
+        onNavigateHome={() => navigate('home')}
+        headerProps={commonHeaderProps}
+      />
+    );
+  }
+
+  if (currentPage === 'blog') {
+    return (
+      <Blog 
         Header={Header}
         Footer={Footer}
         onNavigateHome={() => navigate('home')}

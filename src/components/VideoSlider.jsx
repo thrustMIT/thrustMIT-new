@@ -29,11 +29,15 @@ export const VideoSlider = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      handleNext();
+      if (!isAnimating) {
+        setIsAnimating(true);
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+        setTimeout(() => setIsAnimating(false), 1000);
+      }
     }, 10000); // Auto-advance every 10 seconds
 
     return () => clearInterval(timer);
-  }, [currentSlide]);
+  }, [currentSlide, isAnimating]);
 
   const handleNext = () => {
     if (!isAnimating) {

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Facebook, Twitter, Instagram, Linkedin, Github, Mail } from 'lucide-react';
-import Header from './Header';
-import Footer from './Footer';
 
-const Team = () => {
+const Team = ({ Header, Footer, headerProps }) => {
   const [hoveredMember, setHoveredMember] = useState(null);
 
   // Font loading
@@ -361,16 +359,16 @@ const Team = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
+      <Header {...headerProps} />
       {/* Hero Section */}
-      <section className="relative py-20 px-4 overflow-hidden">
+      <section className="relative pt-32 pb-20 px-4 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ fontFamily: 'Orbitron, sans-serif' }}>
@@ -392,7 +390,7 @@ const Team = () => {
 
           {/* Aerodynamics Section */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
               <span className="text-blue-600">Aerodynamics</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -404,7 +402,7 @@ const Team = () => {
 
           {/* Avionics Section */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
               <span className="text-blue-600">Avionics</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -416,7 +414,7 @@ const Team = () => {
 
           {/* Payload Section */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
               <span className="text-blue-600">Payload</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -428,7 +426,7 @@ const Team = () => {
 
           {/* Propulsion Section */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
               <span className="text-blue-600">Propulsion</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -440,7 +438,7 @@ const Team = () => {
 
           {/* Structures Section */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
               <span className="text-blue-600">Structures</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -452,7 +450,7 @@ const Team = () => {
 
           {/* Management Section */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
               <span className="text-blue-600">Management</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

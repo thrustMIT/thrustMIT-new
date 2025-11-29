@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Header = ({ 
   onNavigateToTeam, 
   onNavigateToAlumni, 
   onNavigateToJoin,
   onNavigateToRocketWiki,
+  onNavigateToBlog,
   onScrollToSection,
   onNavigateHome,
   currentPage = 'home'
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Font loading
@@ -28,36 +28,11 @@ const Header = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleDropdown = (key) => {
-    setDropdownOpen((prev) => (prev === key ? null : key));
-  };
-
-  const handleClickOutside = (event) => {
-    if (!event.target.closest(".dropdown")) {
-      setDropdownOpen(null);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("click", handleClickOutside);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
-
-  const projects = [
-    'AgniAstra',
-    'Altair',
-    'Rayquaza',
-    'Pheonix',
-    'Arya',
-    'Vyom'
-  ];
-
-  const alumniYears = ['2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018'];
+  // If we're on the home page, avoid switching to the stronger scrolled background
+  // to keep the header visually consistent over the hero/slider.
+  const showSolid = isScrolled && currentPage !== 'home';
 
   const handleAlumniClick = () => {
-    setDropdownOpen(null);
     setIsMenuOpen(false);
     if (onNavigateToAlumni) {
       onNavigateToAlumni();
@@ -85,19 +60,30 @@ const Header = ({
     }
   };
 
-  // Universal section click handler - navigates home first if needed
-  const handleSectionClick = (e, sectionId) => {
-    e.preventDefault();
-    setDropdownOpen(null);
+  const handleBlogClick = () => {
     setIsMenuOpen(false);
-    
-    // If we're on the home page, just scroll to section
+    if (onNavigateToBlog) {
+      onNavigateToBlog();
+    }
+  };
+
+  const handleHomeClick = () => {
+    setIsMenuOpen(false);
+    if (onNavigateHome) {
+      onNavigateHome();
+    }
+  };
+
+  // Section click handler
+  const handleSectionClick = (sectionId) => {
+    setIsMenuOpen(false);
+    // If we're on the home page, just scroll to the section
     if (currentPage === 'home') {
       if (onScrollToSection) {
         onScrollToSection(sectionId);
       }
     } else {
-      // If we're on another page, navigate home first, then scroll
+      // If we're on another page, navigate home first and then scroll to the section
       if (onNavigateHome) {
         onNavigateHome(sectionId);
       }
@@ -106,82 +92,83 @@ const Header = ({
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-      isScrolled 
+      showSolid 
         ? 'bg-black/95 backdrop-blur-xl border-b border-blue-600/20 shadow-lg shadow-blue-600/5' 
-        : 'bg-black/80 backdrop-blur-md border-b border-white/5'
+        : 'bg-gradient-to-b from-black via-black/90 to-transparent backdrop-blur-md'
     }`}>
-      <div className="container mx-auto px-8 py-4">
-        <div className="flex items-center justify-between">
+      <div className="px-3 sm:px-4 md:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-center">
+        <div className="max-w-7xl w-full flex items-center justify-between">
           {/* Logo */}
           <button 
-            onClick={(e) => handleSectionClick(e, 'home')}
-            className="flex items-center gap-3 group"
+            onClick={handleHomeClick}
+            className="flex items-center gap-2 group flex-shrink-0"
           >
             <img 
               src="/logo.png" 
               alt="thrustMIT Logo" 
-              className="h-12 w-auto transition-transform duration-300 group-hover:scale-110"
+              className="h-10 sm:h-12 w-auto transition-transform duration-300 group-hover:scale-110"
             />
           </button>
           
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+          <nav className="hidden lg:flex items-center gap-1 flex-wrap justify-center" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
             <button 
-              onClick={(e) => handleSectionClick(e, 'home')}
-              className="px-5 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              onClick={handleHomeClick}
+              className="px-3 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 whitespace-nowrap"
             >
               Home
             </button>
             <button 
-              onClick={(e) => handleSectionClick(e, 'about')}
-              className="px-5 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              onClick={() => handleSectionClick('about')}
+              className="px-3 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 whitespace-nowrap"
             >
               About
             </button>
             <button 
-              onClick={(e) => handleSectionClick(e, 'subsystems')}
-              className="px-5 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              onClick={() => handleSectionClick('subsystems')}
+              className="px-3 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 whitespace-nowrap"
             >
               Subsystems
             </button>
-
             <button 
-              onClick={(e) => handleSectionClick(e, 'projects')}
-              className="px-5 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              onClick={() => handleSectionClick('projects')}
+              className="px-3 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 whitespace-nowrap"
             >
               Projects
             </button>
-
             <button 
-              onClick={(e) => handleSectionClick(e, 'sponsors')}
-              className="px-5 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              onClick={() => handleSectionClick('sponsors')}
+              className="px-3 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 whitespace-nowrap"
             >
               Sponsors
             </button>
             <button 
               onClick={handleTeamClick}
-              className="px-5 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              className="px-3 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 whitespace-nowrap"
             >
               Team
             </button>
-
             <button 
               onClick={handleAlumniClick}
-              className="px-5 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              className="px-3 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 whitespace-nowrap"
             >
               Alumni
             </button>
-
             <button 
-              onClick={(e) => handleSectionClick(e, 'gallery')}
-              className="px-5 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              onClick={() => handleSectionClick('gallery')}
+              className="px-3 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 whitespace-nowrap"
             >
               Gallery
             </button>
-
             <button 
-              onClick={(e) => handleSectionClick(e, 'contact')}
-              className="px-5 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              onClick={handleBlogClick}
+              className="px-3 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 whitespace-nowrap"
+            >
+              Blog
+            </button>
+            <button 
+              onClick={() => handleSectionClick('contact')}
+              className="px-3 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 whitespace-nowrap"
             >
               Contacts
             </button>
@@ -189,72 +176,75 @@ const Header = ({
 
           {/* Mobile Menu Button */}
           <button 
-            className="lg:hidden p-3 text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200" 
+            className="lg:hidden p-2 sm:p-3 text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200" 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMenuOpen ? <X size={24} className="sm:w-7 sm:h-7" /> : <Menu size={24} className="sm:w-7 sm:h-7" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden border-t border-white/5 backdrop-blur-xl bg-black/98">
-          <nav className="container mx-auto px-8 py-6 flex flex-col gap-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+        <div className="lg:hidden border-t border-white/5 backdrop-blur-xl bg-black/98 flex justify-center max-h-[70vh] overflow-y-auto">
+          <nav className="px-3 sm:px-4 md:px-6 py-4 sm:py-6 flex flex-col gap-1 sm:gap-2 max-w-7xl w-full" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
             <button 
-              onClick={(e) => handleSectionClick(e, 'home')}
-              className="text-left px-5 py-4 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              onClick={handleHomeClick}
+              className="text-left px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
             >
               Home
             </button>
             <button 
-              onClick={(e) => handleSectionClick(e, 'about')}
-              className="text-left px-5 py-4 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              onClick={() => handleSectionClick('about')}
+              className="text-left px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
             >
               About
             </button>
             <button 
-              onClick={(e) => handleSectionClick(e, 'subsystems')}
-              className="text-left px-5 py-4 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              onClick={() => handleSectionClick('subsystems')}
+              className="text-left px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
             >
               Subsystems
             </button>
             <button 
-              onClick={(e) => handleSectionClick(e, 'projects')}
-              className="text-left px-5 py-4 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              onClick={() => handleSectionClick('projects')}
+              className="text-left px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
             >
               Projects
             </button>
             <button 
-              onClick={(e) => handleSectionClick(e, 'sponsors')}
-              className="text-left px-5 py-4 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              onClick={() => handleSectionClick('sponsors')}
+              className="text-left px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
             >
               Sponsors
             </button>
             <button 
               onClick={handleTeamClick}
-              className="text-left px-5 py-4 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              className="text-left px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
             >
               Team
             </button>
-
             <button 
               onClick={handleAlumniClick}
-              className="text-left px-5 py-4 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              className="text-left px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
             >
               Alumni
             </button>
-            
             <button 
-              onClick={(e) => handleSectionClick(e, 'gallery')}
-              className="text-left px-5 py-4 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              onClick={() => handleSectionClick('gallery')}
+              className="text-left px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
             >
               Gallery
             </button>
-
             <button 
-              onClick={(e) => handleSectionClick(e, 'contact')}
-              className="text-left px-5 py-4 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+              onClick={handleBlogClick}
+              className="text-left px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+            >
+              Blog
+            </button>
+            <button 
+              onClick={() => handleSectionClick('contact')}
+              className="text-left px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
             >
               Contacts
             </button>

@@ -3,7 +3,7 @@ import { Facebook, Twitter, Instagram, Linkedin, Github, Mail } from 'lucide-rea
 import Header from './Header';
 import Footer from './Footer';
 
-const Alumni = ({ initialYear, onNavigateHome }) => {
+const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) => {
   const [selectedYear, setSelectedYear] = useState(initialYear || '2025');
   const [hoveredAlumni, setHoveredAlumni] = useState(null);
 
@@ -441,16 +441,16 @@ const Alumni = ({ initialYear, onNavigateHome }) => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header onNavigateHome={onNavigateHome} />
+      <Header {...headerProps} />
       {/* Hero Section */}
-      <section className="relative py-20 px-4 overflow-hidden">
+      <section className="relative pt-32 pb-20 px-4 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ fontFamily: 'Orbitron, sans-serif' }}>

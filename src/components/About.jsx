@@ -73,7 +73,7 @@ const About = () => {
                 <p className="text-sm text-gray-400 mb-1" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500 }}>
                   Team thrustMIT
                 </p>
-                <p className="text-lg font-bold text-white" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                <p className="text-lg sm:text-sm font-bold text-white" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                   Building Tomorrow's Rockets Today
                 </p>
               </div>

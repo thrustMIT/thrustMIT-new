@@ -35,15 +35,15 @@ const Gallery = () => {
   return (
     <section id="gallery" className="py-20 bg-black">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4" style={{ fontFamily: 'Orbitron, sans-serif' }} data-aos="fade-up">
           Photo & Video <span className="text-blue-600">Gallery</span>
         </h2>
-        <p className="text-center text-gray-400 mb-16 text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', letterSpacing: '0.05em' }}>
+        <p className="text-center text-gray-400 mb-16 text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', letterSpacing: '0.05em' }} data-aos="fade-up" data-aos-delay="100">
           Explore our journey through launches, tests, and team moments
         </p>
 
         <div className="max-w-4xl mx-auto">
-          <div className="aspect-video bg-gray-900 rounded-xl overflow-hidden mb-6 border border-white/10 hover:border-blue-600/50 transition-all group relative">
+          <div className="aspect-video bg-gray-900 rounded-xl overflow-hidden mb-6 border border-white/10 hover:border-blue-600/50 transition-all group relative" data-aos="zoom-in">
             <img 
               src={images[currentImage].src}
               alt={images[currentImage].title} 
@@ -71,6 +71,8 @@ const Gallery = () => {
                     ? 'border-blue-600 shadow-lg shadow-blue-600/50' 
                     : 'border-transparent hover:border-blue-600/30'
                 }`}
+                data-aos="fade-up"
+                data-aos-delay={i * 50}
               >
                 <img 
                   src={img.src}

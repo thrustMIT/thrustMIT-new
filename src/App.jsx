@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -23,8 +25,16 @@ export default function App() {
   const [selectedProjectId, setSelectedProjectId] = useState(null);
   const [pendingSection, setPendingSection] = useState(null);
 
-  // Prevent overscroll bounce effect
+  // Initialize AOS and prevent overscroll bounce effect
   useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100,
+      easing: 'ease-out-cubic'
+    });
+    
     // Prevent bounce/rubber-band scrolling on the entire page
     document.body.style.overscrollBehavior = 'none';
     document.documentElement.style.overscrollBehavior = 'none';
@@ -220,7 +230,7 @@ export default function App() {
   }
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-black text-white min-h-screen w-full relative" style={{ overflowX: 'clip' }}>
       <Header 
         {...commonHeaderProps}
         onScrollToSection={scrollToSection}

@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Prevent horizontal overflow without breaking scroll */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: clip;
+  width: 100%;
+}
+
+body {
+  overflow-x: clip;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  overflow-x: clip;
+  position: relative;
+}

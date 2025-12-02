@@ -105,7 +105,7 @@ const Subsystems = () => {
   }, []);
 
   return (
-    <section id='subsystems' ref={containerRef} className="relative bg-black" style={{ height: `${(subsystems.length + 1) * 100}vh` }}>
+    <section id='subsystems' ref={containerRef} className="relative bg-black overflow-x-clip" style={{ height: `${(subsystems.length + 1) * 100}vh` }}>
       {/* Sticky container */}
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="container mx-auto px-6 h-full flex flex-col">

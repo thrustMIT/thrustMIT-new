@@ -94,10 +94,10 @@ const Projects = ({ onNavigateToProject }) => {
   return (
     <section id="projects" className="py-20 bg-black">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-black text-center mb-4 tracking-tight" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+        <h2 className="text-4xl md:text-5xl font-black text-center mb-4 tracking-tight" style={{ fontFamily: 'Orbitron, sans-serif' }} data-aos="fade-up">
           Our <span className="text-blue-600">Projects</span>
         </h2>
-        <p className="text-center text-gray-400 mb-16 text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', letterSpacing: '0.05em' }}>
+        <p className="text-center text-gray-400 mb-16 text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', letterSpacing: '0.05em' }} data-aos="fade-up" data-aos-delay="100">
           Discover our research and development projects, each pushing the limits of rocketry
         </p>
 
@@ -107,6 +107,8 @@ const Projects = ({ onNavigateToProject }) => {
               key={i} 
               onClick={() => onNavigateToProject && onNavigateToProject(project.id)}
               className="group relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl border border-gray-800/50 rounded-3xl overflow-hidden hover:border-blue-600/50 transition-all duration-500 cursor-pointer hover:scale-105 hover:shadow-2xl hover:shadow-blue-600/20"
+              data-aos="fade-up"
+              data-aos-delay={i * 100}
             >
               {/* Image Container */}
               <div className="relative h-64 bg-gradient-to-br from-blue-600/20 to-blue-800/20 flex items-center justify-center border-b border-gray-800/50 overflow-hidden">

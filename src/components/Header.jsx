@@ -91,7 +91,7 @@ const Header = ({
   };
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+    <header className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500 ${
       showSolid 
         ? 'bg-black/95 backdrop-blur-xl border-b border-blue-600/20 shadow-lg shadow-blue-600/5' 
         : 'bg-gradient-to-b from-black via-black/90 to-transparent backdrop-blur-md'

@@ -28,7 +28,7 @@ const About = () => {
 
       <div className="container mx-auto px-6 relative z-10 max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-5xl md:text-6xl font-bold mb-6" style={{ fontFamily: 'Orbitron, sans-serif' }}>
             About <span className="text-blue-600">thrustMIT</span>
           </h2>
@@ -40,7 +40,7 @@ const About = () => {
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Text Content */}
-          <div className="space-y-8">
+          <div className="space-y-8" data-aos="fade-right">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <h3 className="text-3xl font-bold" style={{ fontFamily: 'Orbitron, sans-serif' }}>Our Mission</h3>
@@ -59,7 +59,7 @@ const About = () => {
           </div>
 
           {/* Image */}
-          <div className="relative">
+          <div className="relative" data-aos="fade-left">
             <div className="relative aspect-[4/3] bg-gradient-to-br from-blue-600/20 to-blue-900/20 rounded-3xl overflow-hidden border border-blue-600/30 shadow-2xl shadow-blue-600/20">
               <img 
                 src="about/team.png" 

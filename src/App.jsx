@@ -165,6 +165,7 @@ export default function App() {
         projectId={selectedProjectId}
         onNavigateHome={() => navigate('home')}
         onNavigateToProjects={() => navigateHome('projects')}
+        onNavigateToProject={(projectId) => navigate('project-detail', projectId)}
         headerProps={commonHeaderProps}
       />
     );
@@ -188,7 +189,7 @@ export default function App() {
         Header={Header}
         Footer={Footer}
         onNavigateHome={() => navigate('home')}
-        onNavigateToAlumni={(year) => navigate('alumni', year)}
+        onNavigateToJoinTeam={() => navigate('join')} 
         headerProps={commonHeaderProps}
       />
     );

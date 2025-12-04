@@ -16,6 +16,20 @@ const Contact = () => {
     link.href = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;500;600&display=swap';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
+    // Prefill message from URL query params (e.g., ?subject=...&message=...)
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const preMessage = params.get('message');
+      const subject = params.get('subject');
+      if (preMessage || subject) {
+        setFormData(prev => ({
+          ...prev,
+          message: subject ? `${subject}\n\n${(preMessage || '')}` : (preMessage || '')
+        }));
+      }
+    } catch (err) {
+      // ignore if URLSearchParams unavailable
+    }
   }, []);
 
   const handleSubmit = async (e) => {
@@ -106,15 +120,15 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-black">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4" style={{ fontFamily: 'Orbitron, sans-serif' }} data-aos="fade-up">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4" style={{ fontFamily: 'Orbitron, sans-serif' }}>
           Get In <span className="text-blue-600">Touch</span>
         </h2>
-        <p className="text-center text-gray-400 mb-16 text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', letterSpacing: '0.05em' }} data-aos="fade-up" data-aos-delay="100">
+        <p className="text-center text-gray-400 mb-16 text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', letterSpacing: '0.05em' }}>
           Have questions or want to join? We'd love to hear from you!
         </p>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          <div data-aos="fade-right">
+          <div>
             <h3 className="text-2xl font-bold mb-6" style={{ fontFamily: 'Orbitron, sans-serif' }}>Send us a Message</h3>
             <div className="space-y-4">
               <div>
@@ -188,7 +202,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div data-aos="fade-left">
+          <div>
             <h3 className="text-2xl font-bold mb-6" style={{ fontFamily: 'Orbitron, sans-serif' }}>Contact Information</h3>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
@@ -219,9 +233,9 @@ const Contact = () => {
               <p className="text-sm text-gray-300 mb-4" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                 We're always looking for passionate students interested in rocketry and aerospace engineering.
               </p>
-              <button className="text-blue-600 hover:text-blue-500 font-semibold text-sm transition-colors" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+              <a href="/join" className="text-blue-600 hover:text-blue-500 font-semibold text-sm transition-colors inline-block" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                 Learn More →
-              </button>
+              </a>
             </div>
           </div>
         </div>

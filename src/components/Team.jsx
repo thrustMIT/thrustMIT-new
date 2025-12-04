@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Facebook, Twitter, Instagram, Linkedin, Github, Mail } from 'lucide-react';
 
-const Team = ({ Header, Footer, headerProps }) => {
+const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
   const [hoveredMember, setHoveredMember] = useState(null);
 
   // Font loading
@@ -21,7 +21,6 @@ const Team = ({ Header, Footer, headerProps }) => {
       image: '/team/shaunak.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/shaunak-p-552o2',
-        github: '#',
         email: 'shaunakp1709@gmail.com'
       }
     },
@@ -32,9 +31,8 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'leader',
       image: '/team/anushka.webp',
       socials: {
-        linkedin: '#',
-        instagram: '#',
-        email: 'anushka@thrustmit.in'
+        github: 'https://github.com/asprcode',
+        email: 'anushkaprabhutendolkar@gmail.com'
       }
     },
     {
@@ -44,9 +42,9 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'aero',
       image: '/team/shaurya.webp',
       socials: {
-        linkedin: '#',
-        github: '#',
-        email: 'james@thrustmit.in'
+        linkedin: 'https://www.linkedin.com/in/shaurya-mittal-744483291/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        github: 'https://github.com/extorc',
+        email: 'mittalshaurya003@gmail.com'
       }
     },
     {
@@ -56,9 +54,8 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'aero',
       image: '/team/samrudh.webp',
       socials: {
-        linkedin: '#',
-        instagram: '#',
-        email: 'rachel@thrustmit.in'
+        linkedin: 'https://www.linkedin.com/in/samrudh-raja-53657728b/',
+        email: 'samrudh2204@gmail.com'
       }
     },
     {
@@ -68,10 +65,8 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'avionics',
       image: '/team/sanskruti.webp',
       socials: {
-        linkedin: '#',
-        github: '#',
-        twitter: '#',
-        email: 'thomas@thrustmit.in'
+        linkedin: 'https://www.linkedin.com/in/sanskruti-ginde-a512602b2/',
+        email: 'sanskrutiginde@gmail.com'
       }
     },
     {
@@ -81,10 +76,9 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'avionics',
       image: '/team/dhruv.webp',
       socials: {
-        linkedin: '#',
-        github: '#',
-        twitter: '#',
-        email: 'michael@thrustmit.in'
+        linkedin: 'https://www.linkedin.com/in/dhruv-phalod-b75a51282/',
+        github: 'https://github.com/D-Coder-42',
+        email: 'dhruvphalod@gmail.com'
       }
     },
     {
@@ -94,9 +88,8 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'avionics',
       image: '/team/krishanu.webp',
       socials: {
-        linkedin: '#',
-        instagram: '#',
-        email: 'emily@thrustmit.in'
+        github: 'https://github.com/krishanu-170605',
+        email: 'krishanu.170605@gmail.com'
       }
     },
     {
@@ -106,9 +99,9 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'avionics',
       image: '/team/shawn.webp',
       socials: {
-        linkedin: '#',
-        github: '#',
-        email: 'kevin@thrustmit.in'
+        linkedin: 'https://www.linkedin.com/in/shawn-chris-d-silva-12960a20b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+        github: 'https://github.com/sirdeeznuts',
+        email: 'shawnchris100@gmail.com'
       }
     },
     {
@@ -118,9 +111,9 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'avionics',
       image: '/team/vansh.webp',
       socials: {
-        linkedin: '#',
-        github: '#',
-        email: 'alex@thrustmit.in'
+        linkedin: 'https://www.linkedin.com/in/vanshdeep-trivedi-8108ab288/',
+        github: 'https://github.com/Vel0c1ty04',
+        email: 'vanshd.trivedi04@gmail.com'
       }
     },
     {
@@ -130,9 +123,8 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'payload',
       image: '/team/mutra.webp',
       socials: {
-        linkedin: '#',
-        instagram: '#',
-        email: 'sarah@thrustmit.in'
+        github: 'https://github.com/Tharun22122005',
+        email: 'mst.tharun39@gmail.com'
       }
     },
     {
@@ -142,9 +134,9 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'payload',
       image: '/team/adi.webp',
       socials: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'marcus@thrustmit.in'
+        linkedin: 'https://www.linkedin.com/in/adi-narayan-059ab8241/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        github: 'https://github.com/Adi-Narayan',
+        email: 'adinarayanrs777@gmail.com'
       }
     },
     {
@@ -154,9 +146,8 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'payload',
       image: '/team/rudra.webp',
       socials: {
-        linkedin: '#',
-        github: '#',
-        email: 'david@thrustmit.in'
+        linkedin: 'https://www.linkedin.com/in/rudra-rajpurohit-2215772a4/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+        email: 'rudrarajpurohit06@gmail.com'
       }
     },
     {
@@ -166,9 +157,9 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'propulsion',
       image: '/team/dhruv_jadhav.webp',
       socials: {
-        linkedin: '#',
-        instagram: '#',
-        email: 'sophia@thrustmit.in'
+        linkedin: 'https://www.linkedin.com/in/dhruv-jadhav/',
+        github: 'https://github.com/dhruv-jadhav',
+        email: 'dhruvjadhav225@gmail.com'
       }
     },
     {
@@ -178,10 +169,8 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'propulsion',
       image: '/team/varun.webp',
       socials: {
-        linkedin: '#',
-        instagram: '#',
-        twitter: '#',
-        email: 'lisa@thrustmit.in'
+        linkedin: 'https://www.linkedin.com/in/varun-pv-91b20628a',
+        email: 'varunpv44@gmail.com'
       }
     },
     {
@@ -191,9 +180,8 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'structures',
       image: '/team/tushit.webp',
       socials: {
-        linkedin: '#',
-        github: '#',
-        email: 'nathan@thrustmit.in'
+        linkedin: 'https://www.linkedin.com/in/tushitchatterjee/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        email: 'tushitchatterjee1@gmail.com'
       }
     },
     {
@@ -203,9 +191,8 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'structures',
       image: '/team/avnish.webp',
       socials: {
-        linkedin: '#',
-        instagram: '#',
-        email: ''
+        linkedin: 'https://www.linkedin.com/in/avnish-kaur-77984a211/',
+        email: 'kauravnish28@gmail.com'
       }
     },
     {
@@ -215,9 +202,8 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'management',
       image: '/team/vedant.webp',
       socials: {
-        linkedin: '#',
-        github: '#',
-        email: ''
+        linkedin: 'https://www.linkedin.com/in/vedant-totla-51a629223/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+        email: 'totla.vedant1@gmail.com'
       }
     },
     {
@@ -227,9 +213,8 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'management',
       image: '/team/swara.webp',
       socials: {
-        linkedin: '#',
-        instagram: '#',
-        email: ''
+        linkedin: 'https://www.linkedin.com/in/swaraa-sule-814975228/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+        email: 'swaraasule@gmail.com'
       }
     },
     {
@@ -239,9 +224,8 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'management',
       image: '/team/aayush.webp',
       socials: {
-        linkedin: '#',
-        github: '#',
-        email: ''
+        linkedin: 'https://www.linkedin.com/in/aayush-sinha-64a631202/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        email: 'sinha.aayush.aayush@gmail.com'
       }
     },
     {
@@ -251,9 +235,8 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'management',
       image: '/team/shubhendu.webp',
       socials: {
-        linkedin: '#',
-        instagram: '#',
-        email: ''
+        linkedin: 'https://www.linkedin.com/in/shubhendu-arya-003041338/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        email: 'Shubhenduarya96@gmail.com'
       }
     },
     {
@@ -263,9 +246,9 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'management',
       image: '/team/prasanna.webp',
       socials: {
-        linkedin: '#',
-        github: '#',
-        email: ''
+        linkedin: 'https://www.linkedin.com/in/prasanna-bhat-b259ba285/',
+        github: 'https://github.com/Prasannakbhat123',
+        email: 'prasannabhat345@gmail.com'
       }
     },
     {
@@ -275,9 +258,20 @@ const Team = ({ Header, Footer, headerProps }) => {
       tag: 'management',
       image: '/team/adithya.webp',
       socials: {
-        linkedin: '#',
-        instagram: '#',
-        email: ''
+        linkedin: 'https://www.linkedin.com/in/adithya-adiga-0b69a61ab/',
+        github: 'https://github.com/adithya1107',
+        email: 'adigaadithya70@gmail.com'
+      }
+    },
+    {
+      id: 23,
+      name: 'Dr. Srinivas G',
+      role: 'Faculty Advisor',
+      tag: 'advisor',
+      image: '/team/srinivas.webp',
+      socials: {
+        linkedin: 'https://www.linkedin.com/in/srinivas-g-2652a341/?originalSubdomain=in',
+        email: 'srinivas.g@manipal.edu'
       }
     }
   ];
@@ -381,11 +375,19 @@ const Team = ({ Header, Footer, headerProps }) => {
 
           {/* Leadership Section */}
           <div className="mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {teamMembers.filter(m => m.tag === 'leader').map((member) => (
-                <MemberCard key={member.id} member={member} />
-              ))}
-            </div>
+            {(() => {
+              const members = teamMembers.filter(m => m.tag === 'leader');
+              const many = members.length >= 3;
+              return (
+                <div className={many ? 'grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto' : 'flex justify-center flex-wrap gap-8'}>
+                  {members.map((member) => (
+                    <div key={member.id} className={many ? '' : 'w-full sm:w-80 md:w-96'}>
+                      <MemberCard member={member} />
+                    </div>
+                  ))}
+                </div>
+              );
+            })()}
           </div>
 
           {/* Aerodynamics Section */}
@@ -393,11 +395,19 @@ const Team = ({ Header, Footer, headerProps }) => {
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
               <span className="text-blue-600">Aerodynamics</span>
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {teamMembers.filter(m => m.tag === 'aero').map((member) => (
-                <MemberCard key={member.id} member={member} />
-              ))}
-            </div>
+            {(() => {
+              const members = teamMembers.filter(m => m.tag === 'aero');
+              const many = members.length >= 3;
+              return (
+                <div className={many ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'flex justify-center flex-wrap gap-8'}>
+                  {members.map((member) => (
+                    <div key={member.id} className={many ? '' : 'w-full sm:w-80 md:w-96'}>
+                      <MemberCard member={member} />
+                    </div>
+                  ))}
+                </div>
+              );
+            })()}
           </div>
 
           {/* Avionics Section */}
@@ -405,11 +415,19 @@ const Team = ({ Header, Footer, headerProps }) => {
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
               <span className="text-blue-600">Avionics</span>
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {teamMembers.filter(m => m.tag === 'avionics').map((member) => (
-                <MemberCard key={member.id} member={member} />
-              ))}
-            </div>
+            {(() => {
+              const members = teamMembers.filter(m => m.tag === 'avionics');
+              const many = members.length >= 3;
+              return (
+                <div className={many ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'flex justify-center flex-wrap gap-8'}>
+                  {members.map((member) => (
+                    <div key={member.id} className={many ? '' : 'w-full sm:w-80 md:w-96'}>
+                      <MemberCard member={member} />
+                    </div>
+                  ))}
+                </div>
+              );
+            })()}
           </div>
 
           {/* Payload Section */}
@@ -417,11 +435,19 @@ const Team = ({ Header, Footer, headerProps }) => {
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
               <span className="text-blue-600">Payload</span>
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {teamMembers.filter(m => m.tag === 'payload').map((member) => (
-                <MemberCard key={member.id} member={member} />
-              ))}
-            </div>
+            {(() => {
+              const members = teamMembers.filter(m => m.tag === 'payload');
+              const many = members.length >= 3;
+              return (
+                <div className={many ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'flex justify-center flex-wrap gap-8'}>
+                  {members.map((member) => (
+                    <div key={member.id} className={many ? '' : 'w-full sm:w-80 md:w-96'}>
+                      <MemberCard member={member} />
+                    </div>
+                  ))}
+                </div>
+              );
+            })()}
           </div>
 
           {/* Propulsion Section */}
@@ -429,11 +455,19 @@ const Team = ({ Header, Footer, headerProps }) => {
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
               <span className="text-blue-600">Propulsion</span>
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {teamMembers.filter(m => m.tag === 'propulsion').map((member) => (
-                <MemberCard key={member.id} member={member} />
-              ))}
-            </div>
+            {(() => {
+              const members = teamMembers.filter(m => m.tag === 'propulsion');
+              const many = members.length >= 3;
+              return (
+                <div className={many ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'flex justify-center flex-wrap gap-8'}>
+                  {members.map((member) => (
+                    <div key={member.id} className={many ? '' : 'w-full sm:w-80 md:w-96'}>
+                      <MemberCard member={member} />
+                    </div>
+                  ))}
+                </div>
+              );
+            })()}
           </div>
 
           {/* Structures Section */}
@@ -441,11 +475,19 @@ const Team = ({ Header, Footer, headerProps }) => {
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
               <span className="text-blue-600">Structures</span>
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {teamMembers.filter(m => m.tag === 'structures').map((member) => (
-                <MemberCard key={member.id} member={member} />
-              ))}
-            </div>
+            {(() => {
+              const members = teamMembers.filter(m => m.tag === 'structures');
+              const many = members.length >= 3;
+              return (
+                <div className={many ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'flex justify-center flex-wrap gap-8'}>
+                  {members.map((member) => (
+                    <div key={member.id} className={many ? '' : 'w-full sm:w-80 md:w-96'}>
+                      <MemberCard member={member} />
+                    </div>
+                  ))}
+                </div>
+              );
+            })()}
           </div>
 
           {/* Management Section */}
@@ -453,14 +495,39 @@ const Team = ({ Header, Footer, headerProps }) => {
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
               <span className="text-blue-600">Management</span>
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {teamMembers.filter(m => m.tag === 'management').map((member) => (
-                <MemberCard key={member.id} member={member} />
-              ))}
-            </div>
+            {(() => {
+              const members = teamMembers.filter(m => m.tag === 'management');
+              const many = members.length >= 3;
+              return (
+                <div className={many ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'flex justify-center flex-wrap gap-8'}>
+                  {members.map((member) => (
+                    <div key={member.id} className={many ? '' : 'w-full sm:w-80 md:w-96'}>
+                      <MemberCard member={member} />
+                    </div>
+                  ))}
+                </div>
+              );
+            })()}
           </div>
           {/* Faculty Advisors Section */}
-          
+          <div className="mb-16">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+              <span className="text-blue-600">Faculty Advisors</span>
+            </h2>
+            {(() => {
+              const members = teamMembers.filter(m => m.tag === 'advisor');
+              const many = members.length >= 3;
+              return (
+                <div className={many ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'flex justify-center flex-wrap gap-8'}>
+                  {members.map((member) => (
+                    <div key={member.id} className={many ? '' : 'w-full sm:w-80 md:w-96'}>
+                      <MemberCard member={member} />
+                    </div>
+                  ))}
+                </div>
+              );
+            })()}
+          </div>
 
           {/* Join Team CTA */}
           <div className="mt-20 text-center">
@@ -471,7 +538,7 @@ const Team = ({ Header, Footer, headerProps }) => {
               <p className="text-gray-400 text-lg mb-6 max-w-2xl mx-auto" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
                 We're always looking for passionate individuals who want to push the boundaries of rocket science
               </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
+              <button onClick={onNavigateToJoinTeam} className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
                 Get in Touch
               </button>
             </div>

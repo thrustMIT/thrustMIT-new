@@ -180,11 +180,16 @@ const SponsorshipTiers = () => {
                   </div>
 
                   {/* CTA Button */}
-                  <div className="p-8 pt-0">
-                    <button className={`w-full py-4 rounded-xl font-bold text-white transition-all duration-300 bg-gradient-to-r ${tier.gradient} hover:shadow-lg ${tier.glow} hover:scale-105`} style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600, letterSpacing: '0.05em' }}>
+                  {/* <div className="p-8 pt-0">
+                    <button onClick={() => {
+                      const subject = `Sponsorship Inquiry: ${tier.name}`;
+                      const message = `Hello ThrustMIT team,%0D%0A%0D%0AI am interested in the ${tier.name} sponsorship tier. Please send me details on benefits, pricing, and next steps.%0D%0A%0D%0AThanks.`;
+                      // Navigate to contact page with prefilled message
+                      window.location.href = `/contact?subject=${encodeURIComponent(subject)}&message=${message}`;
+                    }} className={`w-full py-4 rounded-xl font-bold text-white transition-all duration-300 bg-gradient-to-r ${tier.gradient} hover:shadow-lg ${tier.glow} hover:scale-105`} style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600, letterSpacing: '0.05em' }}>
                       Choose {tier.name}
                     </button>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Floating Particles */}
@@ -274,9 +279,9 @@ const SponsorshipTiers = () => {
             <p className="text-gray-400 max-w-2xl mx-auto mb-8 text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400, letterSpacing: '0.05em' }}>
               Join us in pushing the boundaries of aerospace innovation. Let's create something extraordinary together.
             </p>
-            <button className="bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white px-10 py-4 rounded-xl font-bold transition-all transform hover:scale-105 shadow-2xl hover:shadow-blue-600/50" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600, letterSpacing: '0.05em' }}>
+            <a href="#contact" className="inline-block bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white px-10 py-4 rounded-xl font-bold transition-all transform hover:scale-105 shadow-2xl hover:shadow-blue-600/50" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600, letterSpacing: '0.05em' }}>
               Contact Us for Partnership
-            </button>
+            </a>
           </div>
         </div>
       </div>

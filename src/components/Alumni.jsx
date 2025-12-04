@@ -32,10 +32,8 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           atThrustMIT: 'Team Leader',
           currentWork: 'Aerospace Engineer at SpaceX',
           socials: {
-            linkedin: '#',
-            github: '#',
-            instagram: '#',
-            email: 'parth@alumni.thrustmit.in'
+            linkedin: 'https://www.linkedin.com/in/satvik-agrawal86/',
+            email: 'satvikagrawal.86@gmail.com'
           }
         },
         {
@@ -45,10 +43,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           atThrustMIT: 'Team Manager',
           currentWork: 'Robotics Engineer at Blue Origin',
           socials: {
-            linkedin: '#',
-            twitter: '#',
-            instagram: '#',
-            email: 'sarah@alumni.thrustmit.in'
+            linkedin: 'https://www.linkedin.com/in/geethika-sree-ravu-0a4553259/'
           }
         },
         {
@@ -60,7 +55,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           socials: {
             linkedin: '#',
             github: '#',
-            email: 'david@alumni.thrustmit.in'
+            email: 'superajinkya783@gmail.com'
           }
         },
         {
@@ -490,11 +485,19 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           </div>
 
           {/* Alumni Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {alumniData[selectedYear].members.map((alumni) => (
-              <AlumniCard key={alumni.id} alumni={alumni} />
-            ))}
-          </div>
+          {(() => {
+            const members = alumniData[selectedYear].members;
+            const many = members.length >= 3;
+            return (
+              <div className={many ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'flex justify-center flex-wrap gap-8'}>
+                {members.map((alumni) => (
+                  <div key={alumni.id} className={many ? '' : 'w-full sm:w-80 md:w-96'}>
+                    <AlumniCard alumni={alumni} />
+                  </div>
+                ))}
+              </div>
+            );
+          })()}
 
         </div>
       </section>

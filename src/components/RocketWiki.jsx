@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Book, ChevronRight, Home, Search, Rocket, Flame, Wind, Zap, Target, Settings } from 'lucide-react';
+import { Book, ChevronRight, Home, Search, Rocket, Flame, Wind, Zap, Target, Settings, X } from 'lucide-react';
 import Footer from './Footer';
 
 const RocketryWiki = ({ Header, headerProps }) => {
   const [selectedTopic, setSelectedTopic] = useState(null);
   const [selectedChapter, setSelectedChapter] = useState(null);
+  const [expandedTopic, setExpandedTopic] = useState(null);
+  const [mobileTocOpen, setMobileTocOpen] = useState(false);
+  const [expandedMobileTopic, setExpandedMobileTopic] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
 
   // Font loading
@@ -381,9 +384,10 @@ Each method has trade-offs in complexity, weight, reliability, and landing speed
     <div className="min-h-screen bg-black text-white">
       <Header {...headerProps} />
 
-      {/* Breadcrumb */}
+      {/* Breadcrumb
       {(selectedTopic || selectedChapter) && (
-        <div className="bg-gradient-to-r from-blue-600/10 to-transparent border-b border-blue-600/20 py-10">
+        // Add top margin so the breadcrumb is not hidden beneath the fixed header
+        <div className="bg-gradient-to-r from-blue-600/10 to-transparent border-b border-blue-600/20 py-10 mt-20 relative z-40 backdrop-blur-sm">
           <div className="container mx-auto px-6 py-3">
             <div className="flex items-center gap-2 text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
               <button
@@ -417,53 +421,59 @@ Each method has trade-offs in complexity, weight, reliability, and landing speed
             </div>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Main Content */}
       <main className="container mx-auto px-6 pt-32 pb-12 flex gap-8">
-        {/* Sidebar Navigation */}
-        {(selectedTopic || selectedChapter) && (
-          <aside className="hidden lg:block w-64 flex-shrink-0">
-            <div className="sticky top-24 bg-gradient-to-br from-gray-900/80 to-black/80 border border-gray-800/50 rounded-2xl p-6">
-              <h3 className="text-sm font-semibold text-gray-400 mb-4 uppercase tracking-wider" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
-                Child Pages
-              </h3>
-              
-              <nav className="space-y-1">
-                <button
-                  onClick={() => {
-                    setSelectedChapter(null);
-                    setSelectedTopic(null);
-                  }}
-                  className="w-full text-left px-3 py-2 rounded-lg text-sm hover:bg-blue-600/20 transition-colors text-gray-400 hover:text-blue-400"
-                  style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500 }}
-                >
-                  Pages
-                </button>
-                
-                {selectedTopic && (
-                  <div className="ml-2 border-l-2 border-gray-700 pl-2">
-                    <button
-                      onClick={() => setSelectedChapter(null)}
-                      className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
-                        !selectedChapter 
-                          ? 'bg-blue-600/20 text-blue-400' 
-                          : 'text-gray-400 hover:bg-blue-600/10 hover:text-blue-400'
-                      }`}
-                      style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500 }}
-                    >
-                      {selectedTopic.title}
-                    </button>
-                    
+        {/* Sidebar Navigation (accordion: topics collapsed by default) */}
+        <aside className="hidden lg:block w-64 flex-shrink-0">
+          <div className="sticky top-24 bg-gradient-to-br from-gray-900/80 to-black/80 border border-gray-800/50 rounded-2xl p-6">
+            <h3 className="text-sm font-semibold text-gray-400 mb-4 uppercase tracking-wider" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
+              Child Pages
+            </h3>
+
+            <nav className="space-y-2" aria-label="Rocket Wiki child pages">
+              <button
+                onClick={() => {
+                  setSelectedChapter(null);
+                  setSelectedTopic(null);
+                }}
+                className="w-full text-left px-3 py-2 rounded-lg text-sm hover:bg-blue-600/20 transition-colors text-gray-400 hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500 }}
+              >
+                All Pages
+              </button>
+
+              {wikiData.map((topic) => (
+                <div key={topic.id} className="pl-0">
+                  {/* Topic heading toggles the chapters list (accordion behavior) */}
+                  <button
+                    onClick={() => {
+                      // toggle expanded topic in sidebar
+                      setExpandedTopic(prev => (prev === topic.id ? null : topic.id));
+                    }}
+                    className={`w-full flex items-center justify-between gap-2 px-3 py-2 rounded-lg text-sm transition-colors ${
+                      expandedTopic === topic.id ? 'bg-blue-600/10 text-blue-400 font-semibold' : 'text-gray-400 hover:bg-blue-600/10 hover:text-blue-400'
+                    }`}
+                    style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: expandedTopic === topic.id ? 600 : 500 }}
+                    aria-expanded={expandedTopic === topic.id}
+                  >
+                    <span className="truncate">{topic.title}</span>
+                    <span className="text-xs text-gray-500">{topic.chapters.length}</span>
+                  </button>
+
+                  {/* Chapters - hidden by default, shown when topic is expanded */}
+                  {expandedTopic === topic.id && (
                     <div className="ml-2 border-l-2 border-gray-700 pl-2 mt-1 space-y-1">
-                      {selectedTopic.chapters.map((chapter) => (
+                      {topic.chapters.map((chapter) => (
                         <button
                           key={chapter.id}
-                          onClick={() => setSelectedChapter(chapter)}
+                          onClick={() => {
+                            setSelectedTopic(topic);
+                            setSelectedChapter(chapter);
+                          }}
                           className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
-                            selectedChapter?.id === chapter.id
-                              ? 'bg-blue-600/20 text-blue-400 font-semibold'
-                              : 'text-gray-400 hover:bg-blue-600/10 hover:text-blue-400'
+                            selectedChapter?.id === chapter.id ? 'bg-blue-600/20 text-blue-400 font-semibold' : 'text-gray-400 hover:bg-blue-600/10 hover:text-blue-400'
                           }`}
                           style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: selectedChapter?.id === chapter.id ? 600 : 400 }}
                         >
@@ -471,14 +481,69 @@ Each method has trade-offs in complexity, weight, reliability, and landing speed
                         </button>
                       ))}
                     </div>
-                  </div>
-                )}
-              </nav>
-            </div>
-          </aside>
-        )}
+                  )}
+                </div>
+              ))}
+            </nav>
+          </div>
+        </aside>
         
         <div className="flex-1">
+        {/* Mobile: floating Contents button */}
+        <div className="lg:hidden">
+          <button
+            onClick={() => setMobileTocOpen(true)}
+            className="fixed bottom-6 right-4 z-50 bg-blue-600 text-white px-4 py-3 rounded-full shadow-lg hover:bg-blue-500 transition-colors"
+            aria-label="Open table of contents"
+          >
+            Contents
+          </button>
+
+          {mobileTocOpen && (
+            <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex">
+              <div className="m-auto w-full max-w-md bg-black/95 rounded-2xl p-6 mx-4 h-[80vh] overflow-y-auto">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-semibold text-white" style={{ fontFamily: 'Rajdhani, sans-serif' }}>Contents</h3>
+                  <button onClick={() => setMobileTocOpen(false)} className="text-gray-400 hover:text-white p-2 rounded-md">
+                    <X />
+                  </button>
+                </div>
+
+                <nav className="space-y-2">
+                  {wikiData.map((topic) => (
+                    <div key={topic.id} className="border-b border-gray-800/40 pb-3">
+                      <button
+                        onClick={() => setExpandedMobileTopic(prev => (prev === topic.id ? null : topic.id))}
+                        className="w-full flex items-center justify-between text-left text-white/90 py-2"
+                      >
+                        <span style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{topic.title}</span>
+                        <span className="text-sm text-gray-400">{topic.chapters.length}</span>
+                      </button>
+
+                      {expandedMobileTopic === topic.id && (
+                        <div className="mt-2 pl-3 space-y-1">
+                          {topic.chapters.map((chapter) => (
+                            <button
+                              key={chapter.id}
+                              onClick={() => {
+                                setSelectedTopic(topic);
+                                setSelectedChapter(chapter);
+                                setMobileTocOpen(false);
+                              }}
+                              className="w-full text-left text-gray-300 hover:text-white py-1"
+                            >
+                              {chapter.title}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </nav>
+              </div>
+            </div>
+          )}
+        </div>
         {!selectedTopic && !selectedChapter && (
           <div>
             {/* Welcome Section */}

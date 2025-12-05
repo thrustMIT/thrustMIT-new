@@ -80,7 +80,7 @@ const WikiCard = ({ onNavigateToRocketWiki }) => {
                     <div className="bg-gradient-to-br from-blue-600/20 to-blue-800/20 backdrop-blur-sm border border-blue-600/30 rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/30">
                       <div className="flex items-center gap-4 mb-3">
                         <div>
-                          <h4 className="font-bold text-white" style={{ fontFamily: 'Orbitron, sans-serif' }}>6 Rockets</h4>
+                          <h4 className="font-bold text-white" style={{ fontFamily: 'Orbitron, sans-serif' }}>7 Rockets</h4>
                           <p className="text-xs text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Complete Fleet</p>
                         </div>
                       </div>

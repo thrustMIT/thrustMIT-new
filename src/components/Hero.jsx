@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { VideoSlider } from './VideoSlider';
 
-const Hero = ({ onNavigateToRocketWiki, onNavigateToJoinTeam }) => {
+const Hero = ({ onNavigateToRocketWiki, onNavigateToJoinTeam, onShowRecruitmentModal }) => {
   // Font loading
   useEffect(() => {
     const link = document.createElement('link');
@@ -20,7 +20,13 @@ const Hero = ({ onNavigateToRocketWiki, onNavigateToJoinTeam }) => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
   <button 
-    onClick={onNavigateToJoinTeam}
+    onClick={() => {
+      if (onShowRecruitmentModal) {
+        onShowRecruitmentModal();
+      } else if (onNavigateToJoinTeam) {
+        onNavigateToJoinTeam();
+      }
+    }}
     className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-5 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-blue-600/60 group" 
     style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600, letterSpacing: '0.05em' }}>
     <span className="relative z-10">Join Our Team</span>

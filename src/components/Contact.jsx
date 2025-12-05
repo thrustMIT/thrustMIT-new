@@ -216,7 +216,7 @@ const Contact = () => {
                 <MapPin className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold mb-1" style={{ fontFamily: 'Rajdhani, sans-serif' }}>Location</p>
-                  <p className="text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif' }}>Manipal Institute of Technology <br/>Automobile Workshop, Near Kamath Circle <br/>Eshwar Nagar, Manipal <br/>Karnataka 576104</p>
+                  <p className="text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif' }}>Bay No. 11, Techshila, Opp. Hostel Block 14, <br/>Manipal Institute of Technology, Manipal,<br /> Udupi, Karnataka - 576104, India</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -228,15 +228,15 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="mt-8 p-6 bg-gradient-to-br from-blue-600/10 to-blue-500/10 border border-blue-600/20 rounded-xl">
+            {/* <div className="mt-8 p-6 bg-gradient-to-br from-blue-600/10 to-blue-500/10 border border-blue-600/20 rounded-xl">
               <h4 className="font-bold mb-3" style={{ fontFamily: 'Orbitron, sans-serif' }}>Join Our Team</h4>
               <p className="text-sm text-gray-300 mb-4" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                 We're always looking for passionate students interested in rocketry and aerospace engineering.
               </p>
-              <a href="/join" className="text-blue-600 hover:text-blue-500 font-semibold text-sm transition-colors inline-block" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+              <button type="button" onClick={() => window.dispatchEvent(new Event('showRecruitModal'))} className="text-blue-600 hover:text-blue-500 font-semibold text-sm transition-colors inline-block" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                 Learn More →
-              </a>
-            </div>
+              </button>
+            </div> */}
           </div>
         </div>
       </div>

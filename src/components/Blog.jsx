@@ -494,7 +494,7 @@ const Blog = ({ Header, Footer, onNavigateHome, headerProps }) => {
       )}
 
       {/* Footer */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

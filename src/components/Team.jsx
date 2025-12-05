@@ -18,9 +18,9 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Shaunak Purkayastha',
       role: 'Team Leader',
       tag: 'leader',
-      image: '/team/shaunak.webp',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Shaunak%20Purkayastha__eTDJDXK5r.HEIC?updatedAt=1735410814877',
       socials: {
-        linkedin: 'https://www.linkedin.com/in/shaunak-p-552o2',
+        linkedin: 'https://www.linkedin.com/in/shaunakpurkayastha/?originalSubdomain=in',
         email: 'shaunakp1709@gmail.com'
       }
     },
@@ -29,7 +29,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Anushka Prabhutendolkar',
       role: 'Team Manager',
       tag: 'leader',
-      image: '/team/anushka.webp',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Anushka%20Prabhutendolkar_wPjll-9coc.HEIC?updatedAt=1735410811512',
       socials: {
         github: 'https://github.com/asprcode',
         email: 'anushkaprabhutendolkar@gmail.com'
@@ -40,7 +40,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Shaurya Mittal',
       role: 'Aerodynamics Head',
       tag: 'aero',
-      image: '/team/shaurya.webp',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Shaurya%20Mittal_vm63fTBj2j.HEIC?updatedAt=1735410815461',
       socials: {
         linkedin: 'https://www.linkedin.com/in/shaurya-mittal-744483291/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         github: 'https://github.com/extorc',
@@ -52,7 +52,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Samrudh Raja',
       role: 'Head of Recovery',
       tag: 'aero',
-      image: '/team/samrudh.webp',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Samrudh%20Raja_cX4ldgPWy.HEIC?updatedAt=1735410813903',
       socials: {
         linkedin: 'https://www.linkedin.com/in/samrudh-raja-53657728b/',
         email: 'samrudh2204@gmail.com'
@@ -63,7 +63,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Sanskruti Ginde',
       role: 'Avionics Head',
       tag: 'avionics',
-      image: '/team/sanskruti.webp',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Sanskruti%20Ginde_Vg6PLfMCk.HEIC?updatedAt=1735410814796',
       socials: {
         linkedin: 'https://www.linkedin.com/in/sanskruti-ginde-a512602b2/',
         email: 'sanskrutiginde@gmail.com'
@@ -74,7 +74,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Dhruv Phalod',
       role: 'Ground Systems Head',
       tag: 'avionics',
-      image: '/team/dhruv.webp',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Dhruv%20Phalod_UpqptrSoG5.HEIC?updatedAt=1735410810811',
       socials: {
         linkedin: 'https://www.linkedin.com/in/dhruv-phalod-b75a51282/',
         github: 'https://github.com/D-Coder-42',
@@ -86,7 +86,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Krishanu Dey',
       role: 'Senior Member',
       tag: 'avionics',
-      image: '/team/krishanu.webp',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Krishanu%20Dey_cawTxipxw.HEIC?updatedAt=1735410809227',
       socials: {
         github: 'https://github.com/krishanu-170605',
         email: 'krishanu.170605@gmail.com'
@@ -97,7 +97,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Shawn Chris D Silva',
       role: 'Senior Member',
       tag: 'avionics',
-      image: '/team/shawn.webp',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Shawn%20Chris%20D%20Silva_aqEyt3PkM.HEIC?updatedAt=1735410815506',
       socials: {
         linkedin: 'https://www.linkedin.com/in/shawn-chris-d-silva-12960a20b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         github: 'https://github.com/sirdeeznuts',
@@ -109,7 +109,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Vanshdeep Trivedi',
       role: 'Senior Member',
       tag: 'avionics',
-      image: '/team/vansh.webp',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Vanshdeep%20Trivedi_D_GtGaGAt.HEIC?updatedAt=1735410816157',
       socials: {
         linkedin: 'https://www.linkedin.com/in/vanshdeep-trivedi-8108ab288/',
         github: 'https://github.com/Vel0c1ty04',
@@ -121,7 +121,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Mutra Sai Tharun',
       role: 'Head of Payload',
       tag: 'payload',
-      image: '/team/mutra.webp',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Mutra%20Sai%20Tharun_eTOFs6mCg.HEIC?updatedAt=1735410811259',
       socials: {
         github: 'https://github.com/Tharun22122005',
         email: 'mst.tharun39@gmail.com'
@@ -132,7 +132,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Adi Narayan',
       role: 'Senior Member',
       tag: 'payload',
-      image: '/team/adi.webp',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Adi%20Narayan%20R%20S_6DXQMEp2LN.HEIC?updatedAt=1735410811485',
       socials: {
         linkedin: 'https://www.linkedin.com/in/adi-narayan-059ab8241/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         github: 'https://github.com/Adi-Narayan',
@@ -144,7 +144,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Rudra Rajpurohit',
       role: 'Senior Member',
       tag: 'payload',
-      image: '/team/rudra.webp',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Rudra%20Rajpurohit_f_Lp5BH16.HEIC?updatedAt=1735410813472',
       socials: {
         linkedin: 'https://www.linkedin.com/in/rudra-rajpurohit-2215772a4/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         email: 'rudrarajpurohit06@gmail.com'
@@ -155,7 +155,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Dhruv Jadhav',
       role: 'Head of Propulsion',
       tag: 'propulsion',
-      image: '/team/dhruv_jadhav.webp',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Dhruv%20Jadhav_AqowM1ZUX.HEIC?updatedAt=1735410811559',
       socials: {
         linkedin: 'https://www.linkedin.com/in/dhruv-jadhav/',
         github: 'https://github.com/dhruv-jadhav',
@@ -167,7 +167,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Varun PV',
       role: 'Senior Member',
       tag: 'propulsion',
-      image: '/team/varun.webp',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Varun%20PV_98fFAJqgb.HEIC?updatedAt=1735410816389',
       socials: {
         linkedin: 'https://www.linkedin.com/in/varun-pv-91b20628a',
         email: 'varunpv44@gmail.com'
@@ -178,7 +178,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Tushit Chatterjee',
       role: 'Head of Structures',
       tag: 'structures',
-      image: '/team/tushit.webp',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Tushit%20Chatterjee_-Y7MmF2I4D.HEIC?updatedAt=1735410815796',
       socials: {
         linkedin: 'https://www.linkedin.com/in/tushitchatterjee/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         email: 'tushitchatterjee1@gmail.com'
@@ -189,7 +189,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Avnish Kaur',
       role: 'Senior Member',
       tag: 'structures',
-      image: '/team/avnish.webp',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Avnish%20Kaur_rsh2X_9Hw.HEIC?updatedAt=1735410811451',
       socials: {
         linkedin: 'https://www.linkedin.com/in/avnish-kaur-77984a211/',
         email: 'kauravnish28@gmail.com'
@@ -200,7 +200,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Vedant Pankaj Totla',
       role: 'Head of Management',
       tag: 'management',
-      image: '/team/vedant.webp',
+      image: '/team/vedant.jpg',
       socials: {
         linkedin: 'https://www.linkedin.com/in/vedant-totla-51a629223/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         email: 'totla.vedant1@gmail.com'
@@ -211,7 +211,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Swara Sule',
       role: 'Senior Member',
       tag: 'management',
-      image: '/team/swara.webp',
+      image: '/team/swara.jpg',
       socials: {
         linkedin: 'https://www.linkedin.com/in/swaraa-sule-814975228/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         email: 'swaraasule@gmail.com'
@@ -222,7 +222,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Aayush Sinha',
       role: 'Senior Member',
       tag: 'management',
-      image: '/team/aayush.webp',
+      image: '/team/aayush.jpg',
       socials: {
         linkedin: 'https://www.linkedin.com/in/aayush-sinha-64a631202/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         email: 'sinha.aayush.aayush@gmail.com'
@@ -233,7 +233,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Shubhendu Arya',
       role: 'Senior Member',
       tag: 'management',
-      image: '/team/shubhendu.webp',
+      image: '/team/shubhendu.jpg',
       socials: {
         linkedin: 'https://www.linkedin.com/in/shubhendu-arya-003041338/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         email: 'Shubhenduarya96@gmail.com'
@@ -244,7 +244,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Prasanna K',
       role: 'Senior Member',
       tag: 'management',
-      image: '/team/prasanna.webp',
+      image: '/team/prasanna.jpg',
       socials: {
         linkedin: 'https://www.linkedin.com/in/prasanna-bhat-b259ba285/',
         github: 'https://github.com/Prasannakbhat123',
@@ -256,7 +256,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Adithya M Adiga',
       role: 'Senior Member',
       tag: 'management',
-      image: '/team/adithya.webp',
+      image: '/team/adithya.jpg',
       socials: {
         linkedin: 'https://www.linkedin.com/in/adithya-adiga-0b69a61ab/',
         github: 'https://github.com/adithya1107',
@@ -268,7 +268,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Dr. Srinivas G',
       role: 'Faculty Advisor',
       tag: 'advisor',
-      image: '/team/srinivas.webp',
+      image: '/team/srinivas.jpg',
       socials: {
         linkedin: 'https://www.linkedin.com/in/srinivas-g-2652a341/?originalSubdomain=in',
         email: 'srinivas.g@manipal.edu'
@@ -281,18 +281,18 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       linkedin: Linkedin,
       github: Github,
       instagram: Instagram,
-      twitter: Twitter,
-      facebook: Facebook,
       email: Mail
     };
     
     const Icon = icons[type];
+    const isEmail = type === 'email';
+    const href = isEmail ? `mailto:${url}` : url;
     
     return (
       <a
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
+        href={href}
+        target={isEmail ? undefined : "_blank"}
+        rel={isEmail ? undefined : "noopener noreferrer"}
         className="w-10 h-10 rounded-full bg-blue-600/20 border border-blue-600/30 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 hover:scale-110 group"
         onClick={(e) => e.stopPropagation()}
       >
@@ -538,7 +538,13 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
               <p className="text-gray-400 text-lg mb-6 max-w-2xl mx-auto" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
                 We're always looking for passionate individuals who want to push the boundaries of rocket science
               </p>
-              <button onClick={onNavigateToJoinTeam} className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
+              <button onClick={() => {
+                if (headerProps && headerProps.onShowRecruitmentModal) {
+                  headerProps.onShowRecruitmentModal();
+                } else if (onNavigateToJoinTeam) {
+                  onNavigateToJoinTeam();
+                }
+              }} className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
                 Get in Touch
               </button>
             </div>

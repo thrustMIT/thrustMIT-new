@@ -8,6 +8,7 @@ import Subsystems from './components/Subsystems';
 import Projects from './components/Projects';
 import Sponsors from './components/Sponsors';
 import Gallery from './components/Gallery';
+import GalleryPage from './components/GalleryPage';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SponsorshipTiers from './components/SponsorshipTiers';
@@ -18,12 +19,15 @@ import Alumni from './components/Alumni';
 import WikiCard from './components/WikiCard';
 import ProjectDetail from './components/ProjectDetail';
 import Blog from './components/Blog';
+import RecruitmentModal from './components/RecruitmentModal';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [selectedAlumniYear, setSelectedAlumniYear] = useState(null);
   const [selectedProjectId, setSelectedProjectId] = useState(null);
   const [pendingSection, setPendingSection] = useState(null);
+  const [recruitmentModalOpen, setRecruitmentModalOpen] = useState(false);
+  const [recruitmentModalMessage, setRecruitmentModalMessage] = useState('Recruitments have not yet started. Stay tuned!');
 
   // Initialize AOS and prevent overscroll bounce effect
   useEffect(() => {
@@ -63,6 +67,8 @@ export default function App() {
         const projectId = path.split('/projects/')[1];
         setCurrentPage('project-detail');
         setSelectedProjectId(projectId);
+      } else if (path === '/gallery' || path.includes('/gallery')) {
+        setCurrentPage('gallery');
       } else {
         setCurrentPage('home');
         setSelectedAlumniYear(null);
@@ -108,6 +114,8 @@ export default function App() {
         setSelectedProjectId(dataParam);
         window.history.pushState({}, '', `/projects/${dataParam}`);
       }
+    } else if (page === 'gallery') {
+      window.history.pushState({}, '', '/gallery');
     } else {
       window.history.pushState({}, '', '/');
       setSelectedAlumniYear(null);
@@ -156,77 +164,126 @@ export default function App() {
     currentPage: currentPage
   };
 
+  // Recruitment modal controls
+  const openRecruitmentModal = (message) => {
+    if (message) setRecruitmentModalMessage(message);
+    setRecruitmentModalOpen(true);
+  };
+
+  const closeRecruitmentModal = () => {
+    setRecruitmentModalOpen(false);
+  };
+
+  // expose modal opener to header and child pages
+  commonHeaderProps.onShowRecruitmentModal = openRecruitmentModal;
+
+  const renderRecruitmentModal = () => (
+    <RecruitmentModal open={recruitmentModalOpen} message={recruitmentModalMessage} onClose={closeRecruitmentModal} />
+  );
+
   // Render different pages based on current route
   if (currentPage === 'project-detail') {
     return (
-      <ProjectDetail 
-        Header={Header}
-        Footer={Footer}
-        projectId={selectedProjectId}
-        onNavigateHome={() => navigate('home')}
-        onNavigateToProjects={() => navigateHome('projects')}
-        onNavigateToProject={(projectId) => navigate('project-detail', projectId)}
-        headerProps={commonHeaderProps}
-      />
+      <>
+        <ProjectDetail 
+          Header={Header}
+          Footer={Footer}
+          projectId={selectedProjectId}
+          onNavigateHome={() => navigate('home')}
+          onNavigateToProjects={() => navigateHome('projects')}
+          onNavigateToProject={(projectId) => navigate('project-detail', projectId)}
+          headerProps={commonHeaderProps}
+        />
+        {renderRecruitmentModal()}
+      </>
     );
   }
 
   if (currentPage === 'rocket-wiki') {
     return (
-      <RocketWiki 
-        Header={Header}
-        Footer={Footer}
-        onNavigateHome={() => navigate('home')}
-        onNavigateToAlumni={(year) => navigate('alumni', year)}
-        headerProps={commonHeaderProps}
-      />
+      <>
+        <RocketWiki 
+          Header={Header}
+          Footer={Footer}
+          onNavigateHome={() => navigate('home')}
+          onNavigateToAlumni={(year) => navigate('alumni', year)}
+          headerProps={commonHeaderProps}
+        />
+        {renderRecruitmentModal()}
+      </>
     );
   }
 
   if (currentPage === 'team') {
     return (
-      <Team 
-        Header={Header}
-        Footer={Footer}
-        onNavigateHome={() => navigate('home')}
-        onNavigateToJoinTeam={() => navigate('join')} 
-        headerProps={commonHeaderProps}
-      />
+      <>
+        <Team 
+          Header={Header}
+          Footer={Footer}
+          onNavigateHome={() => navigate('home')}
+          onNavigateToJoinTeam={() => navigate('join')} 
+          headerProps={commonHeaderProps}
+        />
+        {renderRecruitmentModal()}
+      </>
     );
   }
 
   if (currentPage === 'alumni') {
     return (
-      <Alumni 
-        Header={Header}
-        Footer={Footer}
-        initialYear={selectedAlumniYear} 
-        onNavigateHome={() => navigate('home')}
-        onNavigateToAlumni={(year) => navigate('alumni', year)}
-        headerProps={commonHeaderProps}
-      />
+      <>
+        <Alumni 
+          Header={Header}
+          Footer={Footer}
+          initialYear={selectedAlumniYear} 
+          onNavigateHome={() => navigate('home')}
+          onNavigateToAlumni={(year) => navigate('alumni', year)}
+          headerProps={commonHeaderProps}
+        />
+        {renderRecruitmentModal()}
+      </>
     );
   }
 
   if (currentPage === 'join') {
     return (
-      <JoinTeam 
-        Header={Header}
-        Footer={Footer}
-        onNavigateHome={() => navigate('home')}
-        headerProps={commonHeaderProps}
-      />
+      <>
+        <JoinTeam 
+          Header={Header}
+          Footer={Footer}
+          onNavigateHome={() => navigate('home')}
+          headerProps={commonHeaderProps}
+        />
+        {renderRecruitmentModal()}
+      </>
     );
   }
 
   if (currentPage === 'blog') {
     return (
-      <Blog 
-        Header={Header}
-        Footer={Footer}
-        onNavigateHome={() => navigate('home')}
-        headerProps={commonHeaderProps}
-      />
+      <>
+        <Blog 
+          Header={Header}
+          Footer={Footer}
+          onNavigateHome={() => navigate('home')}
+          headerProps={commonHeaderProps}
+        />
+        {renderRecruitmentModal()}
+      </>
+    );
+  }
+
+  if (currentPage === 'gallery') {
+    return (
+      <>
+        <GalleryPage
+          Header={Header}
+          Footer={Footer}
+          onNavigateHome={() => navigate('home')}
+          headerProps={commonHeaderProps}
+        />
+        {renderRecruitmentModal()}
+      </>
     );
   }
 
@@ -238,17 +295,18 @@ export default function App() {
       />
       <Hero 
         onNavigateToRocketWiki={() => navigate('rocket-wiki')}
-        onNavigateToJoinTeam={() => navigate('join')}
+        onShowRecruitmentModal={openRecruitmentModal}
       />
       <About />
       <Subsystems />
       <Projects onNavigateToProject={(projectId) => navigate('project-detail', projectId)} />
       <Sponsors />
       <SponsorshipTiers />
-      <Gallery />
+      <Gallery onNavigateToGallery={() => navigate('gallery')} />
       <Contact />
       <WikiCard onNavigateToRocketWiki={() => navigate('rocket-wiki')} />
       <Footer/>
+      {renderRecruitmentModal()}
     </div>
   );
 }

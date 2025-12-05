@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-const Gallery = () => {
+const Gallery = ({ onNavigateToGallery }) => {
   const [currentImage, setCurrentImage] = useState(0);
   
   // Replace these filenames with your actual image filenames from the public folder
   const images = [
-    { id: 0, src: "gallery/i1.png", title: "Launch Day Success", description: "Our team's first successful rocket launch at the regional competition in 2024" },
+    { id: 0, src: "https://ik.imagekit.io/wns4q4r9n2/Gallery/Vayuvega/Award%20Ceremony%20Photo_mtsP57mDR.jpg?updatedAt=1753898886832", title: "Launch Day Success", description: "Our team's first successful rocket launch at the regional competition in 2024" },
     { id: 1, src: "gallery/i2.png", title: "Pre-Flight Preparation", description: "Final checks and calibration before the big launch at nationals" },
     { id: 2, src: "gallery/i3.png", title: "Team Assembly", description: "The entire crew working together on rocket assembly in our lab" },
     { id: 3, src: "gallery/i4.png", title: "Engine Test Fire", description: "Static fire test of our custom-built rocket engine" },
@@ -84,6 +84,23 @@ const Gallery = () => {
                 </div>
               </button>
             ))}
+          </div>
+
+          {/* View Full Gallery Button */}
+          <div className="flex justify-center mt-10">
+            <button 
+              onClick={() => {
+                if (onNavigateToGallery) {
+                  onNavigateToGallery();
+                } else {
+                  window.location.href = '/gallery';
+                }
+              }}
+              className="px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white font-bold rounded-xl transition-all transform hover:scale-105 shadow-lg hover:shadow-blue-600/50"
+              style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600, letterSpacing: '0.05em' }}
+            >
+              View Full Gallery →
+            </button>
           </div>
         </div>
 

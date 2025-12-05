@@ -33,7 +33,7 @@ const About = () => {
             About <span className="text-blue-600">thrustMIT</span>
           </h2>
           <p className="text-gray-400 mb-8 max-w-3xl mx-auto text-lg leading-relaxed" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400, letterSpacing: '0.05em' }}>
-            A student-led team at MIT dedicated to pushing the boundaries of rocket propulsion and aerospace engineering
+            India's Top Rocketry Team
           </p>
         </div>
 
@@ -46,13 +46,13 @@ const About = () => {
                 <h3 className="text-3xl font-bold" style={{ fontFamily: 'Orbitron, sans-serif' }}>Our Mission</h3>
               </div>
               <p className="text-gray-300 leading-relaxed text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
-                To build high-powered rockets that break altitude records and inspire the next generation of aerospace engineers. We design, manufacture, and launch advanced rocket systems while fostering a collaborative environment for innovation and learning.
+                thrustMIT started off in early 2016 as a group of rocket enthusiasts with the aim of promoting High-Power-Rocketry in India. The team takes part in the International Rocket Engineering Competition (previously called the Spaceport America Cup), which is the largest international platform in the world for students to showcase their rocketry skills. We are currently the top team in India and one of the top teams in Asia.
               </p>
             </div>
 
             <div className="bg-gradient-to-br from-blue-600/10 to-transparent border border-blue-600/20 rounded-2xl p-6">
               <p className="text-gray-300 leading-relaxed text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
-                Our multidisciplinary team works on everything from propulsion systems and aerodynamics to avionics and recovery mechanisms, competing in national competitions and conducting cutting-edge research.
+                In 2025, Vayuvega reached 29,432 ft, placing 4th in the 30K COTS category and 2nd in the SDL Payload Challenge. In 2024, the team built AgniAstra, India’s first student 30K-ft-class rocket, ranking 7th globally and top in Asia at the SA Cup. The team also earned notable past awards, including 4th in the James Barrowman Award (2022) and design/professionalism recognitions in 2018–19.
               </p>
             </div>
 

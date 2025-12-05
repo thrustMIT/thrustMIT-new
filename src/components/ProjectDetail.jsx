@@ -8,7 +8,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
       name: 'Vayuvega', 
       category: '30K COTS', 
       description: "Vayuvega was thrustMIT's latest project and second 30K COTS class rocket, launched at the 2025 IREC. Vayuvega achieved an apogee of 29,432 feet and was subsequently recovered with no damage to the airframe and systems. Vayuvega featured a payload experiment aiming to validate real-time visual tracking in extreme flight conditions, for which the team won the 2nd Place Prize in the SDL Payload Challenge. Project Vayuvega is our most successful rocket yet, achieving 4th position in the 30K COTS category and 22nd overall at the 2025 IREC.",
-      image: '/projects/vayu.png',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/Projects/Renders/vayuvega_Uo8rkzyzy.png?updatedAt=1753918489502',
       details: {
         maxAltitude: '29,432 ft',
         duration: '2024-25',
@@ -32,7 +32,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
       name: 'AgniAstra', 
       category: '30K COTS', 
       description: "AgniAstra was thrustMIT's debut entry in the 2024 Spaceport America Cup under the 30K COTS category. Featuring a glass fibre and carbon fibre airframe with an Aluminium 6061 internal structure, it carried a CanSat payload to conduct real-time pose estimation via computer vision. The SRAD modular flight computer managed recovery, data logging, and telemetry. Project AgniAstra ranked as Asia's top 30K COTS team.",
-      image: '/projects/agni.png',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/Projects/Renders/rocket%20render%20thrustmit_TNOILvtU5.png?updatedAt=1753908331004',
       details: {
         maxAltitude: '30,000 ft',
         duration: '2023-24',
@@ -56,7 +56,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
       name: 'Altair', 
       category: '10K COTS', 
       description: "Altair was thrustMIT's 10K COTS submission to the 2023 Spaceport America Cup. The rocket featured leading-edge extended fins and crankshaft-airbrakes to optimize flow separation. Project Altair was our most accurate launch with a 0.51% percentage error in apogee, reaching 10,331 ft.",
-      image: '/projects/altair.png',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/Projects/Renders/altair_IoG2kLg-73.png?updatedAt=1753914870160',
       details: {
         maxAltitude: '10,331 ft',
         duration: '2022-23',
@@ -80,7 +80,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
       name: 'Rayquaza', 
       category: '10K COTS', 
       description: "Rayquaza was thrustMIT's 4th developed rocket and project entry to the 2022 Spaceport America Cup. Comprising a carbon fibre airframe and Aluminium 6063 internal structure, Project Rayquaza was our first ever rocket to reach 10,000 ft. Rayquaza came 4th in the James Barrowman Award with a percentage error of less than 0.3%.",
-      image: '/projects/ray.png',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/Projects/Renders/rayquaza_2-xs2pG3B.png?updatedAt=1753914869235',
       details: {
         maxAltitude: '10,000 ft',
         duration: '2021-22',
@@ -104,7 +104,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
       name: 'Phoenix', 
       category: '10K COTS', 
       description: "Phoenix was thrustMIT's 3rd rocket and official entry to the 2021 Spaceport America Cup. With a carbon fibre airframe and glass fibre Avionics Bay, the rocket featured a functional payload experiment aiming to accurately measure and log vibrations experienced by a CanSat during flight using a piezoelectric transducer. Project Phoenix achieved 7th position in the 10K COTS category and 16th position overall.",
-      image: '/projects/pheo.png',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/Projects/Renders/phoenix_8Nh7jG9bA_8isaJXVLu.png?updatedAt=1753914869369',
       details: {
         maxAltitude: '10,000 ft',
         duration: '2020-21',
@@ -128,7 +128,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
       name: 'Arya', 
       category: 'Sounding Rocket', 
       description: "Arya, launched at the 2019 Spaceport America Cup, was our 2nd rocket made entirely out of carbon fibre with a target apogee of 3 km. It featured Aluminium 6061-T6 bulkheads and centering rings. The team successfully launched Lapwing II, a subscale rocket used to test recovery systems. Project Arya featured an in-house reefing mechanism to optimize recovery operations.",
-      image: '/projects/arya.png',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/Projects/Renders/arya_K-kwONsP_.png?updatedAt=1753914869619',
       details: {
         maxAltitude: '3,000 m',
         duration: '2018-19',
@@ -152,7 +152,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
       name: 'Vyom', 
       category: 'Debut Rocket', 
       description: "Vyom was our first rocket, launched at the 2018 Spaceport America Cup. It featured a glass fibre airframe, couplers and fin attachments, and a nose tip made of ABS. It reached an apogee of 1.2 km. Project Vyom won the Best Debutant Award at the 2018 SA Cup.",
-      image: '/projects/vyom.png',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/Projects/Renders/vyom_hcjagHclU_JJM559muPW.png?updatedAt=1753914869355',
       details: {
         maxAltitude: '1,200 m',
         duration: '2017-18',
@@ -286,11 +286,12 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
             </div>
 
             <div className="relative">
-              <div className="relative rounded-3xl p-8 flex items-center justify-center min-h-[400px]">
+              <div className="relative rounded-3xl p-8 flex items-center justify-center min-h-[500px]">
                 <img 
                   src={project.image} 
                   alt={project.name}
-                  className="max-w-full max-h-[350px] object-contain"
+                  className="max-w-full max-h-[500px] object-contain transform rotate-[-90deg]"
+                  style={{ width: 'auto', height: '500px' }}
                 />
               </div>
             </div>

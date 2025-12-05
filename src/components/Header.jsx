@@ -9,6 +9,7 @@ const Header = ({
   onNavigateToBlog,
   onScrollToSection,
   onNavigateHome,
+  onShowRecruitmentModal,
   currentPage = 'home'
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,7 +49,9 @@ const Header = ({
 
   const handleJoinClick = () => {
     setIsMenuOpen(false);
-    if (onNavigateToJoin) {
+    if (onShowRecruitmentModal) {
+      onShowRecruitmentModal();
+    } else if (onNavigateToJoin) {
       onNavigateToJoin();
     }
   };
@@ -172,6 +175,13 @@ const Header = ({
             >
               Contacts
             </button>
+            <button 
+              onClick={handleRocketWikiClick}
+              className="px-4 py-2 text-base font-bold text-white rounded-lg transition-all duration-200 whitespace-nowrap bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 hover:shadow-lg hover:shadow-blue-600/50 transform hover:scale-105"
+            >
+              Rocket Wiki
+            </button>
+            
           </nav>
 
           {/* Mobile Menu Button */}
@@ -248,6 +258,13 @@ const Header = ({
             >
               Contacts
             </button>
+            <button 
+              onClick={handleRocketWikiClick}
+              className="text-left px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-bold text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg transition-all duration-200"
+            >
+              Rocket Wiki
+            </button>
+            
           </nav>
         </div>
       )}

@@ -719,7 +719,7 @@ Each method has trade-offs in complexity, weight, reliability, and landing speed
       </main>
 
       {/* Footer */}
-        <Footer />
+
     </div>
   );
 };

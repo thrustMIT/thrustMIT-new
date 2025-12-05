@@ -631,7 +631,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
         {
           id: 56,
           name: 'Vignesh Renganathan',
-          image: 'https://media.licdn.com/dms/image/v2/D5635AQEqIQdbVVCFvQ/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1720831016968?e=1765562400&v=beta&t=uKOsjWip1oj2VyMwa-MKS4Qnucd78lfq934AVBcOHj4',
+          image: '',
           atThrustMIT: 'Controls Head',
           currentWork: '',
           socials: {

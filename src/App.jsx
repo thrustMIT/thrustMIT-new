@@ -305,7 +305,12 @@ export default function App() {
       <Gallery onNavigateToGallery={() => navigate('gallery')} />
       <Contact />
       <WikiCard onNavigateToRocketWiki={() => navigate('rocket-wiki')} />
-      <Footer/>
+      <Footer
+        onNavigateToRocketWiki={() => navigate('rocket-wiki')}
+        onNavigateToBlog={() => navigate('blog')}
+        onScrollToSection={scrollToSection}
+        onNavigateHome={navigateHome}
+      />
       {renderRecruitmentModal()}
     </div>
   );

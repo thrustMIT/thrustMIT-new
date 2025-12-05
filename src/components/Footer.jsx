@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react';
 import { Rocket, Book, ArrowRight, ExternalLink } from 'lucide-react';
 
-const Footer = ({ onNavigateToRocketWiki }) => {
+const Footer = ({ 
+  onNavigateToRocketWiki,
+  onScrollToSection,
+  onNavigateToBlog,
+  onNavigateHome
+}) => {
   // Font loading
   useEffect(() => {
     const link = document.createElement('link');
@@ -44,14 +49,32 @@ const Footer = ({ onNavigateToRocketWiki }) => {
             <div>
               <h4 className="font-bold mb-4" style={{ fontFamily: 'Orbitron, sans-serif' }}>Quick Links</h4>
               <div className="space-y-2 text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
-                <a href="#about" className="block text-gray-400 hover:text-blue-600 transition-colors">About</a>
-                <a href="#subsystems" className="block text-gray-400 hover:text-blue-600 transition-colors">Subsystems</a>
-                <a href="#projects" className="block text-gray-400 hover:text-blue-600 transition-colors">Projects</a>
                 <button 
-                  onClick={handleRocketWikiClick} 
+                  onClick={() => {
+                    if (onNavigateHome) onNavigateHome('about');
+                    if (onScrollToSection) onScrollToSection('about');
+                  }}
                   className="block text-gray-400 hover:text-blue-600 transition-colors text-left"
                 >
-                  Rocket Wiki
+                  About
+                </button>
+                <button 
+                  onClick={() => {
+                    if (onNavigateHome) onNavigateHome('subsystems');
+                    if (onScrollToSection) onScrollToSection('subsystems');
+                  }}
+                  className="block text-gray-400 hover:text-blue-600 transition-colors text-left"
+                >
+                  Subsystems
+                </button>
+                <button 
+                  onClick={() => {
+                    if (onNavigateHome) onNavigateHome('projects');
+                    if (onScrollToSection) onScrollToSection('projects');
+                  }}
+                  className="block text-gray-400 hover:text-blue-600 transition-colors text-left"
+                >
+                  Projects
                 </button>
               </div>
             </div>
@@ -59,18 +82,40 @@ const Footer = ({ onNavigateToRocketWiki }) => {
             <div>
               <h4 className="font-bold mb-4" style={{ fontFamily: 'Orbitron, sans-serif' }}>Resources</h4>
               <div className="space-y-2 text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
-                <a href="#" className="block text-gray-400 hover:text-blue-600 transition-colors">Documentation</a>
-                <a href="#" className="block text-gray-400 hover:text-blue-600 transition-colors">Blog</a>
-                <a href="#sponsors" className="block text-gray-400 hover:text-blue-600 transition-colors">Sponsors</a>
+                <button 
+                  onClick={() => {
+                    if (onNavigateToRocketWiki) onNavigateToRocketWiki();
+                  }}
+                  className="block text-gray-400 hover:text-blue-600 transition-colors text-left"
+                >
+                  Documentation
+                </button>
+                <button 
+                  onClick={() => {
+                    if (onNavigateToBlog) onNavigateToBlog();
+                  }}
+                  className="block text-gray-400 hover:text-blue-600 transition-colors text-left"
+                >
+                  Blog
+                </button>
+                <button 
+                  onClick={() => {
+                    if (onNavigateHome) onNavigateHome('sponsors');
+                    if (onScrollToSection) onScrollToSection('sponsors');
+                  }}
+                  className="block text-gray-400 hover:text-blue-600 transition-colors text-left"
+                >
+                  Sponsors
+                </button>
               </div>
             </div>
 
             <div>
               <h4 className="font-bold mb-4" style={{ fontFamily: 'Orbitron, sans-serif' }}>Connect</h4>
               <div className="space-y-2 text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
-                <a href="#" className="block text-gray-400 hover:text-blue-600 transition-colors">Instagram</a>
-                <a href="#" className="block text-gray-400 hover:text-blue-600 transition-colors">LinkedIn</a>
-                <a href="#" className="block text-gray-400 hover:text-blue-600 transition-colors">GitHub</a>
+                <a href="https://www.instagram.com/thrustmit/?hl=en" target='_blank' className="block text-gray-400 hover:text-blue-600 transition-colors">Instagram</a>
+                <a href="https://www.linkedin.com/company/thrustmit/posts/?feedView=all" target='_blank' className="block text-gray-400 hover:text-blue-600 transition-colors">LinkedIn</a>
+                <a href="https://www.youtube.com/@thrustmit" target='_blank' className="block text-gray-400 hover:text-blue-600 transition-colors">YouTube</a>
               </div>
             </div>
           </div>

@@ -200,7 +200,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Vedant Pankaj Totla',
       role: 'Head of Management',
       tag: 'management',
-      image: '/team/vedant.jpg',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Vedant%20Totla_dZk7PfRap.HEIC?updatedAt=1735410816828',
       socials: {
         linkedin: 'https://www.linkedin.com/in/vedant-totla-51a629223/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         email: 'totla.vedant1@gmail.com'
@@ -211,7 +211,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Swara Sule',
       role: 'Senior Member',
       tag: 'management',
-      image: '/team/swara.jpg',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Swaraa%20Sule_yewr6hcrb.HEIC?updatedAt=1735410815424',
       socials: {
         linkedin: 'https://www.linkedin.com/in/swaraa-sule-814975228/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         email: 'swaraasule@gmail.com'
@@ -222,7 +222,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Aayush Sinha',
       role: 'Senior Member',
       tag: 'management',
-      image: '/team/aayush.jpg',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Aayush%20Sinha_baEyCvqgu.jpg?updatedAt=1735410808858',
       socials: {
         linkedin: 'https://www.linkedin.com/in/aayush-sinha-64a631202/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         email: 'sinha.aayush.aayush@gmail.com'
@@ -233,7 +233,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Shubhendu Arya',
       role: 'Senior Member',
       tag: 'management',
-      image: '/team/shubhendu.jpg',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Shubhendu%20Arya_Y46KZ0gwB.HEIC?updatedAt=1735410815494',
       socials: {
         linkedin: 'https://www.linkedin.com/in/shubhendu-arya-003041338/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         email: 'Shubhenduarya96@gmail.com'
@@ -244,7 +244,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Prasanna K',
       role: 'Senior Member',
       tag: 'management',
-      image: '/team/prasanna.jpg',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Prasanna_CjSwxeh_r.HEIC?updatedAt=1735410812110',
       socials: {
         linkedin: 'https://www.linkedin.com/in/prasanna-bhat-b259ba285/',
         github: 'https://github.com/Prasannakbhat123',
@@ -256,7 +256,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Adithya M Adiga',
       role: 'Senior Member',
       tag: 'management',
-      image: '/team/adithya.jpg',
+      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Adithya%20M%20Adiga_16S6ILxt4L.HEIC?updatedAt=1735410811407',
       socials: {
         linkedin: 'https://www.linkedin.com/in/adithya-adiga-0b69a61ab/',
         github: 'https://github.com/adithya1107',
@@ -268,7 +268,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Dr. Srinivas G',
       role: 'Faculty Advisor',
       tag: 'advisor',
-      image: '/team/srinivas.jpg',
+      image: 'https://ik.imagekit.io/shasta/thrustMIT_website/image_FKuk4PJIA.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1667060881552',
       socials: {
         linkedin: 'https://www.linkedin.com/in/srinivas-g-2652a341/?originalSubdomain=in',
         email: 'srinivas.g@manipal.edu'

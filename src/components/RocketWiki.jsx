@@ -428,9 +428,6 @@ Each method has trade-offs in complexity, weight, reliability, and landing speed
         {/* Sidebar Navigation (accordion: topics collapsed by default) */}
         <aside className="hidden lg:block w-64 flex-shrink-0">
           <div className="sticky top-24 bg-gradient-to-br from-gray-900/80 to-black/80 border border-gray-800/50 rounded-2xl p-6">
-            <h3 className="text-sm font-semibold text-gray-400 mb-4 uppercase tracking-wider" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
-              Child Pages
-            </h3>
 
             <nav className="space-y-2" aria-label="Rocket Wiki child pages">
               <button

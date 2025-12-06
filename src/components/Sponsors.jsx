@@ -103,81 +103,97 @@ const Sponsors = () => {
           </p>
         </div>
 
-        {/* Sponsors Wheel with Center Description */}
+        {/* Sponsors Wheel with Center Description (desktop) or stacked list (mobile) */}
         <div className="relative w-full max-w-6xl mx-auto mb-20">
-          <div className="relative w-full aspect-square max-w-4xl mx-auto">
-            {/* Sponsor logos in circle */}
-            {sponsors.map((sponsor, index) => {
-              const angle = sponsor.angle;
-              const x = Math.cos((angle - 90) * (Math.PI / 180)) * radius;
-              const y = Math.sin((angle - 90) * (Math.PI / 180)) * radius;
-              const isActive = index === activeIndex;
+          {!isMobile ? (
+            <div className="relative w-full aspect-square max-w-4xl mx-auto">
+              {/* Sponsor logos in circle */}
+              {sponsors.map((sponsor, index) => {
+                const angle = sponsor.angle;
+                const x = Math.cos((angle - 90) * (Math.PI / 180)) * radius;
+                const y = Math.sin((angle - 90) * (Math.PI / 180)) * radius;
+                const isActive = index === activeIndex;
 
-              return (
-                <div
-                  key={sponsor.name}
-                  className="absolute top-1/2 left-1/2 transition-all duration-700 z-20"
-                  style={{
-                    transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
-                  }}
-                >
-                  <button
-                    onClick={() => {
-                      setIsTransitioning(true);
-                      setTimeout(() => {
-                        setActiveIndex(index);
-                        setIsTransitioning(false);
-                      }, 400);
+                return (
+                  <div
+                    key={sponsor.name}
+                    className="absolute top-1/2 left-1/2 transition-all duration-700 z-20"
+                    style={{
+                      transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
                     }}
-                    className={`p-2 md:p-4 rounded-lg border transition-all duration-500 hover:scale-110 ${
-                      isActive
-                        ? "bg-blue-600/20 border-blue-400 shadow-[0_0_25px_rgba(37,99,235,0.5)] scale-110"
-                        : "bg-gray-900/80 backdrop-blur-sm border-gray-700/50 hover:border-blue-400/50 hover:bg-gray-800/80"
-                    }`}
                   >
-                    <img 
-                      src={sponsor.logo} 
-                      alt={sponsor.name}
-                      className={`h-6 md:h-12 w-auto object-contain transition-all duration-500 ${
-                        isActive ? "brightness-125" : "brightness-90 hover:brightness-110"
+                    <button
+                      onClick={() => {
+                        setIsTransitioning(true);
+                        setTimeout(() => {
+                          setActiveIndex(index);
+                          setIsTransitioning(false);
+                        }, 400);
+                      }}
+                      className={`p-2 md:p-4 rounded-lg border transition-all duration-500 hover:scale-110 ${
+                        isActive
+                          ? "bg-blue-600/20 border-blue-400 shadow-[0_0_25px_rgba(37,99,235,0.5)] scale-110"
+                          : "bg-gray-900/80 backdrop-blur-sm border-gray-700/50 hover:border-blue-400/50 hover:bg-gray-800/80"
                       }`}
-                    />
-                  </button>
-                </div>
-              );
-            })}
-
-            {/* Center Description Card */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[160px] md:w-[420px]">
-              <div
-                className={`bg-gradient-to-br from-gray-900/95 via-black/95 to-gray-900/95 backdrop-blur-xl border border-blue-600/30 rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-2xl transition-all duration-500 ${
-                  isTransitioning ? "opacity-0 scale-90" : "opacity-100 scale-100"
-                }`}
-              >
-                {/* Icon/Logo placeholder */}
-                <div className="flex items-center justify-center mb-2 md:mb-4">
-                  <div className="w-12 h-12 md:w-24 md:h-24 bg-gray-800/50 rounded-xl md:rounded-2xl flex items-center justify-center p-2 md:p-3">
-                    <img 
-                      src={activeSponsor.logo} 
-                      alt={activeSponsor.name}
-                      className="w-full h-full object-contain"
-                    />
+                    >
+                      <img 
+                        src={sponsor.logo} 
+                        alt={sponsor.name}
+                        className={`h-6 md:h-12 w-auto object-contain transition-all duration-500 ${
+                          isActive ? "brightness-125" : "brightness-90 hover:brightness-110"
+                        }`}
+                      />
+                    </button>
                   </div>
+                );
+              })}
+
+              {/* Center Description Card */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[160px] md:w-[420px]">
+                <div
+                  className={`bg-gradient-to-br from-gray-900/95 via-black/95 to-gray-900/95 backdrop-blur-xl border border-blue-600/30 rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-2xl transition-all duration-500 ${
+                    isTransitioning ? "opacity-0 scale-90" : "opacity-100 scale-100"
+                  }`}
+                >
+                  {/* Icon/Logo placeholder */}
+                  <div className="flex items-center justify-center mb-2 md:mb-4">
+                    <div className="w-12 h-12 md:w-24 md:h-24 bg-gray-800/50 rounded-xl md:rounded-2xl flex items-center justify-center p-2 md:p-3">
+                      <img 
+                        src={activeSponsor.logo} 
+                        alt={activeSponsor.name}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Company name */}
+                  <h3 className="text-sm md:text-2xl font-bold text-center mb-1 md:mb-3 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                    {activeSponsor.name}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-[10px] md:text-sm text-gray-400 leading-relaxed text-center" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    {activeSponsor.description}
+                  </p>
+                  
                 </div>
-                
-                {/* Company name */}
-                <h3 className="text-sm md:text-2xl font-bold text-center mb-1 md:mb-3 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-                  {activeSponsor.name}
-                </h3>
-                
-                {/* Description */}
-                <p className="text-[10px] md:text-sm text-gray-400 leading-relaxed text-center" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
-                  {activeSponsor.description}
-                </p>
-                
               </div>
             </div>
-          </div>
+          ) : (
+            <div className="flex flex-col gap-4">
+              {sponsors.map((sponsor, index) => (
+                <div key={sponsor.name} className="flex gap-4 items-start bg-gray-900/60 border border-white/5 rounded-2xl p-4">
+                  <div className="w-20 h-20 flex-shrink-0 flex items-center justify-center bg-gray-800/30 rounded-md p-2">
+                    <img src={sponsor.logo} alt={sponsor.name} className="w-full h-full object-contain" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white" style={{ fontFamily: 'Orbitron, sans-serif' }}>{sponsor.name}</h4>
+                    <p className="text-gray-400 text-sm" style={{ fontFamily: 'Rajdhani, sans-serif' }}>{sponsor.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

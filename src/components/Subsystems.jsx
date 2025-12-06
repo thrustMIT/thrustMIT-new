@@ -190,70 +190,13 @@ const Subsystems = () => {
                       )}
                     </div>
 
-                    {/* Right side - Visual Grid */}
-                    <div className="hidden lg:flex items-center justify-center pointer-events-auto">
-                      <div className="relative w-full max-w-3xl">
+                    {/* Right side - Visual (show large single icon on desktop) */}
+                    <div className="flex items-center justify-center pointer-events-auto">
+                      <div className="relative w-full max-w-3xl flex items-center justify-center">
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-3xl blur-3xl"></div>
-                        <div className="relative grid grid-cols-3 gap-8 p-10">
-
-                          <div className={`bg-blue-600 rounded-2xl border backdrop-blur-sm transition-all duration-700 flex items-center justify-center relative overflow-hidden aspect-square ${
-                            subsystem.id === 'aerodynamics'
-                              ? 'border-blue-400/70 shadow-2xl shadow-blue-500/60 scale-110' 
-                              : 'border-blue-600/30 opacity-30'
-                          }`}>
-                            <Wind className={`w-20 h-20 z-10 transition-all duration-700 ${
-                              subsystem.id === 'aerodynamics' ? 'text-cyan-300' : 'text-blue-500/50'
-                            }`} />
-                          </div>
-                          
-                          <div className={`bg-blue-600 rounded-2xl border backdrop-blur-sm transition-all duration-700 flex items-center justify-center relative overflow-hidden aspect-square ${
-                            subsystem.id === 'avionics'
-                              ? 'border-blue-400/70 shadow-2xl shadow-blue-500/60 scale-110' 
-                              : 'border-blue-600/30 opacity-30'
-                          }`}>
-                            <Cpu className={`w-20 h-20 z-10 transition-all duration-700 ${
-                              subsystem.id === 'avionics' ? 'text-cyan-300' : 'text-blue-500/50'
-                            }`} />
-                          </div>
-                          
-                          <div className={`bg-blue-600 rounded-2xl border backdrop-blur-sm transition-all duration-700 flex items-center justify-center relative overflow-hidden aspect-square ${
-                            subsystem.id === 'propulsion'
-                              ? 'border-cyan-400/70 shadow-2xl shadow-cyan-500/60 scale-110' 
-                              : 'border-cyan-600/30 opacity-30'
-                          }`}>
-                            <Flame className={`w-20 h-20 z-10 transition-all duration-700 ${
-                              subsystem.id === 'propulsion' ? 'text-cyan-300' : 'text-cyan-500/50'
-                            }`} />
-                          </div>
-                          
-                          <div className={`bg-blue-600 rounded-2xl border backdrop-blur-sm transition-all duration-700 flex items-center justify-center relative overflow-hidden aspect-square ${
-                            subsystem.id === 'payload'
-                              ? 'border-blue-400/70 shadow-2xl shadow-blue-500/60 scale-110' 
-                              : 'border-blue-600/30 opacity-30'
-                          }`}>
-                            <Package className={`w-20 h-20 z-10 transition-all duration-700 ${
-                              subsystem.id === 'payload' ? 'text-cyan-300' : 'text-blue-500/50'
-                            }`} />
-                          </div>
-
-                          <div className={`bg-blue-600 rounded-2xl border backdrop-blur-sm transition-all duration-700 flex items-center justify-center relative overflow-hidden aspect-square ${
-                            subsystem.id === 'management'
-                              ? 'border-purple-400/70 shadow-2xl shadow-purple-500/60 scale-110' 
-                              : 'border-purple-600/30 opacity-30'
-                          }`}>
-                            <Users className={`w-20 h-20 z-10 transition-all duration-700 ${
-                              subsystem.id === 'management' ? 'text-purple-300' : 'text-purple-500/50'
-                            }`} />
-                          </div>
-                          
-                          <div className={`bg-blue-600 rounded-2xl border backdrop-blur-sm transition-all duration-700 flex items-center justify-center relative overflow-hidden aspect-square ${
-                            subsystem.id === 'structures'
-                              ? 'border-cyan-400/70 shadow-2xl shadow-cyan-500/60 scale-110' 
-                              : 'border-cyan-600/30 opacity-30'
-                          }`}>
-                            <Box className={`w-20 h-20 z-10 transition-all duration-700 ${
-                              subsystem.id === 'structures' ? 'text-cyan-300' : 'text-cyan-500/50'
-                            }`} />
+                        <div className="relative p-10 flex items-center justify-center w-full">
+                          <div className={`bg-blue-600/80 rounded-3xl border border-blue-600/30 p-12 flex items-center justify-center shadow-2xl`}>
+                            <Icon className="w-40 h-40 text-cyan-200" />
                           </div>
                         </div>
                       </div>

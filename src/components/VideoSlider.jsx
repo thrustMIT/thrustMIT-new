@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatedText } from "./AnimatedText";
 
@@ -18,6 +18,7 @@ const slides = [
 export const VideoSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const videoRefs = useRef([]);
 
   // Font loading
   useEffect(() => {
@@ -27,17 +28,28 @@ export const VideoSlider = () => {
     document.head.appendChild(link);
   }, []);
 
+  // When the current slide changes, ensure the shown video starts from 0 and plays,
+  // while other videos are paused and reset. We rely on the video's `ended` event
+  // (below) to advance to the next slide when playback completes.
   useEffect(() => {
-    const timer = setInterval(() => {
-      if (!isAnimating) {
-        setIsAnimating(true);
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
-        setTimeout(() => setIsAnimating(false), 1000);
+    videoRefs.current.forEach((v, i) => {
+      if (!v) return;
+      try {
+        if (i === currentSlide) {
+          v.currentTime = 0;
+          const playPromise = v.play();
+          if (playPromise && typeof playPromise.then === 'function') {
+            playPromise.catch(() => { /* ignore play errors (muted/autoplay policies) */ });
+          }
+        } else {
+          v.pause();
+          v.currentTime = 0;
+        }
+      } catch (e) {
+        // ignore errors when controlling media
       }
-    }, 10000); // Auto-advance every 10 seconds
-
-    return () => clearInterval(timer);
-  }, [currentSlide, isAnimating]);
+    });
+  }, [currentSlide]);
 
   const handleNext = () => {
     if (!isAnimating) {
@@ -71,11 +83,20 @@ export const VideoSlider = () => {
           }}
         >
           <video
+            ref={(el) => (videoRefs.current[index] = el)}
             className="absolute inset-0 w-full h-full object-cover scale-110"
             autoPlay
-            loop
             muted
             playsInline
+            preload="auto"
+            onEnded={() => {
+              // Advance to next slide when the current video ends
+              if (!isAnimating) {
+                setIsAnimating(true);
+                setCurrentSlide((prev) => (prev + 1) % slides.length);
+                setTimeout(() => setIsAnimating(false), 1000);
+              }
+            }}
             style={{
               transform: index === currentSlide ? "scale(1)" : "scale(1.1)",
               transition: "transform 1.5s cubic-bezier(0.77, 0, 0.175, 1)"

@@ -1,8 +1,21 @@
 import React, { useEffect } from 'react';
-import { Rocket, Clock, Users, MapPin, ChevronRight, ArrowLeft, Gauge, Zap, Package, Layers } from 'lucide-react';
+import { Rocket, Clock, Users, MapPin, ChevronRight, ArrowLeft, Gauge, Zap, Package, Layers, ChevronLeft } from 'lucide-react';
 
 const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateToProjects, onNavigateToProject, headerProps }) => {
   const projects = [
+    {
+      id: 'varuna',
+      name: 'Varuna', 
+      category: 'Current Project', 
+      description: "Varuna is thrustMIT's current flagship project, representing our next generation of high-power rocketry. Stay tuned for more updates as we push the boundaries of innovation and performance.",
+      image: 'https://ik.imagekit.io/wns4q4r9n2/Projects/Renders/varuna.png', // Update with actual image URL
+      comingSoon: true,
+      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Replace with actual video URL
+      details: {
+        maxAltitude: 'TBA',
+        duration: '2025-26',
+      }
+    },
     {
       id: 'vayuvega',
       name: 'Vayuvega', 
@@ -204,12 +217,85 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
     );
   }
 
+  // Coming Soon Page for Varuna
+  if (project.comingSoon) {
+    return (
+      <div className="min-h-screen bg-black text-white relative overflow-hidden">
+        {/* Fullscreen Background Video */}
+        <div className="fixed inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/video/vid2.mp4" type="video/mp4" />
+            <source src="./video/vid2.mp4" type="video/mp4" />
+            <source src="../video/vid2.mp4" type="video/mp4" />
+          </video>
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10">
+          <Header {...headerProps} />
+
+          {/* Hero Section */}
+          <section className="relative min-h-screen flex items-center px-4 pt-32 md:pt-40 overflow-hidden">
+            <div className="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 w-full">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                  
+                  <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                    {project.name}
+                  </h1>
+                  
+                  <div className="inline-block bg-blue-600/30 backdrop-blur-md border border-blue-400/50 rounded-full px-6 py-3 mb-6">
+                    <p className="text-xl md:text-2xl font-bold text-blue-300 drop-shadow-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                      Coming Soon
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div className="relative">
+            <Footer />
+          </div>
+        </div>
+
+        {/* Side Navigation Arrows */}
+        <button
+          onClick={() => prevProject && onNavigateToProject && onNavigateToProject(prevProject.id)}
+          disabled={!prevProject}
+          className={`fixed left-4 md:left-8 top-20 md:top-1/2 md:-translate-y-1/2 z-30 p-3 rounded-lg backdrop-blur-md transition-all ${prevProject ? 'bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:scale-110' : 'opacity-20 cursor-not-allowed'}`}
+          aria-label="Previous project"
+        >
+          <ChevronLeft size={24} />
+        </button>
+
+        <button
+          onClick={() => nextProject && onNavigateToProject && onNavigateToProject(nextProject.id)}
+          disabled={!nextProject}
+          className={`fixed right-4 md:right-8 top-20 md:top-1/2 md:-translate-y-1/2 z-30 p-3 rounded-lg backdrop-blur-md transition-all ${nextProject ? 'bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:scale-110' : 'opacity-20 cursor-not-allowed'}`}
+          aria-label="Next project"
+        >
+          <ChevronRight size={24} />
+        </button>
+      </div>
+    );
+  }
+
+  // Regular Project Detail Page (existing code)
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="relative min-h-screen bg-black text-white">
       <Header {...headerProps} />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 overflow-hidden">
+      <section className="relative pt-32 md:pt-40 pb-20 px-4 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
@@ -220,28 +306,6 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              {/* Prev/Next project navigation */}
-              <div className="flex items-center gap-3 mb-4">
-                <button
-                  onClick={() => prevProject && onNavigateToProject && onNavigateToProject(prevProject.id)}
-                  disabled={!prevProject}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${prevProject ? 'bg-white/5 hover:bg-white/6 text-white' : 'opacity-40 cursor-not-allowed'}`}
-                  aria-label="Previous project"
-                >
-                  <ArrowLeft />
-                  <span className="text-sm text-gray-300">Previous</span>
-                </button>
-
-                <button
-                  onClick={() => nextProject && onNavigateToProject && onNavigateToProject(nextProject.id)}
-                  disabled={!nextProject}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ml-auto ${nextProject ? 'bg-white/5 hover:bg-white/6 text-white' : 'opacity-40 cursor-not-allowed'}`}
-                  aria-label="Next project"
-                >
-                  <span className="text-sm text-gray-300">Next</span>
-                  <ChevronRight />
-                </button>
-              </div>
               <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                 {project.name}
               </h1>
@@ -351,6 +415,25 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
       </section>
 
       <Footer />
+
+      {/* Side Navigation Arrows */}
+      <button
+        onClick={() => prevProject && onNavigateToProject && onNavigateToProject(prevProject.id)}
+        disabled={!prevProject}
+        className={`fixed left-4 md:left-8 top-20 md:top-1/2 md:-translate-y-1/2 z-30 p-3 rounded-lg backdrop-blur-md transition-all ${prevProject ? 'bg-white/5 hover:bg-white/6 text-white hover:scale-110' : 'opacity-20 cursor-not-allowed'}`}
+        aria-label="Previous project"
+      >
+        <ChevronLeft size={24} />
+      </button>
+
+      <button
+        onClick={() => nextProject && onNavigateToProject && onNavigateToProject(nextProject.id)}
+        disabled={!nextProject}
+        className={`fixed right-4 md:right-8 top-20 md:top-1/2 md:-translate-y-1/2 z-30 p-3 rounded-lg backdrop-blur-md transition-all ${nextProject ? 'bg-white/5 hover:bg-white/6 text-white hover:scale-110' : 'opacity-20 cursor-not-allowed'}`}
+        aria-label="Next project"
+      >
+        <ChevronRight size={24} />
+      </button>
     </div>
   );
 };

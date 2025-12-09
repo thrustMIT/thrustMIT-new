@@ -4,6 +4,23 @@ import { Rocket, Clock, Users, MapPin, ChevronRight, ArrowLeft, Gauge, Zap, Pack
 const Projects = ({ onNavigateToProject }) => {
   const projects = [
     {
+      id: 'varuna',
+      name: 'Varuna', 
+      category: 'Current Project', 
+      description: "Varuna is thrustMIT's current flagship project, representing our next generation of high-power rocketry. Stay tuned for more updates as we push the boundaries of innovation and performance.",
+      image: 'projects/vyom.png', // You'll need to provide this image
+      details: {
+        maxAltitude: 'TBA',
+        duration: '2025-26',
+        height: 'TBA',
+        diameter: 'TBA',
+        wetMass: 'TBA',
+        motor: 'TBA',
+        launch: 'TBA',
+      },
+      comingSoon: true
+    },
+    {
       id: 'vayuvega',
       name: 'Vayuvega', 
       category: '30K COTS', 
@@ -145,47 +162,53 @@ const Projects = ({ onNavigateToProject }) => {
                   onClick={() => onNavigateToProject && onNavigateToProject(project.id)}
                   className={`${many ? '' : 'w-full sm:w-80 md:w-96'} group relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl border border-gray-800/50 rounded-3xl overflow-hidden hover:border-blue-600/50 transition-all duration-500 cursor-pointer hover:scale-105 hover:shadow-2xl hover:shadow-blue-600/20`}
                 >
-              {/* Image Container */}
-              <div className="relative h-64 bg-gradient-to-br from-blue-600/20 to-blue-800/20 flex items-center justify-center border-b border-gray-800/50 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={`${project.name} logo`}
-                  className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-              </div>
+                  {/* Coming Soon Badge */}
+                  {project.comingSoon && (
+                    <div className="absolute top-4 right-4 z-10 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                      Coming Soon
+                    </div>
+                  )}
+                  
+                  {/* Image Container */}
+                  <div className="relative h-64 bg-gradient-to-br from-blue-600/20 to-blue-800/20 flex items-center justify-center border-b border-gray-800/50 overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={`${project.name} logo`}
+                      className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                  </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-                  {project.name}
-                </h3>
-                <p className="text-blue-400 text-sm mb-3 uppercase tracking-wider" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500 }}>
-                  {project.category}
-                </p>
-                <p className="text-sm text-gray-400 leading-relaxed mb-6" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
-                  {project.description}
-                </p>
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                      {project.name}
+                    </h3>
+                    <p className="text-blue-400 text-sm mb-3 uppercase tracking-wider" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500 }}>
+                      {project.category}
+                    </p>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-6" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
+                      {project.description}
+                    </p>
 
-                {/* Learn More Button */}
-                <div className="flex items-center justify-between">
-                  <button onClick={() => onNavigateToProject && onNavigateToProject(project.id)} className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors group/btn" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
-                    <span>Learn More</span>
-                    <ChevronRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
+                    {/* Learn More Button */}
+                    <div className="flex items-center justify-between">
+                      <button onClick={() => onNavigateToProject && onNavigateToProject(project.id)} className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors group/btn" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
+                        <span>Learn More</span>
+                        <ChevronRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Hover Glow Effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-600/10 to-transparent" />
+                  </div>
                 </div>
-              </div>
-
-              {/* Hover Glow Effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/10 to-transparent" />
-              </div>
-            </div>
               ))}
             </div>
           );
-        })()
-        }
+        })()}
       </div>
     </section>
   );

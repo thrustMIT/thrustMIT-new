@@ -150,16 +150,16 @@ export const VideoSlider = () => {
 
       {/* Navigation buttons */}
       <button
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/40 backdrop-blur-sm border border-blue-600/20 rounded-lg p-3 transition-all hover:border-blue-600/50"
+        className="absolute left-4 md:left-8 bottom-40 md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-30 bg-white/20 hover:bg-white/40 backdrop-blur-sm border border-blue-600/20 rounded-lg p-3 transition-all hover:border-blue-600/50 w-12 h-12 flex items-center justify-center"
         onClick={handlePrev}
       >
-        <ChevronLeft className="h-8 w-8 text-white" />
+        <ChevronLeft className="h-6 w-6 text-white flex-shrink-0" />
       </button>
       <button
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/40 backdrop-blur-sm border border-blue-600/20 rounded-lg p-3 transition-all hover:border-blue-600/50"
+        className="absolute right-4 md:right-8 bottom-40 md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-30 bg-white/20 hover:bg-white/40 backdrop-blur-sm border border-blue-600/20 rounded-lg p-3 transition-all hover:border-blue-600/50 w-12 h-12 flex items-center justify-center"
         onClick={handleNext}
       >
-        <ChevronRight className="h-8 w-8 text-white" />
+        <ChevronRight className="h-6 w-6 text-white flex-shrink-0" />
       </button>
 
     </div>

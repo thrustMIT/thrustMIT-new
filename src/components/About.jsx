@@ -69,11 +69,11 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               
               {/* Floating badge */}
-              <div className="absolute bottom-6 left-6 right-6 bg-black/80 backdrop-blur-md border border-white/10 rounded-xl p-4">
-                <p className="text-sm text-gray-400 mb-1" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500 }}>
+              <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 bg-black/80 backdrop-blur-md border border-white/10 rounded-xl p-3 md:p-4">
+                <p className="text-xs md:text-sm text-gray-400 mb-1" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500 }}>
                   Team thrustMIT
                 </p>
-                <p className="text-lg sm:text-sm font-bold text-white" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                <p className="text-base md:text-lg font-bold text-white" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                   Building Tomorrow's Rockets Today
                 </p>
               </div>

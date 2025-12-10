@@ -177,36 +177,38 @@ const Subsystems = () => {
                       transition: 'transform 0.1s ease-out, opacity 0.1s ease-out'
                     }}
                   >
-                    <div className="w-full max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center px-8">
-                      {/* Left side - Content */}
-                      <div className="space-y-8 pointer-events-auto">
-                        <h3 className="text-5xl font-bold leading-tight text-white" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-                          {subsystem.tagline}
-                        </h3>
-                        
-                        <p className="text-gray-300 leading-relaxed text-xl" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
-                          {subsystem.details}
-                        </p>
-                        
-                        {subsystem.features && (
-                          <ul className="space-y-5 pt-8">
-                            {subsystem.features.map((feature, i) => (
-                              <li key={i} className="flex items-start gap-4 text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
-                                <span className="w-2.5 h-2.5 rounded-full mt-2.5 bg-blue-600 flex-shrink-0"></span>
-                                <span className="text-xl">{feature}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
+                    <div className="w-full max-w-6xl mx-auto px-8">
+                      <div className="grid lg:grid-cols-5 gap-12 items-center">
+                        {/* Left side - Content (3 columns) */}
+                        <div className="lg:col-span-3 space-y-6 pointer-events-auto">
+                          <h3 className="text-4xl font-bold leading-tight text-white" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                            {subsystem.tagline}
+                          </h3>
+                          
+                          <p className="text-gray-300 leading-relaxed text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
+                            {subsystem.details}
+                          </p>
+                          
+                          {subsystem.features && (
+                            <ul className="space-y-4 pt-4">
+                              {subsystem.features.map((feature, i) => (
+                                <li key={i} className="flex items-start gap-3 text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
+                                  <span className="w-2 h-2 rounded-full mt-2 bg-blue-600 flex-shrink-0"></span>
+                                  <span className="text-lg">{feature}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
 
-                      {/* Right side - Visual */}
-                      <div className="flex items-center justify-center pointer-events-auto">
-                        <div className="relative w-full max-w-3xl flex items-center justify-center">
-                          <div className="absolute inset-0 bg-blue-600/20 rounded-3xl blur-3xl"></div>
-                          <div className="relative p-10 flex items-center justify-center w-full">
-                            <div className="bg-blue-600/80 rounded-3xl border border-blue-600/30 p-12 flex items-center justify-center shadow-2xl">
-                              <Icon className="w-40 h-40 text-cyan-200" />
+                        {/* Right side - Visual (2 columns) */}
+                        <div className="lg:col-span-2 flex items-center justify-center pointer-events-auto">
+                          <div className="relative w-full flex items-center justify-center">
+                            <div className="absolute inset-0 bg-blue-600/20 rounded-3xl blur-3xl"></div>
+                            <div className="relative p-8 flex items-center justify-center w-full">
+                              <div className="bg-blue-600/80 rounded-3xl border border-blue-600/30 p-10 flex items-center justify-center shadow-2xl">
+                                <Icon className="w-32 h-32 text-cyan-200" />
+                              </div>
                             </div>
                           </div>
                         </div>

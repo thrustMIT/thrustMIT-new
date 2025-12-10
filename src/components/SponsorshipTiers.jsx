@@ -15,58 +15,79 @@ const SponsorshipTiers = () => {
 
   const tiers = [
     {
-      name: 'Transonic',
+      name: 'Subsonic Partner',
       color: 'blue',
       gradient: 'from-blue-600 to-blue-800',
       glow: 'shadow-blue-600/50',
       deliverables: [
-        'Grid Post on Instagram and LinkedIn',
-        'Logo in Brochure',
-        'Logo in Presentations',
-        'Logo in Competition Posters, Banners, and Presentations',
-        'Logo on Competition T-shirt',
-        'Logo Size on Rocket: S'
+        'Logo on Website Supporters Page',
+        'Individual Social Media Thank You Post',
+        'Logo on Team T-Shirts / Apparel: Small',
+        'Logo on Competition Banners: Small',
+        'Logo on Rocket: Small'
       ],
-      price: 'Entry Level',
-      description: 'Breaking the sound barrier of innovation'
+      price: '₹20k – ₹50k',
+      description: 'Start your journey with us'
     },
     {
-      name: 'Supersonic',
+      name: 'Transonic Partner',
       color: 'blue',
       gradient: 'from-blue-600 to-blue-800',
       glow: 'shadow-blue-600/50',
       deliverables: [
-        'Grid Post on Instagram and LinkedIn',
-        'Logo in Brochure',
-        'Logo in Presentations',
-        'Logo in Competition Posters, Banners, and Presentations',
-        'Logo on Competition T-shirt',
-        'Instagram Reel on the Product Delivered',
-        'Logo Size on Rocket: M'
+        'Logo on Website Supporters Page',
+        'Individual Social Media Thank You Post',
+        'Logo Placement on Livestream Overlay',
+        'Dedicated Blog Post and Collaboration Instagram Reel',
+        'Logo on Team T-Shirts / Apparel: Medium',
+        'Logo on Competition Banners: Medium',
+        'Logo on Rocket: Medium'
       ],
-      price: 'Mid Tier',
-      description: 'Accelerating beyond expectations',
-      featured: true
-    },
-    {
-      name: 'Hypersonic',
-      color: 'blue',
-      gradient: 'from-blue-600 to-blue-800',
-      glow: 'shadow-blue-600/50',
-      deliverables: [
-        'Grid Post on Instagram and LinkedIn',
-        'Logo in Brochure',
-        'Logo in Presentations',
-        'Logo in Competition Posters, Banners, and Presentations',
-        'Logo on Competition T-shirt',
-        'Instagram Reel on the Product Delivered',
-        'Credits in Relevant Videos',
-        'Blog Post Mentioning Company',
-        'Logo Size on Rocket: L'
-      ],
-      price: 'Premium',
-      description: 'Reaching velocities beyond imagination',
+      price: '₹50k – ₹1L',
+      description: 'Breaking the sound barrier of innovation',
+      featured: true,
       premium: true
+    },
+    {
+      name: 'Supersonic Partner',
+      color: 'blue',
+      gradient: 'from-blue-600 to-blue-800',
+      glow: 'shadow-blue-600/50',
+      deliverables: [
+        'Logo on Website Supporters Page',
+        'Individual Social Media Thank You Post',
+        'Logo Placement on Livestream Overlay',
+        'Dedicated Blog Post and Collaboration Instagram Reel',
+        'LinkedIn Article / Post Mention',
+        'Logo on Team T-Shirts / Apparel: Large',
+        'Logo on Competition Banners: Large',
+        'Logo on Rocket: Large',
+        'Featured in Project Video / Team Documentary',
+        '"Presented By" Tagline in Project Videos'
+      ],
+      price: '₹1L+',
+      description: 'Accelerating beyond expectations'
+    },
+    {
+      name: 'Travel Partner',
+      color: 'purple',
+      gradient: 'from-purple-600 to-purple-800',
+      glow: 'shadow-purple-600/50',
+      deliverables: [
+        'Logo on Website Supporters Page',
+        'Individual Social Media Thank You Post',
+        'Logo Placement on Livestream Overlay',
+        'Dedicated Blog Post and Collaboration Instagram Reel',
+        'LinkedIn Article / Post Mention',
+        'Logo on Team T-Shirts / Apparel: Large',
+        'Logo on Competition Banners: Large',
+        'Logo on Rocket: Large',
+        'Featured in Project Video / Team Documentary',
+        '"Presented By" Tagline in Project Videos',
+        '"Official Partner" Mention in Public Events'
+      ],
+      price: 'Custom Package',
+      description: 'Complete partnership experience'
     }
   ];
 
@@ -99,7 +120,7 @@ const SponsorshipTiers = () => {
         </div>
 
         {/* Tier Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {tiers.map((tier, index) => {
             const isSelected = selectedTier === tier.name;
             const isHovered = hoveredTier === tier.name;
@@ -120,7 +141,7 @@ const SponsorshipTiers = () => {
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
                     <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold flex items-center gap-1" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                       <Star size={12} fill="currentColor" />
-                      MOST POPULAR
+                      most popular
                     </div>
                   </div>
                 )}
@@ -141,10 +162,6 @@ const SponsorshipTiers = () => {
 
                   {/* Icon Header */}
                   <div className="relative p-8 border-b border-gray-800/50">
-                    {/* <div className={`w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${tier.gradient} p-0.5 transition-transform duration-500 ${
-                      isActive ? 'scale-110 rotate-6' : ''
-                    }`}>
-                    </div> */}
                     <h3 className="text-3xl font-bold text-center mb-2" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                       {tier.name}
                     </h3>
@@ -178,18 +195,6 @@ const SponsorshipTiers = () => {
                       ))}
                     </div>
                   </div>
-
-                  {/* CTA Button */}
-                  {/* <div className="p-8 pt-0">
-                    <button onClick={() => {
-                      const subject = `Sponsorship Inquiry: ${tier.name}`;
-                      const message = `Hello ThrustMIT team,%0D%0A%0D%0AI am interested in the ${tier.name} sponsorship tier. Please send me details on benefits, pricing, and next steps.%0D%0A%0D%0AThanks.`;
-                      // Navigate to contact page with prefilled message
-                      window.location.href = `/contact?subject=${encodeURIComponent(subject)}&message=${message}`;
-                    }} className={`w-full py-4 rounded-xl font-bold text-white transition-all duration-300 bg-gradient-to-r ${tier.gradient} hover:shadow-lg ${tier.glow} hover:scale-105`} style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600, letterSpacing: '0.05em' }}>
-                      Choose {tier.name}
-                    </button>
-                  </div> */}
                 </div>
 
                 {/* Floating Particles */}
@@ -219,6 +224,11 @@ const SponsorshipTiers = () => {
                     <th className="text-left p-6 text-gray-400 font-semibold" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500 }}>Deliverables</th>
                     <th className="p-6 text-center">
                       <div className="inline-flex items-center gap-2 text-blue-600 font-bold" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
+                        Subsonic
+                      </div>
+                    </th>
+                    <th className="p-6 text-center">
+                      <div className="inline-flex items-center gap-2 text-blue-600 font-bold" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
                         Transonic
                       </div>
                     </th>
@@ -228,41 +238,119 @@ const SponsorshipTiers = () => {
                       </div>
                     </th>
                     <th className="p-6 text-center">
-                      <div className="inline-flex items-center gap-2 text-blue-600 font-bold" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
-                        Hypersonic
+                      <div className="inline-flex items-center gap-2 text-purple-600 font-bold" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
+                        Travel
                       </div>
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {[
-                    'Grid Post on Instagram and LinkedIn',
-                    'Logo in Brochure',
-                    'Logo in Presentations',
-                    'Logo in Competition Posters, Banners, and Presentations',
-                    'Logo on Competition T-shirt',
-                    'Instagram Reel on the Product Delivered',
-                    'Credits in Relevant Videos',
-                    'Blog Post Mentioning Company',
-                  ].map((item, index) => (
-                    <tr key={index} className="border-b border-gray-800/30 hover:bg-white/5 transition-colors duration-200">
-                      <td className="p-6 text-gray-300" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>{item}</td>
-                      <td className="p-6 text-center">
-                        {index <= 4 && <Check size={20} className="inline text-blue-600" />}
-                      </td>
-                      <td className="p-6 text-center">
-                        {index <= 5 && <Check size={20} className="inline text-blue-600" />}
-                      </td>
-                      <td className="p-6 text-center">
-                        <Check size={20} className="inline text-blue-600" />
-                      </td>
-                    </tr>
-                  ))}
+                  <tr className="border-b-2 border-gray-700/50 bg-gray-900/50">
+                    <td className="p-6 text-gray-300 font-semibold" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>Suggested Contribution</td>
+                    <td className="p-6 text-center text-blue-600 font-bold text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>₹20k – ₹50k</td>
+                    <td className="p-6 text-center text-blue-600 font-bold text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>₹50k – ₹1L</td>
+                    <td className="p-6 text-center text-blue-600 font-bold text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>₹1L+</td>
+                    <td className="p-6 text-center text-purple-600 font-bold text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>Custom</td>
+                  </tr>
+                  <tr className="bg-green-900/20">
+                    <td colSpan="5" className="p-4 text-green-400 font-bold text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
+                      DIGITAL BRANDING
+                    </td>
+                  </tr>
+                  <tr className="border-b border-gray-800/30 hover:bg-white/5 transition-colors duration-200">
+                    <td className="p-6 text-gray-300" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Logo on Website Supporters Page</td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-blue-600" /></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-blue-600" /></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-blue-600" /></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-purple-600" /></td>
+                  </tr>
+                  <tr className="border-b border-gray-800/30 hover:bg-white/5 transition-colors duration-200">
+                    <td className="p-6 text-gray-300" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Individual Social Media Thank You Post</td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-blue-600" /></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-blue-600" /></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-blue-600" /></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-purple-600" /></td>
+                  </tr>
+                  <tr className="border-b border-gray-800/30 hover:bg-white/5 transition-colors duration-200">
+                    <td className="p-6 text-gray-300" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Logo Placement on Livestream Overlay</td>
+                    <td className="p-6 text-center"></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-blue-600" /></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-blue-600" /></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-purple-600" /></td>
+                  </tr>
+                  <tr className="border-b border-gray-800/30 hover:bg-white/5 transition-colors duration-200">
+                    <td className="p-6 text-gray-300" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Dedicated Blog Post and Collaboration Instagram Reel</td>
+                    <td className="p-6 text-center"></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-blue-600" /></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-blue-600" /></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-purple-600" /></td>
+                  </tr>
+                  <tr className="border-b border-gray-800/30 hover:bg-white/5 transition-colors duration-200">
+                    <td className="p-6 text-gray-300" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>LinkedIn Article / Post Mention</td>
+                    <td className="p-6 text-center"></td>
+                    <td className="p-6 text-center"></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-blue-600" /></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-purple-600" /></td>
+                  </tr>
+                  
+                  <tr className="bg-green-900/20">
+                    <td colSpan="5" className="p-4 text-green-400 font-bold text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
+                      PHYSICAL BRANDING
+                    </td>
+                  </tr>
+                  <tr className="border-b border-gray-800/30 hover:bg-white/5 transition-colors duration-200">
+                    <td className="p-6 text-gray-300" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Logo on Team T-Shirts / Apparel</td>
+                    <td className="p-6 text-center text-gray-400">Small</td>
+                    <td className="p-6 text-center text-blue-600 font-semibold">Medium</td>
+                    <td className="p-6 text-center text-blue-600 font-semibold">Large</td>
+                    <td className="p-6 text-center text-purple-600 font-semibold">Large</td>
+                  </tr>
+                  <tr className="border-b border-gray-800/30 hover:bg-white/5 transition-colors duration-200">
+                    <td className="p-6 text-gray-300" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Logo on Competition Banners</td>
+                    <td className="p-6 text-center text-gray-400">Small</td>
+                    <td className="p-6 text-center text-blue-600 font-semibold">Medium</td>
+                    <td className="p-6 text-center text-blue-600 font-semibold">Large</td>
+                    <td className="p-6 text-center text-purple-600 font-semibold">Large</td>
+                  </tr>
+                  <tr className="border-b border-gray-800/30 hover:bg-white/5 transition-colors duration-200">
+                    <td className="p-6 text-gray-300" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Logo on Rocket</td>
+                    <td className="p-6 text-center text-gray-400">Small</td>
+                    <td className="p-6 text-center text-blue-600 font-semibold">Medium</td>
+                    <td className="p-6 text-center text-blue-600 font-semibold">Large</td>
+                    <td className="p-6 text-center text-purple-600 font-semibold">Large</td>
+                  </tr>
+
+                  <tr className="bg-green-900/20">
+                    <td colSpan="5" className="p-4 text-green-400 font-bold text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
+                      STRATEGIC PARTNERSHIP
+                    </td>
+                  </tr>
+                  <tr className="border-b border-gray-800/30 hover:bg-white/5 transition-colors duration-200">
+                    <td className="p-6 text-gray-300" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Featured in Project Video / Team Documentary</td>
+                    <td className="p-6 text-center"></td>
+                    <td className="p-6 text-center"></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-blue-600" /></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-purple-600" /></td>
+                  </tr>
+
+                  <tr className="bg-green-900/20">
+                    <td colSpan="5" className="p-4 text-green-400 font-bold text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
+                      EXCLUSIVE RIGHTS
+                    </td>
+                  </tr>
+                  <tr className="border-b border-gray-800/30 hover:bg-white/5 transition-colors duration-200">
+                    <td className="p-6 text-gray-300" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>"Presented By" Tagline in Project Videos</td>
+                    <td className="p-6 text-center"></td>
+                    <td className="p-6 text-center"></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-blue-600" /></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-purple-600" /></td>
+                  </tr>
                   <tr className="hover:bg-white/5 transition-colors duration-200">
-                    <td className="p-6 text-gray-300 font-semibold" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500 }}>Logo Size on Rocket</td>
-                    <td className="p-6 text-center text-blue-600 font-bold" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>S</td>
-                    <td className="p-6 text-center text-blue-600 font-bold" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>M</td>
-                    <td className="p-6 text-center text-blue-600 font-bold" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>L</td>
+                    <td className="p-6 text-gray-300" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>"Official Partner" Mention in Public Events</td>
+                    <td className="p-6 text-center"></td>
+                    <td className="p-6 text-center"></td>
+                    <td className="p-6 text-center"></td>
+                    <td className="p-6 text-center"><Check size={20} className="inline text-purple-600" /></td>
                   </tr>
                 </tbody>
               </table>

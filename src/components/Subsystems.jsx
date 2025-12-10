@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Rocket, Cpu, Flame, Box, Wind, Package, Users } from 'lucide-react';
+import { Rocket, Cpu, Flame, Box, Wind, Package, Users, ChevronRight } from 'lucide-react';
 
 const Subsystems = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
   const containerRef = useRef(null);
 
@@ -12,54 +13,54 @@ const Subsystems = () => {
       name: 'Aerodynamics',
       icon: Wind,
       tagline: 'Aerodynamics',
-      description: 'Advanced computational fluid dynamics',
-      details: 'Our aerodynamics team uses CFD simulations and wind tunnel testing to optimize rocket stability and minimize drag. We design custom nose cones, fins, and body profiles for maximum performance.',
-      features: ['CFD simulations', 'Wind tunnel testing', 'Stability analysis', 'Drag optimization']
+      description: 'Configuration and flight dynamics development',
+      details: 'The Aerodynamics subsystem manages the full configuration and flight-dynamics development of our rockets. We design and optimize the fins, nose cone, boattail, and transition section, using analytical methods and computational fluid dynamics to evaluate pressure and shear distributions, aerodynamic loads, and flow behavior across all Mach regimes. These insights help us minimize drag and improve overall aerodynamic efficiency. Additionally, we oversee flight-path modeling, trajectory analysis, and the complete recovery architecture, ensuring the rocket reaches the correct apogee and maintains stable flight throughout ascent.',
+      features: ['CFD simulations across all Mach regimes', 'Fins, nose cone, and transition optimization', 'Flight-path modeling and trajectory analysis', 'Single-bay dual-deployment recovery system']
     },
     {
       id: 'avionics',
       name: 'Avionics',
       icon: Cpu,
       tagline: 'Avionics',
-      description: 'Custom flight computers and telemetry',
-      details: 'We design and manufacture custom PCBs with real-time data acquisition, GPS tracking, and autonomous flight control. Our systems handle sensor fusion, state estimation, and mission-critical decision making.',
-      features: ['Custom PCB design', 'Real-time telemetry', 'Sensor integration', 'Flight control algorithms']
+      description: 'The brain of the rocket',
+      details: 'The avionics subsystem acts as the brain of the rocket, designing custom flight computers and firmware for reliable operations during flight. Using a combination of sensors like IMUs, barometers, GPS modules, and telemetry modules, we achieve sensor-fusion for state and apogee estimation. Our capabilities include high-rate data logging, live video telemetry, an autonomous antenna-tracking system for real-time flight following, and timely parachute deployment at apogee. We also build control systems such as airbrakes for stability management and design electronics for static-fire tests including wireless ignition systems and real-time telemetry.',
+      features: ['Custom flight computers with sensor fusion', 'Live video telemetry and autonomous tracking', 'Airbrake control systems', 'Static-fire test electronics and wireless ignition']
     },
     {
       id: 'propulsion',
       name: 'Propulsion',
       icon: Flame,
       tagline: 'Propulsion',
-      description: 'Hybrid and solid rocket motors',
-      details: 'Our propulsion team designs high-performance hybrid rocket motors combining solid fuel grains with liquid oxidizers. We conduct static fire tests, optimize combustion efficiency, and push the limits of thrust-to-weight ratios.',
-      features: ['Hybrid motor design', 'Static fire testing', 'Nozzle optimization', 'Thrust vectoring']
+      description: 'End-to-end solid rocket motor development',
+      details: 'The Propulsion subsystem specializes in the complete end-to-end development of solid rocket motors, from conceptual design and finite element simulations to in-house manufacturing and rigorous static testing. Our team handles all critical aspects of motor development including propellant grain design, thermal analysis, nozzle optimization, and combustion characterization. We also develop ejection charge systems for reliable recovery deployment. With active research in advanced propellant formulations and hybrid engine architectures, we are working to become one of India\'s first student teams competing in the SRAD category at international competitions.',
+      features: ['Complete motor design and FEA simulations', 'In-house manufacturing and static testing', 'Propellant grain design and thermal analysis', 'Research in hybrid engine architectures']
     },
     {
       id: 'payload',
       name: 'Payload',
       icon: Package,
       tagline: 'Payload',
-      description: 'Custom payloads and experiments',
-      details: 'We design specialized payload bays for scientific experiments, atmospheric data collection, and technology demonstrations. Our modular systems enable rapid payload swaps and mission flexibility.',
-      features: ['Modular bay design', 'Data logging', 'Experiment integration', 'Deployment mechanisms']
+      description: 'Where research meets flight',
+      details: 'We design, test, and build the scientific and engineering experiments flown aboard our rockets. From active control systems and data-gathering instruments to structural prototypes and real-time decision systems, the payload is where research meets flight. Our division focuses on developing reliable, high-performance payloads and experiment modules capable of surviving extreme launch and recovery conditions. With an emphasis on modularity, rapid integration, and mission-specific customization, we ensure that every payload delivers meaningful scientific value while pushing the boundaries of student-led aerospace research.',
+      features: ['Modular payload designs for rapid integration', 'Real-time computer vision and autonomous navigation', 'Vibration-isolated mounts and thermal protection', 'Deployment mechanisms in various form factors']
     },
     {
       id: 'management',
       name: 'Management',
       icon: Users,
       tagline: 'Management',
-      description: 'Project management and integration',
-      details: 'Our management team coordinates across all subsystems, handles logistics, manages timelines and budgets, and ensures seamless integration. We maintain documentation, organize outreach, and drive the project forward.',
-      features: ['Project coordination', 'Budget management', 'Systems integration', 'Outreach programs']
+      description: 'Coordination, communication, and execution',
+      details: 'Our management team ensures seamless coordination across all subsystems while maintaining external relationships and project momentum. We handle social media outreach, showcase sponsor contributions, create mission patches and posters, and manage the team website. The team communicates and negotiates with sponsors, manages budgets and procurement, and ensures smooth resource flow. We plan testing and manufacturing schedules, oversee documentation, coordinate with external partners, and maintain clear communication across subsystems while tracking timelines to keep the project on schedule.',
+      features: ['Social media, website, and visual communications', 'Sponsor relations and budget management', 'Testing and manufacturing schedule coordination', 'Documentation and cross-subsystem communication']
     },
     {
       id: 'structures',
       name: 'Structures',
       icon: Box,
       tagline: 'Structures',
-      description: 'Airframe and mechanical systems',
-      details: 'We design lightweight yet robust structures using advanced composite materials. Our team handles stress analysis, manufacturing processes, and ensures structural integrity throughout the flight envelope.',
-      features: ['Carbon fiber layup', 'FEA stress analysis', 'Manufacturing', 'Recovery systems']
+      description: 'Engineering the complete framework',
+      details: 'The Structures team engineers the complete framework of the rocket, from metallic assemblies to advanced composite components. This subsystem oversees design, simulation, manufacturing, and testing, ensuring every part remains lightweight, reliable, and flight ready. With safety and precision at the forefront, the team guarantees structural integrity throughout the mission. Our comprehensive approach covers every aspect from initial CAD design through final quality control and testing.',
+      features: ['Design and simulation with FEA analysis', 'Advanced composite manufacturing', 'Quality control and testing protocols', 'Lightweight, flight-ready structural integrity']
     }
   ];
 
@@ -73,7 +74,7 @@ const Subsystems = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!containerRef.current) return;
+      if (!containerRef.current || !isDesktop) return;
       
       const rect = containerRef.current.getBoundingClientRect();
       const containerHeight = containerRef.current.offsetHeight;
@@ -107,12 +108,16 @@ const Subsystems = () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [isDesktop]);
 
   return (
     <section id='subsystems' ref={containerRef} className="relative bg-black overflow-x-clip" style={{ height: isDesktop ? `${(subsystems.length + 1) * 100}vh` : 'auto' }}>
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 via-black to-black pointer-events-none"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-96 bg-blue-600/10 blur-[120px] pointer-events-none"></div>
+      
       {isDesktop ? (
-        // Desktop: Sticky scrolling carousel
+        // Desktop: Sticky horizontal scrolling carousel
         <div className="sticky top-0 h-screen overflow-hidden">
           <div className="container mx-auto px-6 h-full flex flex-col">
             {/* Fixed Header */}
@@ -175,7 +180,6 @@ const Subsystems = () => {
                     <div className="w-full max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center px-8">
                       {/* Left side - Content */}
                       <div className="space-y-8 pointer-events-auto">
-                        
                         <h3 className="text-5xl font-bold leading-tight text-white" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                           {subsystem.tagline}
                         </h3>
@@ -196,12 +200,12 @@ const Subsystems = () => {
                         )}
                       </div>
 
-                      {/* Right side - Visual (show large single icon on desktop) */}
+                      {/* Right side - Visual */}
                       <div className="flex items-center justify-center pointer-events-auto">
                         <div className="relative w-full max-w-3xl flex items-center justify-center">
-                          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-3xl blur-3xl"></div>
+                          <div className="absolute inset-0 bg-blue-600/20 rounded-3xl blur-3xl"></div>
                           <div className="relative p-10 flex items-center justify-center w-full">
-                            <div className={`bg-blue-600/80 rounded-3xl border border-blue-600/30 p-12 flex items-center justify-center shadow-2xl`}>
+                            <div className="bg-blue-600/80 rounded-3xl border border-blue-600/30 p-12 flex items-center justify-center shadow-2xl">
                               <Icon className="w-40 h-40 text-cyan-200" />
                             </div>
                           </div>
@@ -215,47 +219,62 @@ const Subsystems = () => {
           </div>
         </div>
       ) : (
-        // Mobile: Vertical stack layout
-        <div className="pt-16 pb-20">
+        // Mobile: Expandable accordion
+        <div className="py-16 relative z-10">
           <div className="px-4 mb-12">
             <h2 className="text-4xl font-black text-center tracking-tight" style={{ fontFamily: 'Orbitron, sans-serif' }}>
               Our <span className="text-blue-600">Subsystems</span>
             </h2>
+            <p className="text-gray-400 text-base text-center mt-4 max-w-2xl mx-auto" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+              Six specialized teams working together to push the boundaries of student rocketry
+            </p>
           </div>
           
-          <div className="space-y-12 px-4">
+          <div className="space-y-4 max-w-2xl mx-auto px-4">
             {subsystems.map((subsystem, index) => {
               const Icon = subsystem.icon;
+              const isActive = activeIndex === index;
               
               return (
-                <div key={index} className="p-6 bg-gradient-to-br from-blue-600/10 to-purple-600/10 border border-blue-600/30 rounded-2xl">
-                  {/* Icon */}
-                  <div className="flex justify-center mb-6">
-                    <div className="bg-blue-600/80 rounded-2xl border border-blue-600/30 p-8 flex items-center justify-center">
-                      <Icon className="w-24 h-24 text-cyan-200" />
+                <div
+                  key={index}
+                  className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-xl overflow-hidden transition-all duration-300"
+                >
+                  {/* Header - always visible */}
+                  <button
+                    onClick={() => setActiveIndex(isActive ? -1 : index)}
+                    className="w-full p-6 flex items-center gap-4 text-left"
+                  >
+                    <div className="flex-shrink-0 p-3 rounded-lg bg-blue-600">
+                      <Icon className="w-6 h-6 text-white" />
                     </div>
-                  </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-white mb-1" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                        {subsystem.name}
+                      </h3>
+                      <p className="text-gray-400 text-sm" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                        {subsystem.description}
+                      </p>
+                    </div>
+                    <ChevronRight className={`w-5 h-5 text-blue-400 transition-transform duration-300 ${isActive ? 'rotate-90' : ''}`} />
+                  </button>
                   
-                  {/* Content */}
-                  <div className="space-y-4">
-                    <h3 className="text-3xl font-bold text-white text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-                      {subsystem.tagline}
-                    </h3>
-                    
-                    <p className="text-gray-300 leading-relaxed text-base" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
-                      {subsystem.details}
-                    </p>
-                    
-                    {subsystem.features && (
-                      <ul className="space-y-3 pt-4">
+                  {/* Expandable content */}
+                  <div className={`transition-all duration-300 overflow-hidden ${isActive ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="px-6 pb-6 pt-2 border-t border-zinc-800">
+                      <p className="text-gray-300 text-sm leading-relaxed mb-4" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                        {subsystem.details}
+                      </p>
+                      
+                      <div className="space-y-2">
                         {subsystem.features.map((feature, i) => (
-                          <li key={i} className="flex items-start gap-3 text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
-                            <span className="w-2 h-2 rounded-full mt-2 bg-blue-600 flex-shrink-0"></span>
-                            <span className="text-sm">{feature}</span>
-                          </li>
+                          <div key={i} className="flex items-start gap-3 text-gray-400 text-sm" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                            <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 bg-blue-600"></div>
+                            <span>{feature}</span>
+                          </div>
                         ))}
-                      </ul>
-                    )}
+                      </div>
+                    </div>
                   </div>
                 </div>
               );

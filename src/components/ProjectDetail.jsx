@@ -8,9 +8,9 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
       name: 'Varuna', 
       category: 'Current Project', 
       description: "Varuna is thrustMIT's current flagship project, representing our next generation of high-power rocketry. Stay tuned for more updates as we push the boundaries of innovation and performance.",
-      image: 'https://ik.imagekit.io/wns4q4r9n2/Projects/Renders/varuna.png', // Update with actual image URL
+      image: 'https://ik.imagekit.io/wns4q4r9n2/Projects/Renders/varuna.png',
       comingSoon: true,
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Replace with actual video URL
+      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
       details: {
         maxAltitude: 'TBA',
         duration: '2025-26',
@@ -201,6 +201,12 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
   const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
   const nextProject = currentIndex >= 0 && currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
 
+  // Determine rotation degree based on project name
+  const getRotationDegree = (projectName) => {
+    const reverseRotationProjects = ['Rayquaza', 'Arya', 'Vyom'];
+    return reverseRotationProjects.includes(projectName) ? -90 : 90;
+  };
+
   if (!project) {
     return (
       <div className="min-h-screen bg-black text-white flex items-center justify-center">
@@ -230,8 +236,6 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="/video/vid2.mp4" type="video/mp4" />
-            <source src="./video/vid2.mp4" type="video/mp4" />
             <source src="../video/vid2.mp4" type="video/mp4" />
           </video>
           {/* Dark overlay for better text readability */}
@@ -289,7 +293,9 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
     );
   }
 
-  // Regular Project Detail Page (existing code)
+  // Regular Project Detail Page
+  const rotationDegree = getRotationDegree(project.name);
+
   return (
     <div className="relative min-h-screen bg-black text-white">
       <Header {...headerProps} />
@@ -354,8 +360,12 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
                 <img 
                   src={project.image} 
                   alt={project.name}
-                  className="max-w-full max-h-[500px] object-contain transform rotate-[-90deg]"
-                  style={{ width: 'auto', height: '500px' }}
+                  className="max-w-full max-h-[500px] object-contain"
+                  style={{ 
+                    width: 'auto', 
+                    height: '500px',
+                    transform: `rotate(${rotationDegree}deg)`
+                  }}
                 />
               </div>
             </div>

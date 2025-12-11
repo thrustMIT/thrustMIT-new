@@ -28,7 +28,6 @@ const RocketryWiki = ({ Header, headerProps }) => {
           id: 'intro',
           title: 'Introduction to Rocketry',
           content: `Rocketry is the science and technology of rocket design, construction, and flight. A rocket is a vehicle that obtains thrust from a rocket engine through the expulsion of reaction mass at high speed.
-
 The fundamental principle behind rocket propulsion is Newton's Third Law of Motion: for every action, there is an equal and opposite reaction. When a rocket expels mass out of its nozzle at high velocity, it experiences an equal and opposite force that propels it forward.
 
 Rockets are unique among propulsion systems because they carry both fuel and oxidizer, allowing them to operate in the vacuum of space where no atmospheric oxygen is available.`

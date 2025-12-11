@@ -30,7 +30,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Satvik Agrawal',
           image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Satvik%20Agrawal__P_VEZVXb.jpg?updatedAt=1735410792912',
           atThrustMIT: 'Team Leader',
-          currentWork: 'Aerospace Engineer at SpaceX',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/satvik-agrawal86/',
             email: 'satvikagrawal.86@gmail.com'
@@ -41,7 +41,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Geethika Ravu',
           image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Geethika%20Ravu__q2Z5RBwhL.jpg?updatedAt=1735410790801',
           atThrustMIT: 'Team Manager',
-          currentWork: 'Robotics Engineer at Blue Origin',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/geethika-sree-ravu-0a4553259/',
             email:'geethikaravu@gmail.com'
@@ -52,7 +52,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Ajinkya Sathe',
           image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Ajinkya%20Sathe_AzFY4CeEe.jpg?updatedAt=1735410790307',
           atThrustMIT: 'Aerodynamics Head',
-          currentWork: 'Design Engineer at ISRO',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/ajinkya-sathe-234a1028a/',
             email: 'superajinkya783@gmail.com'
@@ -63,7 +63,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Ayyan Bhartia',
           image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Ayyan%20Bhartia_tCrOJtK3h1.jpg?updatedAt=1735410790778',
           atThrustMIT: 'Aerodynamics Member',
-          currentWork: 'Aerospace Intern at NASA',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/ayyan-bhartia-1a8700241/',
             instagram: '#',
@@ -75,7 +75,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Samarth Vinod',
           image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Samarth%20Vinod_S5TdjnYLl.jpg?updatedAt=1735410790774',
           atThrustMIT: 'Avionics Head',
-          currentWork: 'Mechanical Engineer at Rocket Lab',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/samarth-vinod-9309a324a/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
             email: 'samglobal24@gmail.com'
@@ -86,7 +86,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Adithi Shetty N',
           image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Adithi%20Shetty_xiTejsa3U.jpg?updatedAt=1735410790667',
           atThrustMIT: 'Avionics Member',
-          currentWork: 'Systems Engineer at Blue Origin',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/adithi-shetty-n/',
             github: 'https://github.com/adithishetty01',
@@ -98,7 +98,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Jahnavi U',
           image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Jahnavi%20U_JnAyVSYis5.jpg?updatedAt=1735410790962',
           atThrustMIT: 'Avionics Member',
-          currentWork: 'Aerospace Intern at SpaceX',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/jahnavi-uppaluri-011a4026a/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
             github: 'https://github.com/cygnus06',
@@ -110,7 +110,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Tejas Patil',
           image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Tejas%20Patil_ON9LtSh2k.jpg?updatedAt=1735410793264',
           atThrustMIT: 'Payload Head',
-          currentWork: 'Mechanical Engineer at ISRO',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/tejas-patil-0b8946246/',
             github: 'tejas2510 (Tejas Patil) · GitHub',
@@ -122,7 +122,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Mohul Podder',
           image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Mohul%20Podder_yUtAOLLBuQ.jpg?updatedAt=1735410790753',
           atThrustMIT: 'Payload Member',
-          currentWork: 'Aerospace Intern at NASA',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/mohul-podder-699940265/',
             github: 'https://github.com/M4podder',
@@ -134,7 +134,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Aryan Gupta',
           image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Aryan%20Gupta_2ufwXM7_J.jpg?updatedAt=1735410790307',
           atThrustMIT: 'Propulsion Member',
-          currentWork: 'Aerospace Intern at ISRO',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/aryan-gupta-55404826a/?originalSubdomain=in',
             email: 'planetaryan2004@gmail.com'
@@ -145,7 +145,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Madhav Sonkusare',
           image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Madhav%20Sonkusare_U18LXW60Pj.jpg?updatedAt=1735410790707',
           atThrustMIT: 'Propulsion Head',
-          currentWork: 'Structural Engineer at SpaceX',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/madhav-sonkusare-550578250/',
             email: 'madhav.sonkusare@gmail.com'
@@ -155,7 +155,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Shreemad Burade',
           image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Shreemad%20Burade_qIgczp856.jpg?updatedAt=1735410793345',
           atThrustMIT: 'Propulsion Member',
-          currentWork: 'Aerospace Intern at Blue Origin',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/shreemad-burade-97b73224a/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
             email: 'shreemadb@gmail.com'
@@ -166,7 +166,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Akash Siddharth',
           image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Akash%20Siddarth_BN-VW8muG.jpg?updatedAt=1735410790589',
           atThrustMIT: 'Structures Head',
-          currentWork: 'Propulsion Engineer at Rocket Lab',
+          currentWork: '',
           socials: {
             email: 'akasiddarth7107@gmail.com'
           }
@@ -181,7 +181,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Parth Jain',
           image: 'https://ik.imagekit.io/wns4q4r9n2/Alumni/Parth%20Jain%20_uPuCbI0PD.webp?updatedAt=1735394198017',
           atThrustMIT: 'Team Leader',
-          currentWork: 'Systems Engineer at NASA',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/jain-parth/',
             email: 'parthjain03@gmail.com'
@@ -192,7 +192,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Vinoy S',
           image: 'https://ik.imagekit.io/wns4q4r9n2/Alumni/Vinoy%20S_nmXcvB0p2.webp?updatedAt=1735394374055',
           atThrustMIT: 'Team Manager',
-          currentWork: 'Propulsion Specialist at Rocket Lab',
+          currentWork: '',
           socials: {
             email: 'mailmevinoy@gmail.com'
           }
@@ -202,7 +202,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Vedang Bhosale',
           image: 'https://ik.imagekit.io/wns4q4r9n2/Alumni/Vedang_YIpPUHszJ.webp?updatedAt=1735394373819',
           atThrustMIT: 'Aerodynamics Head',
-          currentWork: 'Aerospace Engineer at SpaceX',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/vedang-bhosale-bb340b24a',
             github: 'https://github.com/Vedang2002',
@@ -214,7 +214,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Aiyaz Karani',
           image: 'https://ik.imagekit.io/wns4q4r9n2/Alumni/Aiyaz%20Karani_ELwAI9JSj7.webp?updatedAt=1735394371861',
           atThrustMIT: 'Recovery Head',
-          currentWork: 'Rocket Propulsion Intern at Blue Origin',
+          currentWork: '',
           socials: {
             linkedin: '#',
             instagram: '#',
@@ -226,7 +226,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Monish Anne',
           image: 'https://ik.imagekit.io/wns4q4r9n2/Alumni/Monish%20Anne_6ayNR8-40.webp?updatedAt=1735394373663',
           atThrustMIT: 'Avionics Head',
-          currentWork: 'Structural Engineer at Virgin Galactic',
+          currentWork: '',
           socials: {
             email: 'monhar1407@gmail.com'
           }
@@ -236,7 +236,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Satwik Agarwal',
           image: 'https://ik.imagekit.io/wns4q4r9n2/Alumni/Satwik%20Agarwal_9WAWSlHVD1.webp?updatedAt=1735394374232',
           atThrustMIT: 'Avionics Member',
-          currentWork: 'Aerospace Intern at ISRO',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/satwik-agarwal-a7b14323a',
             email: 'asatwik218@gmail.com'
@@ -247,7 +247,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Keeratraj Singh',
           image: 'https://ik.imagekit.io/wns4q4r9n2/Alumni/Keeratraj%20Singh_UAJ1Ydqaw.webp?updatedAt=1735394371856',
           atThrustMIT: 'Avionics Member',
-          currentWork: 'Mechanical Engineer at Rocket Lab',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/keeratraj-singh-00660a219',
             email: 'rajsinghsach@gmail.com'
@@ -258,7 +258,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Aman Soni',
           image: 'https://ik.imagekit.io/wns4q4r9n2/Alumni/Aman%20Soni_ToHkCh9qxn.webp?updatedAt=1735394371845',
           atThrustMIT: 'Avionics Member',
-          currentWork: 'Aerospace Intern at NASA',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/aman-soni-214262255',
             github: 'https://github.com/itzzamann',
@@ -270,7 +270,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Hrishikesh Singh Yadav',
           image: 'https://ik.imagekit.io/wns4q4r9n2/Alumni/Hrishikesh%20Singh%20Yadav_XnggdyTV1Z.webp?updatedAt=1735394370837',
           atThrustMIT: 'Payload Head',
-          currentWork: 'Systems Engineer at SpaceX',
+          currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/hrishikesh-singh-yadav-0aaa28244',
             github: 'https://github.com/HrishikeshSinghYdadav',
@@ -282,7 +282,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           name: 'Joshvir Nirula',
           image: 'https://ik.imagekit.io/wns4q4r9n2/Alumni/Joshvir%20Nirula_tZiGv5OJVL.webp?updatedAt=1735394371099',
           atThrustMIT: 'Payload Member',
-          currentWork: 'Aerospace Intern at Blue Origin',
+          currentWork: '',
           socials: {
             github: 'https://github.com/JoshvirNarula',
             email: ''

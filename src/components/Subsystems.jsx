@@ -56,7 +56,7 @@ const Subsystems = () => {
     {
       id: 'structures',
       name: 'Structures',
-      icon: Box,
+      image: '/subsystem/structures.png', 
       tagline: 'Structures',
       description: 'Engineering the complete framework',
       details: 'The Structures team engineers the complete framework of the rocket, from metallic assemblies to advanced composite components. This subsystem oversees design, simulation, manufacturing, and testing, ensuring every part remains lightweight, reliable, and flight ready. With safety and precision at the forefront, the team guarantees structural integrity throughout the mission. Our comprehensive approach covers every aspect from initial CAD design through final quality control and testing.',

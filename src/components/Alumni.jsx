@@ -1272,7 +1272,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           {/* Class Info */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-              Class of <span className="text-blue-600">{selectedYear}</span>
+              Batch of <span className="text-blue-600">{selectedYear}</span>
             </h2>
             <p className="text-gray-400 text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', letterSpacing: '0.05em' }}>
               {alumniData[selectedYear].tagline}

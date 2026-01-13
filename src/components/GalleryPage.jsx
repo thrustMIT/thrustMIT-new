@@ -59,20 +59,20 @@ const GalleryPage = ({ Header, Footer, onNavigateHome, headerProps }) => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                {/* <div className="p-6">
                   <h3 
                     className="text-xl font-bold mb-2 text-white group-hover:text-blue-600 transition-colors"
                     style={{ fontFamily: 'Orbitron, sans-serif' }}
                   >
                     {item.title}
                   </h3>
-                  <p 
+                  {/* <p 
                     className="text-sm text-gray-400 leading-relaxed"
                     style={{ fontFamily: 'Rajdhani, sans-serif' }}
                   >
                     {item.description}
-                  </p>
-                </div>
+                  </p> */}
+                {/* </div> */} 
 
                 {/* Hover Effect - Icon in top-right */}
                 {/* <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

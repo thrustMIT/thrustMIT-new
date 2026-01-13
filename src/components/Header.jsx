@@ -7,6 +7,7 @@ const Header = ({
   onNavigateToJoin,
   onNavigateToRocketWiki,
   onNavigateToBlog,
+  onNavigateToGallery,
   onScrollToSection,
   onNavigateHome,
   onShowRecruitmentModal,
@@ -67,6 +68,13 @@ const Header = ({
     setIsMenuOpen(false);
     if (onNavigateToBlog) {
       onNavigateToBlog();
+    }
+  };
+
+  const handleGalleryClick = () => {
+    setIsMenuOpen(false);
+    if (onNavigateToGallery) {
+      onNavigateToGallery();
     }
   };
 
@@ -158,7 +166,7 @@ const Header = ({
               Alumni
             </button>
             <button 
-              onClick={() => handleSectionClick('gallery')}
+              onClick={handleGalleryClick}
               className="px-3 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 whitespace-nowrap"
             >
               Gallery
@@ -241,7 +249,7 @@ const Header = ({
               Alumni
             </button>
             <button 
-              onClick={() => handleSectionClick('gallery')}
+              onClick={handleGalleryClick}
               className="text-left px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
             >
               Gallery

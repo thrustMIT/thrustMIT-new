@@ -8,7 +8,7 @@ const Projects = ({ onNavigateToProject }) => {
       name: 'Varuna', 
       category: 'Current Project', 
       description: "Varuna is thrustMIT's current flagship project, representing our next generation of high-power rocketry. Stay tuned for more updates as we push the boundaries of innovation and performance.",
-      image: 'projects/vyom.png', // You'll need to provide this image
+      image: 'black_logo.svg', 
       details: {
         maxAltitude: 'TBA',
         duration: '2025-26',
@@ -164,7 +164,7 @@ const Projects = ({ onNavigateToProject }) => {
                 >
                   {/* Coming Soon Badge */}
                   {project.comingSoon && (
-                    <div className="absolute top-4 right-4 z-10 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <div className="absolute top-4 right-4 z-10 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold tracking-wider" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                       Coming Soon
                     </div>
                   )}
@@ -181,10 +181,10 @@ const Projects = ({ onNavigateToProject }) => {
 
                   {/* Content */}
                   <div className="p-6">
-                    <h3 className="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                    <h3 className="text-2xl font-bold mb-2 group-hover:text-blue-600 transition-colors" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                       {project.name}
                     </h3>
-                    <p className="text-blue-400 text-sm mb-3 uppercase tracking-wider" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500 }}>
+                    <p className="text-blue-600 text-sm mb-3 uppercase tracking-wider" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500 }}>
                       {project.category}
                     </p>
                     <p className="text-sm text-gray-400 leading-relaxed mb-6" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
@@ -193,7 +193,7 @@ const Projects = ({ onNavigateToProject }) => {
 
                     {/* Learn More Button */}
                     <div className="flex items-center justify-between">
-                      <button onClick={() => onNavigateToProject && onNavigateToProject(project.id)} className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors group/btn" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
+                      <button onClick={() => onNavigateToProject && onNavigateToProject(project.id)} className="flex items-center gap-2 text-blue-600 hover:text-blue-300 transition-colors group/btn" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
                         <span>Learn More</span>
                         <ChevronRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
                       </button>

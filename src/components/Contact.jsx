@@ -209,7 +209,7 @@ const Contact = () => {
                 <Mail className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold mb-1" style={{ fontFamily: 'Rajdhani, sans-serif' }}>Email</p>
-                  <p className="text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif' }}>info@thrustmit.in</p>
+                  <p className="text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif' }}>management@thrustmit.in</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">

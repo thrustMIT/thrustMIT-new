@@ -159,6 +159,7 @@ export default function App() {
     onNavigateToJoin: () => navigate('join'),
     onNavigateToRocketWiki: () => navigate('rocket-wiki'),
     onNavigateToBlog: () => navigate('blog'),
+    onNavigateToGallery: () => navigate('gallery'),
     onNavigateHome: navigateHome,
     onScrollToSection: scrollToSection,
     currentPage: currentPage
@@ -304,7 +305,12 @@ export default function App() {
       <SponsorshipTiers />
       <Gallery onNavigateToGallery={() => navigate('gallery')} />
       <Contact />
-      <WikiCard onNavigateToRocketWiki={() => navigate('rocket-wiki')} />
+      <WikiCard 
+        onNavigateToRocketWiki={() => navigate('rocket-wiki')}
+        onScrollToSection={scrollToSection}
+        onNavigateHome={navigateHome}
+        currentPage={currentPage}
+      />
       <Footer
         onNavigateToRocketWiki={() => navigate('rocket-wiki')}
         onNavigateToBlog={() => navigate('blog')}

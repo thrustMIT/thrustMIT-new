@@ -12,7 +12,8 @@ import GalleryPage from './components/GalleryPage';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SponsorshipTiers from './components/SponsorshipTiers';
-import RocketWiki from './components/RocketWiki';
+// import RocketWiki from './components/RocketWiki'; 
+import ComingSoon from './components/ComingSoon'; 
 import JoinTeam from './components/JoinTeam';
 import Team from './components/Team';
 import Alumni from './components/Alumni';
@@ -201,18 +202,28 @@ export default function App() {
   }
 
   if (currentPage === 'rocket-wiki') {
+    // COMING SOON PAGE (Currently Active)
+    // To switch back to the full Rocket Wiki, comment out the ComingSoon block below
+    // and uncomment the RocketWiki block
     return (
-      <>
-        <RocketWiki 
-          Header={Header}
-          Footer={Footer}
-          onNavigateHome={() => navigate('home')}
-          onNavigateToAlumni={(year) => navigate('alumni', year)}
-          headerProps={commonHeaderProps}
-        />
-        {renderRecruitmentModal()}
-      </>
+      <ComingSoon 
+        Header={Header}
+        onNavigateHome={() => navigate('home')}
+        headerProps={commonHeaderProps}
+      />
     );
+
+    // FULL ROCKET WIKI PAGE (Commented Out)
+    // Uncomment this block when ready to show the full wiki
+    /* return (
+      <RocketWiki 
+        Header={Header}
+        Footer={Footer}
+        onNavigateHome={() => navigate('home')}
+        onNavigateToAlumni={(year) => navigate('alumni', year)}
+        headerProps={commonHeaderProps}
+      />
+    ); */
   }
 
   if (currentPage === 'team') {

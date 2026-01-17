@@ -10,7 +10,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
       description: "Varuna is thrustMIT's current flagship project, representing our next generation of high-power rocketry. Stay tuned for more updates as we push the boundaries of innovation and performance.",
       image: 'https://ik.imagekit.io/wns4q4r9n2/Projects/Renders/varuna.png',
       comingSoon: true,
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      videoUrl: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/video/vid2.mp4',
       details: {
         maxAltitude: 'TBA',
         duration: '2025-26',

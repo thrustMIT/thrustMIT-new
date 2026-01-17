@@ -115,7 +115,7 @@ const Header = ({
             className="flex items-center gap-2 group flex-shrink-0"
           >
             <img 
-              src="/logo.png" 
+              src="https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/logo.png" 
               alt="thrustMIT Logo" 
               className="h-10 sm:h-12 w-auto transition-transform duration-300 group-hover:scale-110"
             />

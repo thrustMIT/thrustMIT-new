@@ -9,7 +9,7 @@ const Contact = () => {
     message: ''
   });
   const [loading, setLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState('idle'); // idle, success, error
+  const [submitStatus, setSubmitStatus] = useState('idle');
 
   // Font loading
   useEffect(() => {
@@ -17,16 +17,6 @@ const Contact = () => {
     link.href = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;500;600&display=swap';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
-
-    // Load EmailJS script
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
-    script.async = true;
-    script.onload = () => {
-      // Initialize EmailJS with your public key
-      window.emailjs.init('-5nRf2BoYkjRclNQe');
-    };
-    document.body.appendChild(script);
 
     // Prefill message from URL query params
     try {
@@ -42,12 +32,6 @@ const Contact = () => {
     } catch (err) {
       // ignore if URLSearchParams unavailable
     }
-
-    return () => {
-      if (script.parentNode) {
-        document.body.removeChild(script);
-      }
-    };
   }, []);
 
   const handleChange = ({ target: { name, value } }) => {
@@ -56,34 +40,48 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    if (!form.name || !form.email || !form.message) {
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 3000);
+      return;
+    }
+
     setLoading(true);
     setSubmitStatus('idle');
 
     try {
-      await window.emailjs.send(
-        'service_3yfojsb',
-        'template_uf082m7',
-        {
-          from_name: form.name,
-          to_name: 'THRUST MIT',
-          from_email: form.email,
-          to_email: 'management@thrustmit.in',
-          message: form.message
-        },
-        '-5nRf2BoYkjRclNQe'
-      );
+      const formData = new FormData();
+      formData.append('name', form.name);
+      formData.append('email', form.email);
+      formData.append('message', form.message);
+      formData.append('_subject', `New Contact Form Submission from ${form.name}`);
+      formData.append('_captcha', 'false');
+      formData.append('_template', 'table');
 
-      setLoading(false);
-      setSubmitStatus('success');
-      setForm({
-        name: '',
-        email: '',
-        message: ''
+      const response = await fetch('https://formsubmit.co/management@thrustmit.in', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
       });
 
-      setTimeout(() => {
-        setSubmitStatus('idle');
-      }, 5000);
+      if (response.ok) {
+        setLoading(false);
+        setSubmitStatus('success');
+        setForm({
+          name: '',
+          email: '',
+          message: ''
+        });
+
+        setTimeout(() => {
+          setSubmitStatus('idle');
+        }, 5000);
+      } else {
+        throw new Error('Failed to send');
+      }
 
     } catch (error) {
       setLoading(false);
@@ -109,7 +107,7 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <div>
             <h3 className="text-2xl font-bold mb-6" style={{ fontFamily: 'Orbitron, sans-serif' }}>Send us a Message</h3>
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+            <div ref={formRef} className="space-y-4">
               <div>
                 <label className="block text-sm mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>Name</label>
                 <input 
@@ -150,7 +148,7 @@ const Contact = () => {
                 ></textarea>
               </div>
               <button 
-                type="submit"
+                onClick={handleSubmit}
                 disabled={loading}
                 className={`w-full px-8 py-3 rounded-lg font-semibold transition-all transform shadow-lg flex items-center justify-center gap-2 ${
                   loading 
@@ -171,7 +169,6 @@ const Contact = () => {
                  submitStatus === 'error' ? 'Failed to Send' : 'Send Message'}
               </button>
               
-              {/* Status message */}
               {submitStatus === 'success' && (
                 <div className="text-sm mt-2 p-3 rounded-lg bg-green-600/10 text-green-400 border border-green-600/20" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                   Thank you! Your message has been sent successfully.
@@ -182,7 +179,7 @@ const Contact = () => {
                   Something went wrong! Please try again.
                 </div>
               )}
-            </form>
+            </div>
           </div>
 
           <div>

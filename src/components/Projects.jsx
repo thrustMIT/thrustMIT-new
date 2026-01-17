@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Rocket, Clock, Users, MapPin, ChevronRight, ArrowLeft, Gauge, Zap, Package, Layers } from 'lucide-react';
+import VarunaModal from './VarunaModal';
 
 const Projects = ({ onNavigateToProject }) => {
+  const [varunaModalOpen, setVarunaModalOpen] = useState(false);
+
   const projects = [
     {
       id: 'varuna',
@@ -159,7 +162,13 @@ const Projects = ({ onNavigateToProject }) => {
               {projects.map((project, i) => (
                 <div 
                   key={i} 
-                  onClick={() => onNavigateToProject && onNavigateToProject(project.id)}
+                  onClick={() => {
+                    if (project.comingSoon) {
+                      setVarunaModalOpen(true);
+                    } else {
+                      onNavigateToProject && onNavigateToProject(project.id);
+                    }
+                  }}
                   className={`${many ? '' : 'w-full sm:w-80 md:w-96'} group relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl border border-gray-800/50 rounded-3xl overflow-hidden hover:border-blue-600/50 transition-all duration-500 cursor-pointer hover:scale-105 hover:shadow-2xl hover:shadow-blue-600/20`}
                 >
                   {/* Coming Soon Badge */}
@@ -193,7 +202,18 @@ const Projects = ({ onNavigateToProject }) => {
 
                     {/* Learn More Button */}
                     <div className="flex items-center justify-between">
-                      <button onClick={() => onNavigateToProject && onNavigateToProject(project.id)} className="flex items-center gap-2 text-blue-600 hover:text-blue-300 transition-colors group/btn" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (project.comingSoon) {
+                            setVarunaModalOpen(true);
+                          } else {
+                            onNavigateToProject && onNavigateToProject(project.id);
+                          }
+                        }} 
+                        className="flex items-center gap-2 text-blue-600 hover:text-blue-300 transition-colors group/btn" 
+                        style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}
+                      >
                         <span>Learn More</span>
                         <ChevronRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
                       </button>
@@ -210,6 +230,9 @@ const Projects = ({ onNavigateToProject }) => {
           );
         })()}
       </div>
+
+      {/* Varuna Modal */}
+      <VarunaModal open={varunaModalOpen} onClose={() => setVarunaModalOpen(false)} />
     </section>
   );
 };

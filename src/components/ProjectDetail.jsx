@@ -4,19 +4,6 @@ import { Rocket, Clock, Users, MapPin, ChevronRight, ArrowLeft, Gauge, Zap, Pack
 const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateToProjects, onNavigateToProject, headerProps }) => {
   const projects = [
     {
-      id: 'varuna',
-      name: 'Varuna', 
-      category: 'Current Project', 
-      description: "Varuna is thrustMIT's current flagship project, representing our next generation of high-power rocketry. Stay tuned for more updates as we push the boundaries of innovation and performance.",
-      image: 'https://ik.imagekit.io/wns4q4r9n2/Projects/Renders/varuna.png',
-      comingSoon: true,
-      videoUrl: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/video/vid2.mp4',
-      details: {
-        maxAltitude: 'TBA',
-        duration: '2025-26',
-      }
-    },
-    {
       id: 'vayuvega',
       name: 'Vayuvega', 
       category: '30K COTS', 
@@ -322,7 +309,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
               {/* Quick Stats Grid */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-                  <div className="flex items-center gap-2 text-blue-400 mb-2">
+                  <div className="flex items-center gap-2 text-blue-600 mb-2">
                     <Gauge size={20} />
                     <span className="text-sm text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Max Altitude</span>
                   </div>
@@ -330,7 +317,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
                 </div>
                 
                 <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-                  <div className="flex items-center gap-2 text-blue-400 mb-2">
+                  <div className="flex items-center gap-2 text-blue-600 mb-2">
                     <Clock size={20} />
                     <span className="text-sm text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Year</span>
                   </div>
@@ -338,7 +325,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
                 </div>
                 
                 <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-                  <div className="flex items-center gap-2 text-blue-400 mb-2">
+                  <div className="flex items-center gap-2 text-blue-600 mb-2">
                     <Package size={20} />
                     <span className="text-sm text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Motor</span>
                   </div>
@@ -346,7 +333,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
                 </div>
                 
                 <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-                  <div className="flex items-center gap-2 text-blue-400 mb-2">
+                  <div className="flex items-center gap-2 text-blue-600 mb-2">
                     <MapPin size={20} />
                     <span className="text-sm text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Launch</span>
                   </div>

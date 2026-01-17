@@ -183,7 +183,7 @@ const Subsystems = () => {
                             {subsystem.tagline}
                           </h3>
                           
-                          <p className="text-gray-300 leading-relaxed text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
+                          <p className="text-gray-300 leading-relaxed text-xl" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
                             {subsystem.details}
                           </p>
                           

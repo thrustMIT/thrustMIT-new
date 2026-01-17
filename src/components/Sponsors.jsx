@@ -25,9 +25,9 @@ const Sponsors = () => {
   return (
     <section id="sponsors" className="relative min-h-screen bg-black py-20 px-4 overflow-hidden flex items-center">
       {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-radial from-blue-600/5 via-transparent to-transparent" />
+      {/* <div className="absolute inset-0 bg-gradient-radial from-blue-600/5 via-transparent to-transparent" />
       <div className="absolute top-20 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" /> */}
 
       <div className="relative max-w-7xl mx-auto w-full">
         {/* Header */}
@@ -49,7 +49,7 @@ const Sponsors = () => {
         <div className="max-w-5xl mx-auto">
           <div className="relative group">
             {/* Glow effect */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/50 via-blue-500/50 to-blue-600/50 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/50 via-blue-500/50 to-blue-600/50 rounded-3xl blur-xl opacity-75 transition-opacity duration-500"></div>
             
             {/* Card */}
             <div className="relative bg-gradient-to-br from-gray-900/95 via-black/95 to-gray-900/95 rounded-3xl overflow-hidden">

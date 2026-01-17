@@ -179,7 +179,7 @@ const Projects = ({ onNavigateToProject }) => {
                   )}
                   
                   {/* Image Container */}
-                  <div className="relative h-64 bg-gradient-to-br from-blue-600/20 to-blue-800/20 flex items-center justify-center border-b border-gray-800/50 overflow-hidden">
+                  <div className="relative h-64 flex items-center justify-center border-b border-gray-800/50 overflow-hidden">
                     <img 
                       src={project.image} 
                       alt={`${project.name} logo`}

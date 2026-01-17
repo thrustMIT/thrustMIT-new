@@ -5,14 +5,14 @@ const Gallery = ({ onNavigateToGallery }) => {
   
   // Replace these filenames with your actual image filenames from the public folder
   const images = [
-    { id: 0, src: "https://ik.imagekit.io/wns4q4r9n2/Gallery/Vayuvega/Award%20Ceremony%20Photo_mtsP57mDR.jpg?updatedAt=1753898886832", title: "", description: "" },
-    { id: 1, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i2.png", title: "", description: "" },
-    { id: 2, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i3.png", title: "", description: "" },
-    { id: 3, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i4.png", title: "", description: "" },
-    { id: 4, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i5.png", title: "", description: "" },
-    { id: 5, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i1.png", title: "", description: "" },
-    { id: 6, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i2.png", title: "", description: "" },
-    { id: 7, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i3.png", title: "", description: "" }
+    { id: 0, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i1.jpg", title: "", description: "" },
+    { id: 1, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i2.webp", title: "", description: "" },
+    { id: 2, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i3.webp", title: "", description: "" },
+    { id: 3, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i4.webp", title: "", description: "" },
+    { id: 4, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i5.webp", title: "", description: "" },
+    { id: 5, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i6.webp", title: "", description: "" },
+    { id: 6, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i7.webp", title: "", description: "" },
+    { id: 7, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i8.webp", title: "", description: "" }
   ];
 
   // Font loading

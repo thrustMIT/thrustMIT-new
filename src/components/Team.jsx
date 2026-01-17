@@ -38,7 +38,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
     {
       id: 3,
       name: 'Shaurya Mittal',
-      role: 'Aerodynamics Head',
+      role: 'Head of Aerodynamics',
       tag: 'aero',
       image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Shaurya%20Mittal_vm63fTBj2j.HEIC?updatedAt=1735410815461',
       socials: {
@@ -61,7 +61,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
     {
       id: 5,
       name: 'Sanskruti Ginde',
-      role: 'Avionics Head',
+      role: 'Head of Avionics',
       tag: 'avionics',
       image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Sanskruti%20Ginde_Vg6PLfMCk.HEIC?updatedAt=1735410814796',
       socials: {
@@ -72,7 +72,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
     {
       id: 6,
       name: 'Dhruv Phalod',
-      role: 'Ground Systems Head',
+      role: 'Head of Ground Systems',
       tag: 'avionics',
       image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Dhruv%20Phalod_UpqptrSoG5.HEIC?updatedAt=1735410810811',
       socials: {

@@ -62,7 +62,7 @@ const About = () => {
           <div className="relative">
             <div className="relative aspect-[4/3] bg-gradient-to-br from-blue-600/20 to-blue-900/20 rounded-3xl overflow-hidden border border-blue-600/30 shadow-2xl shadow-blue-600/20">
               <img 
-                src="about/team.png" 
+                src="https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/about/team.JPG" 
                 alt="Team Photo" 
                 className="w-full h-full object-cover"
               />

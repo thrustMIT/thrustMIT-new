@@ -11,7 +11,7 @@ const Subsystems = () => {
     {
       id: 'aerodynamics',
       name: 'Aerodynamics',
-      image: '/subsystem/aero.png', 
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/subsystem/aero.png', 
       tagline: 'Aerodynamics',
       description: 'Configuration and flight dynamics development',
       details: 'The Aerodynamics subsystem manages the full configuration and flight-dynamics development of our rockets. We design and optimize the fins, nose cone, boattail, and transition section, using analytical methods and computational fluid dynamics to evaluate pressure and shear distributions, aerodynamic loads, and flow behavior across all Mach regimes. These insights help us minimize drag and improve overall aerodynamic efficiency. Additionally, we oversee flight-path modeling, trajectory analysis, and the complete recovery architecture, ensuring the rocket reaches the correct apogee and maintains stable flight throughout ascent.',
@@ -20,7 +20,7 @@ const Subsystems = () => {
     {
       id: 'avionics',
       name: 'Avionics',
-      image: '/subsystem/avionics.png', 
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/subsystem/avionics.png', 
       tagline: 'Avionics',
       description: 'The brain of the rocket',
       details: 'The avionics subsystem acts as the brain of the rocket, designing custom flight computers and firmware for reliable operations during flight. Using a combination of sensors like IMUs, barometers, GPS modules, and telemetry modules, we achieve sensor-fusion for state and apogee estimation. Our capabilities include high-rate data logging, live video telemetry, an autonomous antenna-tracking system for real-time flight following, and timely parachute deployment at apogee. We also build control systems such as airbrakes for stability management and design electronics for static-fire tests including wireless ignition systems and real-time telemetry.',
@@ -29,7 +29,7 @@ const Subsystems = () => {
     {
       id: 'propulsion',
       name: 'Propulsion',
-      image: '/subsystem/prop.png', 
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/subsystem/prop.png', 
       tagline: 'Propulsion',
       description: 'End-to-end solid rocket motor development',
       details: 'The Propulsion subsystem specializes in the complete end-to-end development of solid rocket motors, from conceptual design and finite element simulations to in-house manufacturing and rigorous static testing. Our team handles all critical aspects of motor development including propellant grain design, thermal analysis, nozzle optimization, and combustion characterization. We also develop ejection charge systems for reliable recovery deployment. With active research in advanced propellant formulations and hybrid engine architectures, we are working to become one of India\'s first student teams competing in the SRAD category at international competitions.',
@@ -38,7 +38,7 @@ const Subsystems = () => {
     {
       id: 'payload',
       name: 'Payload',
-      image: '/subsystem/payload.png', 
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/subsystem/payload.png', 
       tagline: 'Payload',
       description: 'Where research meets flight',
       details: 'We design, test, and build the scientific and engineering experiments flown aboard our rockets. From active control systems and data-gathering instruments to structural prototypes and real-time decision systems, the payload is where research meets flight. Our division focuses on developing reliable, high-performance payloads and experiment modules capable of surviving extreme launch and recovery conditions. With an emphasis on modularity, rapid integration, and mission-specific customization, we ensure that every payload delivers meaningful scientific value while pushing the boundaries of student-led aerospace research.',
@@ -56,7 +56,7 @@ const Subsystems = () => {
     {
       id: 'structures',
       name: 'Structures',
-      image: '/subsystem/structures.png', 
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/subsystem/structures.png', 
       tagline: 'Structures',
       description: 'Engineering the complete framework',
       details: 'The Structures team engineers the complete framework of the rocket, from metallic assemblies to advanced composite components. This subsystem oversees design, simulation, manufacturing, and testing, ensuring every part remains lightweight, reliable, and flight ready. With safety and precision at the forefront, the team guarantees structural integrity throughout the mission. Our comprehensive approach covers every aspect from initial CAD design through final quality control and testing.',

@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Mail, MapPin, Phone, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
+  const formRef = useRef();
+  const [form, setForm] = useState({
     name: '',
     email: '',
     message: ''
   });
-  const [submitStatus, setSubmitStatus] = useState('idle'); // idle, loading, success, error
-  const [statusMessage, setStatusMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('idle'); // idle, success, error
 
   // Font loading
   useEffect(() => {
@@ -16,13 +17,24 @@ const Contact = () => {
     link.href = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;500;600&display=swap';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
-    // Prefill message from URL query params (e.g., ?subject=...&message=...)
+
+    // Load EmailJS script
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+    script.async = true;
+    script.onload = () => {
+      // Initialize EmailJS with your public key
+      window.emailjs.init('-5nRf2BoYkjRclNQe');
+    };
+    document.body.appendChild(script);
+
+    // Prefill message from URL query params
     try {
       const params = new URLSearchParams(window.location.search);
       const preMessage = params.get('message');
       const subject = params.get('subject');
       if (preMessage || subject) {
-        setFormData(prev => ({
+        setForm(prev => ({
           ...prev,
           message: subject ? `${subject}\n\n${(preMessage || '')}` : (preMessage || '')
         }));
@@ -30,91 +42,58 @@ const Contact = () => {
     } catch (err) {
       // ignore if URLSearchParams unavailable
     }
+
+    return () => {
+      if (script.parentNode) {
+        document.body.removeChild(script);
+      }
+    };
   }, []);
+
+  const handleChange = ({ target: { name, value } }) => {
+    setForm({ ...form, [name]: value });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Validate form
-    if (!formData.name || !formData.email || !formData.message) {
-      setSubmitStatus('error');
-      setStatusMessage('Please fill in all fields');
-      return;
-    }
-
-    setSubmitStatus('loading');
-    setStatusMessage('');
+    setLoading(true);
+    setSubmitStatus('idle');
 
     try {
-      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwQQVfRUxCG7QYDWYPEMxhhBv_TncoIPVTMSOKHHRkV9C3n50LudV1ruIa6p62W64ur/exec';
-      
-      const params = new URLSearchParams({
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-        timestamp: new Date().toISOString()
+      await window.emailjs.send(
+        'service_3yfojsb',
+        'template_uf082m7',
+        {
+          from_name: form.name,
+          to_name: 'THRUST MIT',
+          from_email: form.email,
+          to_email: 'management@thrustmit.in',
+          message: form.message
+        },
+        '-5nRf2BoYkjRclNQe'
+      );
+
+      setLoading(false);
+      setSubmitStatus('success');
+      setForm({
+        name: '',
+        email: '',
+        message: ''
       });
 
-      const urlWithParams = `${GOOGLE_SCRIPT_URL}?${params.toString()}`;
-
-      const response = await fetch(urlWithParams, {
-        method: 'GET',
-        redirect: 'follow'
-      });
-
-      const result = await response.text();
-
-      try {
-        const jsonResult = JSON.parse(result);
-        
-        if (jsonResult.result === 'success') {
-          setSubmitStatus('success');
-          setStatusMessage('Thank you! Your message has been sent successfully.');
-          
-          setFormData({
-            name: '',
-            email: '',
-            message: ''
-          });
-
-          setTimeout(() => {
-            setSubmitStatus('idle');
-            setStatusMessage('');
-          }, 5000);
-        } else {
-          throw new Error(jsonResult.message || 'Unknown error');
-        }
-      } catch (parseError) {
-        if (response.ok) {
-          setSubmitStatus('success');
-          setStatusMessage('Thank you! Your message has been sent successfully.');
-          
-          setFormData({
-            name: '',
-            email: '',
-            message: ''
-          });
-
-          setTimeout(() => {
-            setSubmitStatus('idle');
-            setStatusMessage('');
-          }, 5000);
-        } else {
-          throw new Error('Failed to parse response');
-        }
-      }
+      setTimeout(() => {
+        setSubmitStatus('idle');
+      }, 5000);
 
     } catch (error) {
+      setLoading(false);
       setSubmitStatus('error');
-      setStatusMessage('Failed to send message. Please try again.');
+      console.log(error);
+      
+      setTimeout(() => {
+        setSubmitStatus('idle');
+      }, 5000);
     }
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
   };
 
   return (
@@ -130,14 +109,15 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <div>
             <h3 className="text-2xl font-bold mb-6" style={{ fontFamily: 'Orbitron, sans-serif' }}>Send us a Message</h3>
-            <div className="space-y-4">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>Name</label>
                 <input 
                   type="text" 
                   name="name"
-                  value={formData.name}
+                  value={form.name}
                   onChange={handleChange}
+                  required
                   className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-blue-600 focus:outline-none transition-colors" 
                   style={{ fontFamily: 'Rajdhani, sans-serif' }}
                   placeholder="Your name" 
@@ -148,8 +128,9 @@ const Contact = () => {
                 <input 
                   type="email" 
                   name="email"
-                  value={formData.email}
+                  value={form.email}
                   onChange={handleChange}
+                  required
                   className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-blue-600 focus:outline-none transition-colors" 
                   style={{ fontFamily: 'Rajdhani, sans-serif' }}
                   placeholder="your@email.com" 
@@ -160,18 +141,19 @@ const Contact = () => {
                 <textarea 
                   rows="4" 
                   name="message"
-                  value={formData.message}
+                  value={form.message}
                   onChange={handleChange}
+                  required
                   className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-blue-600 focus:outline-none transition-colors resize-none" 
                   style={{ fontFamily: 'Rajdhani, sans-serif' }}
                   placeholder="Tell us about your interest..."
                 ></textarea>
               </div>
               <button 
-                onClick={handleSubmit}
-                disabled={submitStatus === 'loading'}
+                type="submit"
+                disabled={loading}
                 className={`w-full px-8 py-3 rounded-lg font-semibold transition-all transform shadow-lg flex items-center justify-center gap-2 ${
-                  submitStatus === 'loading' 
+                  loading 
                     ? 'bg-blue-600/50 cursor-not-allowed' 
                     : submitStatus === 'success'
                     ? 'bg-green-600 hover:bg-green-700 shadow-green-600/30 hover:shadow-green-600/50'
@@ -181,25 +163,26 @@ const Contact = () => {
                 }`}
                 style={{ fontFamily: 'Rajdhani, sans-serif' }}
               >
-                {submitStatus === 'loading' && <Loader2 className="w-5 h-5 animate-spin" />}
+                {loading && <Loader2 className="w-5 h-5 animate-spin" />}
                 {submitStatus === 'success' && <CheckCircle className="w-5 h-5" />}
                 {submitStatus === 'error' && <AlertCircle className="w-5 h-5" />}
-                {submitStatus === 'loading' ? 'Sending...' : 
-                 submitStatus === 'success' ? 'Sent!' :
-                 submitStatus === 'error' ? 'Failed' : 'Send Message'}
+                {loading ? 'Sending...' : 
+                 submitStatus === 'success' ? 'Message Sent!' :
+                 submitStatus === 'error' ? 'Failed to Send' : 'Send Message'}
               </button>
               
               {/* Status message */}
-              {statusMessage && (
-                <div className={`text-sm mt-2 p-3 rounded-lg ${
-                  submitStatus === 'success' 
-                    ? 'bg-green-600/10 text-green-400 border border-green-600/20' 
-                    : 'bg-red-600/10 text-red-400 border border-red-600/20'
-                }`} style={{ fontFamily: 'Rajdhani, sans-serif' }}>
-                  {statusMessage}
+              {submitStatus === 'success' && (
+                <div className="text-sm mt-2 p-3 rounded-lg bg-green-600/10 text-green-400 border border-green-600/20" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  Thank you! Your message has been sent successfully.
                 </div>
               )}
-            </div>
+              {submitStatus === 'error' && (
+                <div className="text-sm mt-2 p-3 rounded-lg bg-red-600/10 text-red-400 border border-red-600/20" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  Something went wrong! Please try again.
+                </div>
+              )}
+            </form>
           </div>
 
           <div>
@@ -227,16 +210,6 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-
-            {/* <div className="mt-8 p-6 bg-gradient-to-br from-blue-600/10 to-blue-500/10 border border-blue-600/20 rounded-xl">
-              <h4 className="font-bold mb-3" style={{ fontFamily: 'Orbitron, sans-serif' }}>Join Our Team</h4>
-              <p className="text-sm text-gray-300 mb-4" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
-                We're always looking for passionate students interested in rocketry and aerospace engineering.
-              </p>
-              <button type="button" onClick={() => window.dispatchEvent(new Event('showRecruitModal'))} className="text-blue-600 hover:text-blue-500 font-semibold text-sm transition-colors inline-block" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
-                Learn More →
-              </button>
-            </div> */}
           </div>
         </div>
       </div>

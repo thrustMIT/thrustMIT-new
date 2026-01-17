@@ -6,13 +6,13 @@ const Gallery = ({ onNavigateToGallery }) => {
   // Replace these filenames with your actual image filenames from the public folder
   const images = [
     { id: 0, src: "https://ik.imagekit.io/wns4q4r9n2/Gallery/Vayuvega/Award%20Ceremony%20Photo_mtsP57mDR.jpg?updatedAt=1753898886832", title: "Launch Day Success", description: "Our team's first successful rocket launch at the regional competition in 2024" },
-    { id: 1, src: "gallery/i2.png", title: "Pre-Flight Preparation", description: "Final checks and calibration before the big launch at nationals" },
-    { id: 2, src: "gallery/i3.png", title: "Team Assembly", description: "The entire crew working together on rocket assembly in our lab" },
-    { id: 3, src: "gallery/i4.png", title: "Engine Test Fire", description: "Static fire test of our custom-built rocket engine" },
-    { id: 4, src: "gallery/i5.png", title: "Recovery System Deploy", description: "Successful parachute deployment during a test flight" },
-    { id: 5, src: "gallery/i1.png", title: "Award Ceremony", description: "Receiving first place trophy at the State Rocketry Championship" },
-    { id: 6, src: "gallery/i2.png", title: "Wind Tunnel Testing", description: "Aerodynamic testing of our rocket design in the university wind tunnel" },
-    { id: 7, src: "gallery/i3.png", title: "Mission Control", description: "Team monitoring telemetry data during a live launch sequence" }
+    { id: 1, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i2.png", title: "Pre-Flight Preparation", description: "Final checks and calibration before the big launch at nationals" },
+    { id: 2, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i3.png", title: "Team Assembly", description: "The entire crew working together on rocket assembly in our lab" },
+    { id: 3, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i4.png", title: "Engine Test Fire", description: "Static fire test of our custom-built rocket engine" },
+    { id: 4, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i5.png", title: "Recovery System Deploy", description: "Successful parachute deployment during a test flight" },
+    { id: 5, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i1.png", title: "Award Ceremony", description: "Receiving first place trophy at the State Rocketry Championship" },
+    { id: 6, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i2.png", title: "Wind Tunnel Testing", description: "Aerodynamic testing of our rocket design in the university wind tunnel" },
+    { id: 7, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i3.png", title: "Mission Control", description: "Team monitoring telemetry data during a live launch sequence" }
   ];
 
   // Font loading

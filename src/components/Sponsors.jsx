@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const Sponsors = () => {
   const sponsor = {
     name: "Altium",
-    logo: "/sponsors/altium.png",
+    logo: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/sponsors/altium.png",
     description: "Altium is the world's leading PCB design software that combines schematic, layout, and everything else needed in one environment to effortlessly design printed circuit boards. Used across industries from aerospace and defense to automotive and consumer electronics, Altium empowers designers to develop electronics products faster and more efficiently than ever before.",
     partnership: "Official PCB Design Partner",
     impact: [

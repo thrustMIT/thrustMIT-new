@@ -8,7 +8,7 @@ const Projects = ({ onNavigateToProject }) => {
       name: 'Varuna', 
       category: 'Current Project', 
       description: "Varuna is thrustMIT's current flagship project, representing our next generation of high-power rocketry. Stay tuned for more updates as we push the boundaries of innovation and performance.",
-      image: 'black_logo.svg', 
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/black_logo.svg', 
       details: {
         maxAltitude: 'TBA',
         duration: '2025-26',
@@ -25,7 +25,7 @@ const Projects = ({ onNavigateToProject }) => {
       name: 'Vayuvega', 
       category: '30K COTS', 
       description: "Vayuvega was thrustMIT's latest project and second 30K COTS class rocket, launched at the 2025 IREC. Vayuvega achieved an apogee of 29,432 feet and was subsequently recovered with no damage to the airframe and systems. Vayuvega featured a payload experiment aiming to validate real-time visual tracking in extreme flight conditions, for which the team won the 2nd Place Prize in the SDL Payload Challenge.",
-      image: 'projects/vayu.png',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/projects/vayu.png',
       details: {
         maxAltitude: '29,432 ft',
         duration: '2024-25',
@@ -41,7 +41,7 @@ const Projects = ({ onNavigateToProject }) => {
       name: 'AgniAstra', 
       category: '30K COTS', 
       description: "AgniAstra was thrustMIT's debut entry in the 2024 Spaceport America Cup under the 30K COTS category. Featuring a glass fibre and carbon fibre airframe with an Aluminium 6061 internal structure, it carried a CanSat payload to conduct real-time pose estimation via computer vision. The SRAD modular flight computer managed recovery, data logging, and telemetry.",
-      image: 'projects/agni.png',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/projects/agni.png',
       details: {
         maxAltitude: '30,000 ft',
         duration: '2023-24',
@@ -57,7 +57,7 @@ const Projects = ({ onNavigateToProject }) => {
       name: 'Altair', 
       category: '10K COTS', 
       description: "Altair was thrustMIT's 10K COTS submission to the 2023 Spaceport America Cup. The rocket featured leading-edge extended fins and crankshaft-airbrakes to optimize flow separation. Project Altair was our most accurate launch with a 0.51% percentage error in apogee, reaching 10,331 ft.",
-      image: 'projects/altair.png',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/projects/altair.png',
       details: {
         maxAltitude: '10,331 ft',
         duration: '2022-23',
@@ -73,7 +73,7 @@ const Projects = ({ onNavigateToProject }) => {
       name: 'Rayquaza', 
       category: '10K COTS', 
       description: "Rayquaza was thrustMIT's 4th developed rocket and project entry to the 2022 Spaceport America Cup. Comprising a carbon fibre airframe and Aluminium 6063 internal structure, Project Rayquaza was our first ever rocket to reach 10,000 ft. Rayquaza came 4th in the James Barrowman Award with a percentage error of less than 0.3%.",
-      image: 'projects/ray.png',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/projects/ray.png',
       details: {
         maxAltitude: '10,000 ft',
         duration: '2021-22',
@@ -89,7 +89,7 @@ const Projects = ({ onNavigateToProject }) => {
       name: 'Phoenix', 
       category: '10K COTS', 
       description: "Phoenix was thrustMIT's 3rd rocket and official entry to the 2021 Spaceport America Cup. With a carbon fibre airframe and glass fibre Avionics Bay, the rocket featured a functional payload experiment aiming to accurately measure and log vibrations experienced by a CanSat during flight using a piezoelectric transducer.",
-      image: 'projects/pheo.png',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/projects/pheo.png',
       details: {
         maxAltitude: '10,000 ft',
         duration: '2020-21',
@@ -105,7 +105,7 @@ const Projects = ({ onNavigateToProject }) => {
       name: 'Arya', 
       category: 'Sounding Rocket', 
       description: "Arya, launched at the 2019 Spaceport America Cup, was our 2nd rocket made entirely out of carbon fibre with a target apogee of 3 km. It featured Aluminium 6061-T6 bulkheads and centering rings. The team successfully launched Lapwing II, a subscale rocket used to test recovery systems.",
-      image: 'projects/arya.png',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/projects/arya.png',
       details: {
         maxAltitude: '3,000 m',
         duration: '2018-19',
@@ -121,7 +121,7 @@ const Projects = ({ onNavigateToProject }) => {
       name: 'Vyom', 
       category: 'Debut Rocket', 
       description: "Vyom was our first rocket, launched at the 2018 Spaceport America Cup. It featured a glass fibre airframe, couplers and fin attachments, and a nose tip made of ABS. It reached an apogee of 1.2 km. Project Vyom won the Best Debutant Award at the 2018 SA Cup.",
-      image: 'projects/vyom.png',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/projects/vyom.png',
       details: {
         maxAltitude: '1,200 m',
         duration: '2017-18',

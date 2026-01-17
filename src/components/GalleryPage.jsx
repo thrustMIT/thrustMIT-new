@@ -4,17 +4,17 @@ import { ArrowLeft } from 'lucide-react';
 const GalleryPage = ({ Header, Footer, onNavigateHome, headerProps }) => {
   const galleryItems = [
     { id: 0, src: "https://ik.imagekit.io/wns4q4r9n2/Gallery/Vayuvega/Award%20Ceremony%20Photo_mtsP57mDR.jpg?updatedAt=1753898886832", title: "Launch Day Success", description: "Our team's first successful rocket launch at the regional competition in 2024. A moment of pride and achievement." },
-    { id: 1, src: "gallery/i2.png", title: "Pre-Flight Preparation", description: "Final checks and calibration before the big launch at nationals. Precision and attention to detail matter." },
-    { id: 2, src: "gallery/i3.png", title: "Team Assembly", description: "The entire crew working together on rocket assembly in our lab. Teamwork makes the dream work." },
-    { id: 3, src: "gallery/i4.png", title: "Engine Test Fire", description: "Static fire test of our custom-built rocket engine. Testing our innovation under pressure." },
-    { id: 4, src: "gallery/i5.png", title: "Recovery System Deploy", description: "Successful parachute deployment during a test flight. Safety first, always." },
-    { id: 5, src: "gallery/i1.png", title: "Award Ceremony", description: "Receiving first place trophy at the State Rocketry Championship. Celebrating our victory." },
-    { id: 6, src: "gallery/i2.png", title: "Wind Tunnel Testing", description: "Aerodynamic testing of our rocket design in the university wind tunnel. Science in action." },
-    { id: 7, src: "gallery/i3.png", title: "Mission Control", description: "Team monitoring telemetry data during a live launch sequence. Every second counts." },
-    { id: 8, src: "gallery/i4.png", title: "Payload Integration", description: "Installing scientific instruments into the payload bay. Precision engineering at its finest." },
-    { id: 9, src: "gallery/i5.png", title: "Post-Launch Analysis", description: "Reviewing flight data and performance metrics after recovery. Learning from every mission." },
-    { id: 10, src: "gallery/i1.png", title: "Team Celebration", description: "Celebrating a successful launch and mission accomplishment. Hard work pays off." },
-    { id: 11, src: "gallery/i2.png", title: "Ground Operations", description: "Team coordinating launch sequences and safety protocols. Preparation is everything." }
+    { id: 1, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i2.png", title: "Pre-Flight Preparation", description: "Final checks and calibration before the big launch at nationals. Precision and attention to detail matter." },
+    { id: 2, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i3.png", title: "Team Assembly", description: "The entire crew working together on rocket assembly in our lab. Teamwork makes the dream work." },
+    { id: 3, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i4.png", title: "Engine Test Fire", description: "Static fire test of our custom-built rocket engine. Testing our innovation under pressure." },
+    { id: 4, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i5.png", title: "Recovery System Deploy", description: "Successful parachute deployment during a test flight. Safety first, always." },
+    { id: 5, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i1.png", title: "Award Ceremony", description: "Receiving first place trophy at the State Rocketry Championship. Celebrating our victory." },
+    { id: 6, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i2.png", title: "Wind Tunnel Testing", description: "Aerodynamic testing of our rocket design in the university wind tunnel. Science in action." },
+    { id: 7, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i3.png", title: "Mission Control", description: "Team monitoring telemetry data during a live launch sequence. Every second counts." },
+    { id: 8, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i4.png", title: "Payload Integration", description: "Installing scientific instruments into the payload bay. Precision engineering at its finest." },
+    { id: 9, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i5.png", title: "Post-Launch Analysis", description: "Reviewing flight data and performance metrics after recovery. Learning from every mission." },
+    { id: 10, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i1.png", title: "Team Celebration", description: "Celebrating a successful launch and mission accomplishment. Hard work pays off." },
+    { id: 11, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i2.png", title: "Ground Operations", description: "Team coordinating launch sequences and safety protocols. Preparation is everything." }
   ];
 
   useEffect(() => {

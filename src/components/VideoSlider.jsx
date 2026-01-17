@@ -4,12 +4,12 @@ import { AnimatedText } from "./AnimatedText";
 
 const slides = [
   {
-    videoUrl: "video/vid2.mp4",
+    videoUrl: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/video/vid2.mp4",
     title: "Defying Gravity",
     subtitle: "Pioneering the future of space exploration through innovation"
   },
   {
-    videoUrl: "video/vid1.mp4",
+    videoUrl: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/video/vid1.mp4",
     title: "Beyond Mach",
     subtitle: "Excellence and relentless pursuit of the impossible"
   }

@@ -179,11 +179,11 @@ const Subsystems = () => {
                       <div className="grid lg:grid-cols-5 gap-12 items-center">
                         {/* Left side - Content (3 columns) */}
                         <div className="lg:col-span-3 space-y-6 pointer-events-auto">
-                          <h3 className="text-4xl font-bold leading-tight text-white" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                          <h3 className="text-3xl font-bold leading-tight text-white" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                             {subsystem.tagline}
                           </h3>
                           
-                          <p className="text-gray-300 leading-relaxed text-xl" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
+                          <p className="text-gray-300 leading-relaxed text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
                             {subsystem.details}
                           </p>
                           

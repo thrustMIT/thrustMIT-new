@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 ..bfg-report
+.env.local
+.env*.local
 
 # Editor directories and files
 .vscode/*

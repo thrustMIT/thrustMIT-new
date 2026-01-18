@@ -34,9 +34,9 @@ const Footer = ({
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <a href="/" className="flex items-center gap-3 group">
+              <a href="/" className="flex items-center gap-3 group justify-between">
             <img 
-              src="/logo.png" 
+              src="https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/logo.png" 
               alt="thrustMIT Logo" 
               className="h-12 w-auto transition-transform duration-300 group-hover:scale-110"
             />
@@ -121,7 +121,7 @@ const Footer = ({
           </div>
 
           <div className="border-t border-white/10 pt-8 text-center text-sm text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
-            <p>© 2025 thrustMIT. All rights reserved. | Defying Gravity Beyond Mach.</p>
+            <p>© 2026 thrustMIT. All rights reserved.</p>
           </div>
         </div>
       </footer>

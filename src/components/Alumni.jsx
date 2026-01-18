@@ -216,8 +216,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           atThrustMIT: 'Recovery Head',
           currentWork: '',
           socials: {
-            linkedin: '#',
-            instagram: '#',
+            linkedin: 'https://www.linkedin.com/in/aiyaz-karani-09483821a/?originalSubdomain=in',
             email: 'aiyazkarani@gmail.com'
           }
         },

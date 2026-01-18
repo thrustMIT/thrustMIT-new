@@ -20,10 +20,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
         totalLength: '3.50 m',
         totalDiameter: '126 mm',
         totalWeight: '36.80 kg',
-        propellant: 'COTS Motor',
-        recovery: 'Dual Deploy',
-        avionics: 'Custom Flight Computer',
-        payload: 'Real-time Visual Tracking',
+        category: '30K COTS',
         achievement: '4th in 30K COTS, 22nd Overall'
       }
     },
@@ -44,10 +41,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
         totalLength: '3.19 m',
         totalDiameter: '124 mm',
         totalWeight: '32.21 kg',
-        propellant: 'COTS Motor',
-        recovery: 'SRAD System',
-        avionics: 'SRAD Modular Flight Computer',
-        payload: 'CanSat - Pose Estimation',
+        category: '30K COTS',
         achievement: "Asia's Top 30K COTS Team"
       }
     },
@@ -68,10 +62,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
         totalLength: '2.71 m',
         totalDiameter: '150 mm',
         totalWeight: '30.20 kg',
-        propellant: 'COTS Motor',
-        recovery: 'Dual Deploy',
-        avionics: 'Extended Fins',
-        payload: 'Flow Optimization',
+        category: '10K COTS',
         achievement: '0.51% Apogee Error'
       }
     },
@@ -92,10 +83,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
         totalLength: '2.76 m',
         totalDiameter: '150 mm',
         totalWeight: '29.73 kg',
-        propellant: 'COTS Motor',
-        recovery: 'Dual Deploy',
-        avionics: 'Custom Flight Computer',
-        payload: 'Standard Payload',
+        category: '10K COTS',
         achievement: '4th James Barrowman Award'
       }
     },
@@ -116,10 +104,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
         totalLength: '3.20 m',
         totalDiameter: '150 mm',
         totalWeight: '38.10 kg',
-        propellant: 'COTS Motor',
-        recovery: 'Dual Deploy',
-        avionics: 'Glass Fibre Avionics Bay',
-        payload: 'Vibration Measurement',
+        category: '10K COTS',
         achievement: '7th in 10K COTS, 16th Overall'
       }
     },
@@ -140,10 +125,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
         totalLength: '2.45 m',
         totalDiameter: '140 mm',
         totalWeight: '22.36 kg',
-        propellant: 'COTS Motor',
-        recovery: 'In-house Reefing Mechanism',
-        avionics: 'Standard Avionics',
-        payload: 'Recovery Test',
+        category: '10K COTS',
         achievement: 'Carbon Fibre Construction'
       }
     },
@@ -164,10 +146,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
         totalLength: '2.54 m',
         totalDiameter: '150 mm',
         totalWeight: '26.00 kg',
-        propellant: 'COTS Motor',
-        recovery: 'Dual Deploy',
-        avionics: 'Glass Fibre Airframe',
-        payload: 'Standard Payload',
+        category: '10K COTS',
         achievement: 'Best Debutant Award 2018'
       }
     }
@@ -367,7 +346,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
             Technical <span className="text-blue-600">Specifications</span>
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-2xl p-6 hover:border-blue-600/50 transition-all">
               <p className="text-gray-400 text-sm mb-2" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Height</p>
               <p className="text-3xl font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.totalLength}</p>
@@ -388,19 +367,19 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
               <p className="text-2xl font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.motor}</p>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-2xl p-6 hover:border-blue-600/50 transition-all">
+            {/* <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-2xl p-6 hover:border-blue-600/50 transition-all">
               <p className="text-gray-400 text-sm mb-2" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Recovery</p>
               <p className="text-xl font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.recovery}</p>
-            </div>
+            </div> */}
 
-            <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-2xl p-6 hover:border-blue-600/50 transition-all">
+            {/* <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-2xl p-6 hover:border-blue-600/50 transition-all">
               <p className="text-gray-400 text-sm mb-2" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Avionics</p>
               <p className="text-xl font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.avionics}</p>
-            </div>
+            </div> */}
 
             <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-2xl p-6 hover:border-blue-600/50 transition-all">
-              <p className="text-gray-400 text-sm mb-2" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Payload</p>
-              <p className="text-xl font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.payload}</p>
+              <p className="text-gray-400 text-sm mb-2" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Category</p>
+              <p className="text-xl font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.category}</p>
             </div>
 
             <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-2xl p-6 hover:border-blue-600/50 transition-all">

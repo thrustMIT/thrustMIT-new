@@ -300,21 +300,21 @@ const SponsorshipTiers = () => {
                   </tr>
                   <tr className="border-b border-gray-800/30 hover:bg-white/5 transition-colors duration-200">
                     <td className="p-6 text-gray-300" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Logo on Team T-Shirts / Apparel</td>
-                    <td className="p-6 text-center text-gray-400">Small</td>
+                    <td className="p-6 text-center text-blue-600">Small</td>
                     <td className="p-6 text-center text-blue-600 font-semibold">Medium</td>
                     <td className="p-6 text-center text-blue-600 font-semibold">Large</td>
                     <td className="p-6 text-center text-purple-600 font-semibold">Large</td>
                   </tr>
                   <tr className="border-b border-gray-800/30 hover:bg-white/5 transition-colors duration-200">
                     <td className="p-6 text-gray-300" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Logo on Competition Banners</td>
-                    <td className="p-6 text-center text-gray-400">Small</td>
+                    <td className="p-6 text-center text-blue-600">Small</td>
                     <td className="p-6 text-center text-blue-600 font-semibold">Medium</td>
                     <td className="p-6 text-center text-blue-600 font-semibold">Large</td>
                     <td className="p-6 text-center text-purple-600 font-semibold">Large</td>
                   </tr>
                   <tr className="border-b border-gray-800/30 hover:bg-white/5 transition-colors duration-200">
                     <td className="p-6 text-gray-300" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Logo on Rocket</td>
-                    <td className="p-6 text-center text-gray-400">Small</td>
+                    <td className="p-6 text-center text-blue-600">Small</td>
                     <td className="p-6 text-center text-blue-600 font-semibold">Medium</td>
                     <td className="p-6 text-center text-blue-600 font-semibold">Large</td>
                     <td className="p-6 text-center text-purple-600 font-semibold">Large</td>

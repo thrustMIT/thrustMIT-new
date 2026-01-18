@@ -43,7 +43,7 @@ const VarunaModal = ({ open = false, onClose = () => {} }) => {
         </button>
 
         {/* Header with Rocket Icon */}
-        <div className="relative bg-gradient-to-br from-blue-600/20 to-blue-800/20 p-4 sm:p-6 md:p-8 border-b border-gray-800/50">
+        <div className="relative p-4 sm:p-6 md:p-8 border-b border-gray-800/50">
           <div className="flex items-center gap-3 sm:gap-4 mb-2">
             <div>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white" style={{ fontFamily: 'Orbitron, sans-serif' }}>
@@ -63,9 +63,6 @@ const VarunaModal = ({ open = false, onClose = () => {} }) => {
         <div className="p-4 sm:p-6 md:p-8">
           <div className="space-y-4 sm:space-y-6">
             <div>
-              <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-                Next Generation High-Power Rocketry
-              </h4>
               <p className="text-sm sm:text-base text-gray-300 leading-relaxed" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
                 Varuna represents thrustMIT's most ambitious project to date—our flagship next-generation high-power rocket designed to push the boundaries of innovation and performance.
               </p>

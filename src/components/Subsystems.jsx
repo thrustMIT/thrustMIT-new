@@ -204,7 +204,7 @@ const Subsystems = () => {
                           <div className="relative w-full flex items-center justify-center">
                             <div className="absolute inset-0 rounded-3xl blur-3xl" style={{ backgroundColor: 'rgba(30, 64, 175, 0.4)' }}></div>
                             <div className="relative p-8 flex items-center justify-center w-full">
-                              <div className="rounded-3xl p-10 flex items-center justify-center shadow-2xl" style={{ backgroundColor: '#1e40af', border: '1px solid rgba(37, 99, 235, 0.3)' }}>
+                              <div className="rounded-3xl p-10 flex items-center justify-center shadow-2xl" style={{ backgroundColor: '#2563eb', border: '1px solid rgba(37, 99, 235, 0.3)' }}>
                                 {subsystem.image ? (
                                   <img 
                                     src={subsystem.image} 
@@ -212,7 +212,7 @@ const Subsystems = () => {
                                     className="w-40 h-40 object-contain opacity-80"
                                   />
                                 ) : subsystem.icon ? (
-                                  <subsystem.icon className="w-40 h-40 text-cyan-400 opacity-80" />
+                                  <subsystem.icon className="w-40 h-40 text-white opacity-80" />
                                 ) : null}
                               </div>
                             </div>
@@ -252,7 +252,7 @@ const Subsystems = () => {
                     onClick={() => setActiveIndex(isActive ? -1 : index)}
                     className="w-full p-6 flex items-center gap-4 text-left"
                   >
-                    <div className="flex-shrink-0 p-3 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#0041c2' }}>
+                    <div className="flex-shrink-0 p-3 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#2563eb' }}>
                       {subsystem.image ? (
                         <img 
                           src={subsystem.image} 
@@ -260,7 +260,7 @@ const Subsystems = () => {
                           className="w-6 h-6 object-contain opacity-90"
                         />
                       ) : subsystem.icon ? (
-                        <subsystem.icon className="w-6 h-6 text-cyan-400 opacity-90" />
+                        <subsystem.icon className="w-6 h-6 text-white opacity-90" />
                       ) : null}
                     </div>
                     <div className="flex-1">

@@ -353,7 +353,7 @@ const Blog = ({ Header, Footer, onNavigateHome, headerProps }) => {
             Stories from the frontier of student rocketry and aerospace innovation
           </p>
 
-          <div className="mb-8">
+          {/* <div className="mb-8">
             <button
               onClick={() => {
                 setPasswordAction('add');
@@ -365,7 +365,7 @@ const Blog = ({ Header, Footer, onNavigateHome, headerProps }) => {
               <Plus size={18} />
               Write Article
             </button>
-          </div>
+          </div> */}
 
           <div className="max-w-2xl mx-auto">
             <div className="relative">
@@ -409,7 +409,7 @@ const Blog = ({ Header, Footer, onNavigateHome, headerProps }) => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                     
                     {/* Edit and Delete Buttons */}
-                    <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    {/* <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                       <button
                         onClick={(e) => handleEditClick(article, e)}
                         className="w-9 h-9 bg-blue-600/90 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors shadow-lg"
@@ -424,7 +424,7 @@ const Blog = ({ Header, Footer, onNavigateHome, headerProps }) => {
                       >
                         <Trash2 size={16} />
                       </button>
-                    </div>
+                    </div> */}
                   </div>
 
                   <div className="p-6">

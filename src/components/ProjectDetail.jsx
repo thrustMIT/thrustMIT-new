@@ -16,7 +16,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
         diameter: '126 mm',
         wetMass: '36.80 kg',
         motor: 'Aerotech 05500X-PS',
-        launch: '2025 IREC',
+        payload: 'Real-time 3D Visual Tracking System',
         totalLength: '3.50 m',
         totalDiameter: '126 mm',
         totalWeight: '36.80 kg',
@@ -37,7 +37,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
         diameter: '124 mm',
         wetMass: '32.21 kg',
         motor: 'Cesaroni N5800-P',
-        launch: '2024 SA Cup',
+        payload: '3D Vision & Pose Estimation',
         totalLength: '3.19 m',
         totalDiameter: '124 mm',
         totalWeight: '32.21 kg',
@@ -58,7 +58,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
         diameter: '150 mm',
         wetMass: '30.20 kg',
         motor: 'Cesaroni M3400-P',
-        launch: '2023 SA Cup',
+        payload: '3-DoF Stewart Platform',
         totalLength: '2.71 m',
         totalDiameter: '150 mm',
         totalWeight: '30.20 kg',
@@ -79,7 +79,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
         diameter: '150 mm',
         wetMass: '29.73 kg',
         motor: 'Cesaroni M3400-P',
-        launch: '2022 SA Cup',
+        payload: 'Acoustic Dampening of CNT',
         totalLength: '2.76 m',
         totalDiameter: '150 mm',
         totalWeight: '29.73 kg',
@@ -100,7 +100,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
         diameter: '150 mm',
         wetMass: '38.10 kg',
         motor: 'Cesaroni N2200-P',
-        launch: '2021 SA Cup',
+        payload: 'Piezo-Electric Device to detect Vibrations',
         totalLength: '3.20 m',
         totalDiameter: '150 mm',
         totalWeight: '38.10 kg',
@@ -121,7 +121,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
         diameter: '140 mm',
         wetMass: '22.36 kg',
         motor: 'Aerotech M1845-P',
-        launch: '2019 SA Cup',
+        payload: 'Non-Newtonian Fluid Damper',
         totalLength: '2.45 m',
         totalDiameter: '140 mm',
         totalWeight: '22.36 kg',
@@ -142,7 +142,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
         diameter: '150 mm',
         wetMass: '26.00 kg',
         motor: 'Aerotech M1845-P',
-        launch: '2018 SA Cup',
+        payload: 'Non Functional',
         totalLength: '2.54 m',
         totalDiameter: '150 mm',
         totalWeight: '26.00 kg',
@@ -266,7 +266,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
     <div className="relative min-h-screen bg-black text-white">
       <Header {...headerProps} />
 
-      {/* Hero Section */}
+      {/* Hero Section with Description and Specs on Left, Rocket on Right */}
       <section className="relative pt-32 md:pt-40 pb-20 px-4 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" />
@@ -275,116 +275,72 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
         <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
         <div className="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* Left Column: Title, Description, and Specs */}
+            <div className="space-y-8">
+              <div>
+                <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                  {project.name}
+                </h1>
+                <p className="text-lg md:text-xl text-gray-300 leading-relaxed" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400, letterSpacing: '0.03em' }}>
+                  {project.description}
+                </p>
+              </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-                {project.name}
-              </h1>
-              <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400, letterSpacing: '0.03em' }}>
-                {project.description}
-              </p>
+              {/* Technical Specifications */}
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                  Technical <span className="text-blue-600">Specifications</span>
+                </h2>
 
-              {/* Quick Stats Grid */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-                  <div className="flex items-center gap-2 text-blue-600 mb-2">
-                    <Gauge size={20} />
-                    <span className="text-sm text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Max Altitude</span>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-xl p-4 hover:border-blue-600/50 transition-all">
+                    <p className="text-gray-400 text-xs mb-1" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Height</p>
+                    <p className="text-2xl font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.totalLength}</p>
                   </div>
-                  <p className="text-2xl font-bold" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.maxAltitude}</p>
-                </div>
-                
-                <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-                  <div className="flex items-center gap-2 text-blue-600 mb-2">
-                    <Clock size={20} />
-                    <span className="text-sm text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Year</span>
+
+                  <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-xl p-4 hover:border-blue-600/50 transition-all">
+                    <p className="text-gray-400 text-xs mb-1" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Diameter</p>
+                    <p className="text-2xl font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.totalDiameter}</p>
                   </div>
-                  <p className="text-2xl font-bold" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.duration}</p>
-                </div>
-                
-                <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-                  <div className="flex items-center gap-2 text-blue-600 mb-2">
-                    <Package size={20} />
-                    <span className="text-sm text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Motor</span>
+
+                  <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-xl p-4 hover:border-blue-600/50 transition-all">
+                    <p className="text-gray-400 text-xs mb-1" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Wet Mass</p>
+                    <p className="text-2xl font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.totalWeight}</p>
                   </div>
-                  <p className="text-xl font-bold" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.motor}</p>
-                </div>
-                
-                <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-                  <div className="flex items-center gap-2 text-blue-600 mb-2">
-                    <MapPin size={20} />
-                    <span className="text-sm text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Launch</span>
+
+                  <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-xl p-4 hover:border-blue-600/50 transition-all">
+                    <p className="text-gray-400 text-xs mb-1" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Motor</p>
+                    <p className="text-xl font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.motor}</p>
                   </div>
-                  <p className="text-xl font-bold" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.launch}</p>
+
+                  <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-xl p-4 hover:border-blue-600/50 transition-all">
+                    <p className="text-gray-400 text-xs mb-1" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Category</p>
+                    <p className="text-lg font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.category}</p>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-xl p-4 hover:border-blue-600/50 transition-all">
+                    <p className="text-gray-400 text-xs mb-1" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Achievement</p>
+                    <p className="text-base font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.achievement}</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="relative">
-              <div className="relative rounded-3xl p-8 flex items-center justify-center min-h-[500px]">
+            {/* Right Column: Rocket Image */}
+            <div className="relative flex items-center justify-center min-h-[700px]">
+              <div className="relative rounded-3xl p-8 flex items-center justify-center">
                 <img 
                   src={project.image} 
                   alt={project.name}
-                  className="max-w-full max-h-[500px] object-contain"
+                  className="max-w-full max-h-[700px] object-contain"
                   style={{ 
                     width: 'auto', 
-                    height: '500px',
+                    height: '700px',
                     transform: `rotate(${rotationDegree}deg)`
                   }}
                 />
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Technical Specifications */}
-      <section className="relative py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-            Technical <span className="text-blue-600">Specifications</span>
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-2xl p-6 hover:border-blue-600/50 transition-all">
-              <p className="text-gray-400 text-sm mb-2" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Height</p>
-              <p className="text-3xl font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.totalLength}</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-2xl p-6 hover:border-blue-600/50 transition-all">
-              <p className="text-gray-400 text-sm mb-2" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Diameter</p>
-              <p className="text-3xl font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.totalDiameter}</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-2xl p-6 hover:border-blue-600/50 transition-all">
-              <p className="text-gray-400 text-sm mb-2" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Wet Mass</p>
-              <p className="text-3xl font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.totalWeight}</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-2xl p-6 hover:border-blue-600/50 transition-all">
-              <p className="text-gray-400 text-sm mb-2" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Motor</p>
-              <p className="text-2xl font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.motor}</p>
-            </div>
-
-            {/* <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-2xl p-6 hover:border-blue-600/50 transition-all">
-              <p className="text-gray-400 text-sm mb-2" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Recovery</p>
-              <p className="text-xl font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.recovery}</p>
-            </div> */}
-
-            {/* <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-2xl p-6 hover:border-blue-600/50 transition-all">
-              <p className="text-gray-400 text-sm mb-2" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Avionics</p>
-              <p className="text-xl font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.avionics}</p>
-            </div> */}
-
-            <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-2xl p-6 hover:border-blue-600/50 transition-all">
-              <p className="text-gray-400 text-sm mb-2" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Category</p>
-              <p className="text-xl font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.category}</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-gray-900/80 to-black/80 border border-white/10 rounded-2xl p-6 hover:border-blue-600/50 transition-all">
-              <p className="text-gray-400 text-sm mb-2" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Achievement</p>
-              <p className="text-lg font-bold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>{project.details.achievement}</p>
             </div>
           </div>
         </div>

@@ -212,7 +212,7 @@ const Subsystems = () => {
                                     className="w-52 h-52 object-contain opacity-80"
                                   />
                                 ) : subsystem.icon ? (
-                                  <subsystem.icon className="w-40 h-40 text-white opacity-80" />
+                                  <subsystem.icon className="w-52 h-52 text-white opacity-80" />
                                 ) : null}
                               </div>
                             </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Rocket, Clock, Users, MapPin, ChevronRight, ArrowLeft, Gauge, Zap, Package, Layers } from 'lucide-react';
+import { Rocket, Clock, Users, MapPin, ChevronRight, ArrowLeft, Gauge, Zap, Package, Layers, Settings } from 'lucide-react';
 import VarunaModal from './VarunaModal';
 
 const Projects = ({ onNavigateToProject }) => {
@@ -15,11 +15,8 @@ const Projects = ({ onNavigateToProject }) => {
       details: {
         maxAltitude: 'TBA',
         duration: '2025-26',
-        height: 'TBA',
-        diameter: 'TBA',
-        wetMass: 'TBA',
         motor: 'TBA',
-        launch: 'TBA',
+        payload: 'TBA',
       },
       comingSoon: true
     },
@@ -32,11 +29,8 @@ const Projects = ({ onNavigateToProject }) => {
       details: {
         maxAltitude: '29,432 ft',
         duration: '2024-25',
-        height: '3.50 m',
-        diameter: '126 mm',
-        wetMass: '36.80 kg',
         motor: 'Aerotech 05500X-PS',
-        launch: '2025 IREC',
+        payload: 'Real-time 3D Visual Tracking System',
       }
     },
     { 
@@ -48,11 +42,8 @@ const Projects = ({ onNavigateToProject }) => {
       details: {
         maxAltitude: '30,000 ft',
         duration: '2023-24',
-        height: '3.19 m',
-        diameter: '124 mm',
-        wetMass: '32.21 kg',
         motor: 'Cesaroni N5800-P',
-        launch: '2024 SA Cup',
+        payload: '3D Vision & Pose Estimation'
       }
     },
     { 
@@ -64,11 +55,8 @@ const Projects = ({ onNavigateToProject }) => {
       details: {
         maxAltitude: '10,331 ft',
         duration: '2022-23',
-        height: '2.71 m',
-        diameter: '150 mm',
-        wetMass: '30.20 kg',
         motor: 'Cesaroni M3400-P',
-        launch: '2023 SA Cup',
+        payload: '3-DoF Stewart Platform'
       }
     },
     { 
@@ -80,11 +68,8 @@ const Projects = ({ onNavigateToProject }) => {
       details: {
         maxAltitude: '10,000 ft',
         duration: '2021-22',
-        height: '2.76 m',
-        diameter: '150 mm',
-        wetMass: '29.73 kg',
         motor: 'Cesaroni M3400-P',
-        launch: '2022 SA Cup',
+        payload: 'Acoustic Dampening of CNT'
       }
     },
     { 
@@ -96,27 +81,21 @@ const Projects = ({ onNavigateToProject }) => {
       details: {
         maxAltitude: '10,000 ft',
         duration: '2020-21',
-        height: '3.20 m',
-        diameter: '150 mm',
-        wetMass: '38.10 kg',
         motor: 'Cesaroni N2200-P',
-        launch: '2021 SA Cup',
+        payload: 'Piezo-Electric Device to detect Vibrations'
       }
     },
     { 
       id: 'arya',
       name: 'Arya', 
-      category: 'Sounding Rocket', 
+      category: '10K COTS', 
       description: "Arya, launched at the 2019 Spaceport America Cup, was our 2nd rocket made entirely out of carbon fibre with a target apogee of 3 km. It featured Aluminium 6061-T6 bulkheads and centering rings. The team successfully launched Lapwing II, a subscale rocket used to test recovery systems.",
       image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/projects/arya.png',
       details: {
         maxAltitude: '3,000 m',
         duration: '2018-19',
-        height: '2.45 m',
-        diameter: '140 mm',
-        wetMass: '22.36 kg',
         motor: 'Aerotech M1845-P',
-        launch: '2019 SA Cup',
+        payload: 'Non-Newtonian Fluid Damper'
       }
     },
     { 
@@ -128,11 +107,8 @@ const Projects = ({ onNavigateToProject }) => {
       details: {
         maxAltitude: '1,200 m',
         duration: '2017-18',
-        height: '2.54 m',
-        diameter: '150 mm',
-        wetMass: '26.00 kg',
         motor: 'Aerotech M1845-P',
-        launch: '2018 SA Cup',
+        payload: 'Non Functional'
       }
     }
   ];
@@ -193,12 +169,44 @@ const Projects = ({ onNavigateToProject }) => {
                     <h3 className="text-2xl font-bold mb-2 group-hover:text-blue-600 transition-colors" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                       {project.name}
                     </h3>
-                    <p className="text-blue-600 text-sm mb-3 uppercase tracking-wider" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500 }}>
+                    <p className="text-blue-600 text-sm mb-4 uppercase tracking-wider" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500 }}>
                       {project.category}
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-6" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
-                      {project.description}
-                    </p>
+
+                    {/* Stats Grid - 2x2 */}
+                    <div className="grid grid-cols-2 gap-3 mb-6">
+                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        <div className="flex items-center gap-1 text-blue-600 mb-1">
+                          <Gauge size={16} />
+                          <span className="text-xs text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif' }}>Altitude</span>
+                        </div>
+                        <p className="text-sm font-bold" style={{ fontFamily: 'Rajdhani, sans-serif' }}>{project.details.maxAltitude}</p>
+                      </div>
+                      
+                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        <div className="flex items-center gap-1 text-blue-600 mb-1">
+                          <Clock size={16} />
+                          <span className="text-xs text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif' }}>Year</span>
+                        </div>
+                        <p className="text-sm font-bold" style={{ fontFamily: 'Rajdhani, sans-serif' }}>{project.details.duration}</p>
+                      </div>
+                      
+                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        <div className="flex items-center gap-1 text-blue-600 mb-1">
+                          <Settings size={16} />
+                          <span className="text-xs text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif' }}>Motor</span>
+                        </div>
+                        <p className="text-xs font-bold" style={{ fontFamily: 'Rajdhani, sans-serif' }}>{project.details.motor}</p>
+                      </div>
+                      
+                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        <div className="flex items-center gap-1 text-blue-600 mb-1">
+                          <Package size={16} />
+                          <span className="text-xs text-gray-400" style={{ fontFamily: 'Rajdhani, sans-serif' }}>Payload</span>
+                        </div>
+                        <p className="text-xs font-bold" style={{ fontFamily: 'Rajdhani, sans-serif' }}>{project.details.payload}</p>
+                      </div>
+                    </div>
 
                     {/* Learn More Button */}
                     <div className="flex items-center justify-between">

@@ -88,6 +88,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       tag: 'avionics',
       image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Krishanu%20Dey_cawTxipxw.HEIC?updatedAt=1735410809227',
       socials: {
+        linkedin: 'https://www.linkedin.com/in/krishanu-dey-976892275/',
         github: 'https://github.com/krishanu-170605',
         email: 'krishanu.170605@gmail.com'
       }

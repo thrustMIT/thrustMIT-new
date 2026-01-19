@@ -40,7 +40,7 @@ const Projects = ({ onNavigateToProject }) => {
       description: "AgniAstra was thrustMIT's debut entry in the 2024 Spaceport America Cup under the 30K COTS category. Featuring a glass fibre and carbon fibre airframe with an Aluminium 6061 internal structure, it carried a CanSat payload to conduct real-time pose estimation via computer vision. The SRAD modular flight computer managed recovery, data logging, and telemetry.",
       image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/projects/agni.png',
       details: {
-        maxAltitude: '30,000 ft',
+        maxAltitude: '17010 ft',
         duration: '2023-24',
         motor: 'Cesaroni N5800-P',
         payload: '3D Vision & Pose Estimation'
@@ -66,7 +66,7 @@ const Projects = ({ onNavigateToProject }) => {
       description: "Rayquaza was thrustMIT's 4th developed rocket and project entry to the 2022 Spaceport America Cup. Comprising a carbon fibre airframe and Aluminium 6063 internal structure, Project Rayquaza was our first ever rocket to reach 10,000 ft. Rayquaza came 4th in the James Barrowman Award with a percentage error of less than 0.3%.",
       image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/projects/ray.png',
       details: {
-        maxAltitude: '10,000 ft',
+        maxAltitude: '11,662 ft',
         duration: '2021-22',
         motor: 'Cesaroni M3400-P',
         payload: 'Acoustic Dampening of CNT'

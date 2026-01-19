@@ -209,7 +209,7 @@ const Subsystems = () => {
                                   <img 
                                     src={subsystem.image} 
                                     alt={subsystem.name} 
-                                    className="w-40 h-40 object-contain opacity-80"
+                                    className="w-52 h-52 object-contain opacity-80"
                                   />
                                 ) : subsystem.icon ? (
                                   <subsystem.icon className="w-40 h-40 text-white opacity-80" />
@@ -257,10 +257,10 @@ const Subsystems = () => {
                         <img 
                           src={subsystem.image} 
                           alt={subsystem.name} 
-                          className="w-6 h-6 object-contain opacity-90"
+                          className="w-10 h-10 object-contain opacity-90"
                         />
                       ) : subsystem.icon ? (
-                        <subsystem.icon className="w-6 h-6 text-white opacity-90" />
+                        <subsystem.icon className="w-10 h-10 text-white opacity-90" />
                       ) : null}
                     </div>
                     <div className="flex-1">

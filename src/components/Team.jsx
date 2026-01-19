@@ -197,7 +197,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
     },
     {
       id: 17,
-      name: 'Vedant Pankaj Totla',
+      name: 'Vedant Totla',
       role: 'Head of Management',
       tag: 'management',
       image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Vedant%20Totla_dZk7PfRap.HEIC?updatedAt=1735410816828',
@@ -208,7 +208,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
     },
     {
       id: 18,
-      name: 'Swara Sule',
+      name: 'Swaraa Sule',
       role: 'Senior Member',
       tag: 'management',
       image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Swaraa%20Sule_yewr6hcrb.HEIC?updatedAt=1735410815424',

@@ -1218,7 +1218,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
         <h3 className="text-xl font-bold mb-1 group-hover:text-blue-600 transition-colors" style={{ fontFamily: 'Orbitron, sans-serif' }}>
           {alumni.name}
         </h3>
-        <p className="text-blue-400 text-sm mb-3" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500, letterSpacing: '0.05em' }}>
+        <p className="text-blue-600 text-sm mb-3" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500, letterSpacing: '0.05em' }}>
           {alumni.atThrustMIT}
         </p>
         <p className="text-gray-400 text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>

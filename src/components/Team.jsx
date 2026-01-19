@@ -345,7 +345,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
         <h3 className="text-xl font-bold mb-1 group-hover:text-blue-600 transition-colors" style={{ fontFamily: 'Orbitron, sans-serif' }}>
           {member.name}
         </h3>
-        <p className="text-blue-400 text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500, letterSpacing: '0.05em' }}>
+        <p className="text-blue-600 text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500, letterSpacing: '0.05em' }}>
           {member.role}
         </p>
       </div>

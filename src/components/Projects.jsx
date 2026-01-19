@@ -92,7 +92,7 @@ const Projects = ({ onNavigateToProject }) => {
       description: "Arya, launched at the 2019 Spaceport America Cup, was our 2nd rocket made entirely out of carbon fibre with a target apogee of 3 km. It featured Aluminium 6061-T6 bulkheads and centering rings. The team successfully launched Lapwing II, a subscale rocket used to test recovery systems.",
       image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/projects/arya.png',
       details: {
-        maxAltitude: '2047 ft',
+        maxAltitude: '2,047 ft',
         duration: '2018-19',
         motor: 'Aerotech M1845-P',
         payload: 'Non-Newtonian Fluid Damper'
@@ -105,7 +105,7 @@ const Projects = ({ onNavigateToProject }) => {
       description: "Vyom was our first rocket, launched at the 2018 Spaceport America Cup. It featured a glass fibre airframe, couplers and fin attachments, and a nose tip made of ABS. It reached an apogee of 1.2 km. Project Vyom won the Best Debutant Award at the 2018 SA Cup.",
       image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/projects/vyom.png',
       details: {
-        maxAltitude: '1,200 m',
+        maxAltitude: '3,937 ft',
         duration: '2017-18',
         motor: 'Aerotech M1845-P',
         payload: 'Non Functional'

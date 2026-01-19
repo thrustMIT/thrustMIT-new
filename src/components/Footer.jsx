@@ -34,7 +34,7 @@ const Footer = ({
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <a href="/" className="flex items-center gap-3 group justify-between">
+              <a href="/" className="flex items-center gap-3 group">
             <img 
               src="https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/logo.png" 
               alt="thrustMIT Logo" 
@@ -47,7 +47,7 @@ const Footer = ({
             </div>
             
             <div>
-              <h4 className="font-bold mb-4" style={{ fontFamily: 'Orbitron, sans-serif' }}>Quick Links</h4>
+              <h4 className="font-bold mb-4 text-blue-600" style={{ fontFamily: 'Orbitron, sans-serif' }}>Quick Links</h4>
               <div className="space-y-2 text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
                 <button 
                   onClick={() => {
@@ -80,7 +80,7 @@ const Footer = ({
             </div>
 
             <div>
-              <h4 className="font-bold mb-4" style={{ fontFamily: 'Orbitron, sans-serif' }}>Resources</h4>
+              <h4 className="font-bold mb-4 text-blue-600" style={{ fontFamily: 'Orbitron, sans-serif' }}>Resources</h4>
               <div className="space-y-2 text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
                 <button 
                   onClick={() => {
@@ -111,7 +111,7 @@ const Footer = ({
             </div>
 
             <div>
-              <h4 className="font-bold mb-4" style={{ fontFamily: 'Orbitron, sans-serif' }}>Connect</h4>
+              <h4 className="font-bold mb-4 text-blue-600" style={{ fontFamily: 'Orbitron, sans-serif' }}>Connect</h4>
               <div className="space-y-2 text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
                 <a href="https://www.instagram.com/thrustmit/?hl=en" target='_blank' className="block text-gray-400 hover:text-blue-600 transition-colors">Instagram</a>
                 <a href="https://www.linkedin.com/company/thrustmit/posts/?feedView=all" target='_blank' className="block text-gray-400 hover:text-blue-600 transition-colors">LinkedIn</a>

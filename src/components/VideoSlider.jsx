@@ -109,23 +109,28 @@ export const VideoSlider = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-10" />
           
           {/* Animated text overlay */}
-          <div className="absolute inset-0 z-20 flex items-center justify-center">
-            <div className="text-center px-6 max-w-5xl">
-              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight" style={{ fontFamily: 'Orbitron, sans-serif', wordWrap: 'break-word', overflowWrap: 'break-word' }}>
-                <AnimatedText
-                  text={slide.title.split(" ")[0]}
-                  className="text-white inline-block mr-3 sm:mr-4"
-                  delay={200}
-                  isActive={index === currentSlide}
-                />
-                <AnimatedText
-                  text={slide.title.split(" ").slice(1).join(" ")}
-                  className="text-blue-600 inline-block"
-                  delay={600}
-                  isActive={index === currentSlide}
-                />
+          <div className="absolute inset-0 z-20 flex items-center justify-center px-4 sm:px-8 md:px-12">
+            <div className="text-center w-full max-w-5xl">
+              <h1 className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 leading-tight" style={{ fontFamily: 'Orbitron, sans-serif', wordBreak: 'keep-all', hyphens: 'none', WebkitHyphens: 'none', MozHyphens: 'none' }}>
+                <span style={{ display: 'inline', whiteSpace: 'nowrap' }}>
+                  <AnimatedText
+                    text={slide.title.split(" ")[0]}
+                    className="text-white"
+                    delay={200}
+                    isActive={index === currentSlide}
+                  />
+                </span>
+                {' '}
+                <span style={{ display: 'inline', whiteSpace: 'nowrap' }}>
+                  <AnimatedText
+                    text={slide.title.split(" ").slice(1).join(" ")}
+                    className="text-blue-600"
+                    delay={600}
+                    isActive={index === currentSlide}
+                  />
+                </span>
               </h1>
-              <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed px-2" style={{ fontFamily: 'Rajdhani, sans-serif', letterSpacing: '0.05em', wordWrap: 'break-word', overflowWrap: 'break-word' }}>
+              <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/90 mb-8 leading-relaxed px-2 sm:px-4" style={{ fontFamily: 'Rajdhani, sans-serif', letterSpacing: '0.05em' }}>
                 <AnimatedText
                   text={slide.subtitle}
                   delay={1000}

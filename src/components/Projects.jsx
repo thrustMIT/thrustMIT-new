@@ -40,7 +40,7 @@ const Projects = ({ onNavigateToProject }) => {
       description: "AgniAstra was thrustMIT's debut entry in the 2024 Spaceport America Cup under the 30K COTS category. Featuring a glass fibre and carbon fibre airframe with an Aluminium 6061 internal structure, it carried a CanSat payload to conduct real-time pose estimation via computer vision. The SRAD modular flight computer managed recovery, data logging, and telemetry.",
       image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/projects/agni.png',
       details: {
-        maxAltitude: '17010 ft',
+        maxAltitude: '17,010 ft',
         duration: '2023-24',
         motor: 'Cesaroni N5800-P',
         payload: '3D Vision & Pose Estimation'

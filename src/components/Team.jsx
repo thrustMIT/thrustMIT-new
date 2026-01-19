@@ -147,7 +147,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       tag: 'payload',
       image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Rudra%20Rajpurohit_f_Lp5BH16.HEIC?updatedAt=1735410813472',
       socials: {
-        linkedin: 'https://www.linkedin.com/in/rudra-rajpurohit-2215772a4/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+        linkedin: 'https://www.linkedin.com/in/rajrudra06?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         email: 'rudrarajpurohit06@gmail.com'
       }
     },

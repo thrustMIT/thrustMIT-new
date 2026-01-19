@@ -92,7 +92,7 @@ const Projects = ({ onNavigateToProject }) => {
       description: "Arya, launched at the 2019 Spaceport America Cup, was our 2nd rocket made entirely out of carbon fibre with a target apogee of 3 km. It featured Aluminium 6061-T6 bulkheads and centering rings. The team successfully launched Lapwing II, a subscale rocket used to test recovery systems.",
       image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/projects/arya.png',
       details: {
-        maxAltitude: '3,000 m',
+        maxAltitude: '2047 ft',
         duration: '2018-19',
         motor: 'Aerotech M1845-P',
         payload: 'Non-Newtonian Fluid Damper'

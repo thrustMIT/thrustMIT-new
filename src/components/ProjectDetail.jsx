@@ -31,7 +31,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
       description: "AgniAstra was thrustMIT's debut entry in the 2024 Spaceport America Cup under the 30K COTS category. Featuring a glass fibre and carbon fibre airframe with an Aluminium 6061 internal structure, it carried a CanSat payload to conduct real-time pose estimation via computer vision. The SRAD modular flight computer managed recovery, data logging, and telemetry. Project AgniAstra ranked as Asia's top 30K COTS team.",
       image: 'https://ik.imagekit.io/wns4q4r9n2/Projects/Renders/rocket%20render%20thrustmit_TNOILvtU5.png?updatedAt=1753908331004',
       details: {
-        maxAltitude: '30,000 ft',
+        maxAltitude: '17,010 ft',
         duration: '2023-24',
         height: '3.19 m',
         diameter: '124 mm',
@@ -73,7 +73,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
       description: "Rayquaza was thrustMIT's 4th developed rocket and project entry to the 2022 Spaceport America Cup. Comprising a carbon fibre airframe and Aluminium 6063 internal structure, Project Rayquaza was our first ever rocket to reach 10,000 ft. Rayquaza came 4th in the James Barrowman Award with a percentage error of less than 0.3%.",
       image: 'https://ik.imagekit.io/wns4q4r9n2/Projects/Renders/rayquaza_2-xs2pG3B.png?updatedAt=1753914869235',
       details: {
-        maxAltitude: '10,000 ft',
+        maxAltitude: '11,662 ft',
         duration: '2021-22',
         height: '2.76 m',
         diameter: '150 mm',
@@ -115,7 +115,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
       description: "Arya, launched at the 2019 Spaceport America Cup, was our 2nd rocket made entirely out of carbon fibre with a target apogee of 3 km. It featured Aluminium 6061-T6 bulkheads and centering rings. The team successfully launched Lapwing II, a subscale rocket used to test recovery systems. Project Arya featured an in-house reefing mechanism to optimize recovery operations.",
       image: 'https://ik.imagekit.io/wns4q4r9n2/Projects/Renders/arya_K-kwONsP_.png?updatedAt=1753914869619',
       details: {
-        maxAltitude: '3,000 m',
+        maxAltitude: '2,047 ft',
         duration: '2018-19',
         height: '2.45 m',
         diameter: '140 mm',

@@ -20,7 +20,7 @@ const SponsorshipTiers = () => {
       gradient: 'from-blue-600 to-blue-800',
       glow: 'shadow-blue-600/50',
       deliverables: [
-        'Logo on Website Supporters Page',
+        'Logo on Website Sponsors Page',
         'Individual Social Media Thank You Post',
         'Logo on Team T-Shirts / Apparel: Small',
         'Logo on Competition Banners: Small',
@@ -35,7 +35,7 @@ const SponsorshipTiers = () => {
       gradient: 'from-blue-600 to-blue-800',
       glow: 'shadow-blue-600/50',
       deliverables: [
-        'Logo on Website Supporters Page',
+        'Logo on Website Sponsors Page',
         'Individual Social Media Thank You Post',
         'Logo Placement on Livestream Overlay',
         'Dedicated Blog Post and Collaboration Instagram Reel',
@@ -54,7 +54,7 @@ const SponsorshipTiers = () => {
       gradient: 'from-blue-600 to-blue-800',
       glow: 'shadow-blue-600/50',
       deliverables: [
-        'Logo on Website Supporters Page',
+        'Logo on Website Sponsors Page',
         'Individual Social Media Thank You Post',
         'Logo Placement on Livestream Overlay',
         'Dedicated Blog Post and Collaboration Instagram Reel',
@@ -74,7 +74,7 @@ const SponsorshipTiers = () => {
       gradient: 'from-purple-600 to-purple-800',
       glow: 'shadow-purple-600/50',
       deliverables: [
-        'Logo on Website Supporters Page',
+        'Logo on Website Sponsors Page',
         'Individual Social Media Thank You Post',
         'Logo Placement on Livestream Overlay',
         'Dedicated Blog Post and Collaboration Instagram Reel',
@@ -258,7 +258,7 @@ const SponsorshipTiers = () => {
                     </td>
                   </tr>
                   <tr className="border-b border-gray-800/30 hover:bg-white/5 transition-colors duration-200">
-                    <td className="p-6 text-gray-300" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Logo on Website Supporters Page</td>
+                    <td className="p-6 text-gray-300" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>Logo on Website Sponsors Page</td>
                     <td className="p-6 text-center"><Check size={20} className="inline text-blue-600" /></td>
                     <td className="p-6 text-center"><Check size={20} className="inline text-blue-600" /></td>
                     <td className="p-6 text-center"><Check size={20} className="inline text-blue-600" /></td>

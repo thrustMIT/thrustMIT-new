@@ -873,7 +873,7 @@ const Blog = ({ Header, Footer, onNavigateHome, headerProps }) => {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="sticky top-6 flex justify-end gap-2 mr-6 z-10">
-                <button
+                {/* <button
                   onClick={(e) => {
                     e.stopPropagation();
                     setSelectedArticle(null);
@@ -892,7 +892,7 @@ const Blog = ({ Header, Footer, onNavigateHome, headerProps }) => {
                   title="Delete article"
                 >
                   <Trash2 size={20} />
-                </button>
+                </button> */}
                 <button
                   onClick={() => setSelectedArticle(null)}
                   className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"

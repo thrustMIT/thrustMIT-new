@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
-import { ArrowLeft } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { X } from 'lucide-react';
 
 const GalleryPage = ({ Header, Footer, onNavigateHome, headerProps }) => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
   const galleryItems = [
     { id: 0, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i1.jpg", title: "Launch Day Success", description: "Our team's first successful rocket launch at the regional competition in 2024. A moment of pride and achievement." },
     { id: 2, src: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/gallery/i3.webp", title: "Team Assembly", description: "The entire crew working together on rocket assembly in our lab. Teamwork makes the dream work." },
@@ -49,13 +51,40 @@ const GalleryPage = ({ Header, Footer, onNavigateHome, headerProps }) => {
     document.head.appendChild(link);
   }, []);
 
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (selectedImage !== null) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedImage]);
+
+  const openModal = (index) => {
+    setSelectedImage(index);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+
+  const nextImage = () => {
+    setSelectedImage((prev) => (prev + 1) % galleryItems.length);
+  };
+
+  const prevImage = () => {
+    setSelectedImage((prev) => (prev - 1 + galleryItems.length) % galleryItems.length);
+  };
+
   return (
     <div className="bg-black text-white min-h-screen w-full relative" style={{ overflowX: 'clip' }}>
       <Header {...headerProps} />
       
       <section className="py-20 bg-black mt-5">
         <div className="container mx-auto px-6">
-
           {/* Header */}
           <h1 className="text-5xl md:text-6xl font-bold text-center mb-4" style={{ fontFamily: 'Orbitron, sans-serif' }}>
             Our <span className="text-blue-600">Gallery</span>
@@ -64,49 +93,40 @@ const GalleryPage = ({ Header, Footer, onNavigateHome, headerProps }) => {
             Explore our complete collection of moments from launches, tests, training, and team celebrations
           </p>
 
-          {/* Gallery Grid - 3 Column Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {galleryItems.map((item) => (
+          {/* Gallery Grid - Masonry Layout */}
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 max-w-7xl mx-auto space-y-6">
+            {galleryItems.map((item, index) => (
               <div 
                 key={item.id}
-                className="group relative bg-gray-900 rounded-xl overflow-hidden border border-white/10 hover:border-blue-600/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/20"
+                onClick={() => openModal(index)}
+                className="group relative bg-gray-900 rounded-xl overflow-hidden border border-white/10 hover:border-blue-600/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/20 cursor-pointer break-inside-avoid mb-6"
                 data-aos="fade-up"
               >
                 {/* Image Container */}
-                <div className="aspect-square overflow-hidden relative">
+                <div className="relative overflow-hidden">
                   <img 
                     src={item.src}
                     alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-
-                {/* Content */}
-                {/* <div className="p-6">
-                  <h3 
-                    className="text-xl font-bold mb-2 text-white group-hover:text-blue-600 transition-colors"
-                    style={{ fontFamily: 'Orbitron, sans-serif' }}
-                  >
-                    {item.title}
-                  </h3>
-                  {/* <p 
-                    className="text-sm text-gray-400 leading-relaxed"
-                    style={{ fontFamily: 'Rajdhani, sans-serif' }}
-                  >
-                    {item.description}
-                  </p> */}
-                {/* </div> */} 
-
-                {/* Hover Effect - Icon in top-right */}
-                {/* <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7" />
-                    </svg>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="text-center px-4">
+                      {/* <h3 
+                        className="text-xl font-bold text-white mb-2"
+                        style={{ fontFamily: 'Orbitron, sans-serif' }}
+                      >
+                        {item.title}
+                      </h3> */}
+                      <p 
+                        className="text-sm text-gray-300"
+                        style={{ fontFamily: 'Rajdhani, sans-serif' }}
+                      >
+                        Click to view
+                      </p>
+                    </div>
                   </div>
-                </div> */}
+                </div>
               </div>
             ))}
           </div>
@@ -132,6 +152,83 @@ const GalleryPage = ({ Header, Footer, onNavigateHome, headerProps }) => {
           </div>
         </div>
       </section>
+
+      {/* Fullscreen Modal */}
+      {selectedImage !== null && (
+        <div 
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+          onClick={closeModal}
+        >
+          {/* Close Button */}
+          <button
+            onClick={closeModal}
+            className="absolute top-4 right-4 z-10 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+          >
+            <X className="w-8 h-8 text-white" />
+          </button>
+
+          {/* Previous Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              prevImage();
+            }}
+            className="absolute left-4 z-10 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+          >
+            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Next Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+            className="absolute right-4 z-10 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+          >
+            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Image Container - 75% of viewport */}
+          <div 
+            className="relative max-w-[75vw] max-h-[75vh] flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={galleryItems[selectedImage].src}
+              alt={galleryItems[selectedImage].title}
+              className="max-w-full max-h-[75vh] object-contain rounded-lg"
+            />
+            
+            {/* Image Info */}
+            {/* <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6 rounded-b-lg">
+              <h3 
+                className="text-2xl font-bold text-white mb-2"
+                style={{ fontFamily: 'Orbitron, sans-serif' }}
+              >
+                {galleryItems[selectedImage].title}
+              </h3>
+              <p 
+                className="text-gray-300"
+                style={{ fontFamily: 'Rajdhani, sans-serif' }}
+              >
+                {galleryItems[selectedImage].description}
+              </p>
+            </div> */}
+          </div>
+
+          {/* Image Counter */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/10 px-4 py-2 rounded-full">
+            <span className="text-white font-medium" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+              {selectedImage + 1} / {galleryItems.length}
+            </span>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>

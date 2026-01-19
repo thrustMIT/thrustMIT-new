@@ -110,11 +110,11 @@ export const VideoSlider = () => {
           
           {/* Animated text overlay */}
           <div className="absolute inset-0 z-20 flex items-center justify-center">
-            <div className="text-center px-4 max-w-5xl">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            <div className="text-center px-6 max-w-5xl">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight" style={{ fontFamily: 'Orbitron, sans-serif', wordWrap: 'break-word', overflowWrap: 'break-word' }}>
                 <AnimatedText
                   text={slide.title.split(" ")[0]}
-                  className="text-white inline-block mr-4"
+                  className="text-white inline-block mr-3 sm:mr-4"
                   delay={200}
                   isActive={index === currentSlide}
                 />
@@ -125,7 +125,7 @@ export const VideoSlider = () => {
                   isActive={index === currentSlide}
                 />
               </h1>
-              <div className="text-lg md:text-xl lg:text-2xl text-white/90 mb-8" style={{ fontFamily: 'Rajdhani, sans-serif', letterSpacing: '0.05em' }}>
+              <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed px-2" style={{ fontFamily: 'Rajdhani, sans-serif', letterSpacing: '0.05em', wordWrap: 'break-word', overflowWrap: 'break-word' }}>
                 <AnimatedText
                   text={slide.subtitle}
                   delay={1000}

@@ -18,7 +18,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Shaunak Purkayastha',
       role: 'Team Leader',
       tag: 'leader',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Shaunak%20Purkayastha__eTDJDXK5r.HEIC?updatedAt=1735410814877',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/shaunak.JPG',
       socials: {
         linkedin: 'https://www.linkedin.com/in/shaunakpurkayastha/?originalSubdomain=in',
         email: 'shaunakp1709@gmail.com'
@@ -29,7 +29,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Anushka Prabhutendolkar',
       role: 'Team Manager',
       tag: 'leader',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Anushka%20Prabhutendolkar_wPjll-9coc.HEIC?updatedAt=1735410811512',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/anushka.JPG',
       socials: {
         github: 'https://github.com/asprcode',
         email: 'anushkaprabhutendolkar@gmail.com'
@@ -40,7 +40,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Shaurya Mittal',
       role: 'Head of Aerodynamics',
       tag: 'aero',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Shaurya%20Mittal_vm63fTBj2j.HEIC?updatedAt=1735410815461',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/shaurya.JPG',
       socials: {
         linkedin: 'https://www.linkedin.com/in/shaurya-mittal-744483291/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         github: 'https://github.com/extorc',
@@ -52,7 +52,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Samrudh Raja',
       role: 'Head of Recovery',
       tag: 'aero',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Samrudh%20Raja_cX4ldgPWy.HEIC?updatedAt=1735410813903',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/samrudh.JPG',
       socials: {
         linkedin: 'https://www.linkedin.com/in/samrudh-raja-53657728b/',
         email: 'samrudh2204@gmail.com'
@@ -63,7 +63,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Sanskruti Ginde',
       role: 'Head of Avionics',
       tag: 'avionics',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Sanskruti%20Ginde_Vg6PLfMCk.HEIC?updatedAt=1735410814796',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/sanskruti.JPG',
       socials: {
         linkedin: 'https://www.linkedin.com/in/sanskruti-ginde-a512602b2/',
         email: 'sanskrutiginde@gmail.com'
@@ -74,7 +74,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Dhruv Phalod',
       role: 'Head of Ground Systems',
       tag: 'avionics',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Dhruv%20Phalod_UpqptrSoG5.HEIC?updatedAt=1735410810811',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/dhruvp.JPG',
       socials: {
         linkedin: 'https://www.linkedin.com/in/dhruv-phalod-b75a51282/',
         github: 'https://github.com/D-Coder-42',
@@ -86,7 +86,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Krishanu Dey',
       role: 'Senior Member',
       tag: 'avionics',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Krishanu%20Dey_cawTxipxw.HEIC?updatedAt=1735410809227',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/krishanu.JPG',
       socials: {
         linkedin: 'https://www.linkedin.com/in/krishanu-dey-976892275/',
         github: 'https://github.com/krishanu-170605',
@@ -98,7 +98,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Shawn Chris D Silva',
       role: 'Senior Member',
       tag: 'avionics',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Shawn%20Chris%20D%20Silva_aqEyt3PkM.HEIC?updatedAt=1735410815506',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/shawn.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/shawn-chris-d-silva-12960a20b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         github: 'https://github.com/sirdeeznuts',
@@ -110,7 +110,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Vanshdeep Trivedi',
       role: 'Senior Member',
       tag: 'avionics',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Vanshdeep%20Trivedi_D_GtGaGAt.HEIC?updatedAt=1735410816157',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/vansh.JPG',
       socials: {
         linkedin: 'https://www.linkedin.com/in/vanshdeep-trivedi-8108ab288/',
         github: 'https://github.com/Vel0c1ty04',
@@ -122,7 +122,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Mutra Sai Tharun',
       role: 'Head of Payload',
       tag: 'payload',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Mutra%20Sai%20Tharun_eTOFs6mCg.HEIC?updatedAt=1735410811259',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/tharun.webp',
       socials: {
         github: 'https://github.com/Tharun22122005',
         email: 'mst.tharun39@gmail.com'
@@ -133,7 +133,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Adi Narayan',
       role: 'Senior Member',
       tag: 'payload',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Adi%20Narayan%20R%20S_6DXQMEp2LN.HEIC?updatedAt=1735410811485',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/adi.JPG',
       socials: {
         linkedin: 'https://www.linkedin.com/in/adi-narayan-059ab8241/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         github: 'https://github.com/Adi-Narayan',
@@ -145,7 +145,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Rudra Rajpurohit',
       role: 'Senior Member',
       tag: 'payload',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Rudra%20Rajpurohit_f_Lp5BH16.HEIC?updatedAt=1735410813472',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/rudra.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/rajrudra06?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         email: 'rudrarajpurohit06@gmail.com'
@@ -156,7 +156,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Dhruv Jadhav',
       role: 'Head of Propulsion',
       tag: 'propulsion',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Dhruv%20Jadhav_AqowM1ZUX.HEIC?updatedAt=1735410811559',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/dhruvj.JPG',
       socials: {
         linkedin: 'https://www.linkedin.com/in/dhruv-jadhav/',
         github: 'https://github.com/dhruv-jadhav',
@@ -168,7 +168,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Varun PV',
       role: 'Senior Member',
       tag: 'propulsion',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Varun%20PV_98fFAJqgb.HEIC?updatedAt=1735410816389',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/varun.JPG',
       socials: {
         linkedin: 'https://www.linkedin.com/in/varun-pv-91b20628a',
         email: 'varunpv44@gmail.com'
@@ -179,7 +179,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Tushit Chatterjee',
       role: 'Head of Structures',
       tag: 'structures',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Tushit%20Chatterjee_-Y7MmF2I4D.HEIC?updatedAt=1735410815796',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/tushit.JPG',
       socials: {
         linkedin: 'https://www.linkedin.com/in/tushitchatterjee/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         email: 'tushitchatterjee1@gmail.com'
@@ -190,7 +190,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Avnish Kaur',
       role: 'Senior Member',
       tag: 'structures',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Avnish%20Kaur_rsh2X_9Hw.HEIC?updatedAt=1735410811451',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/avnish.JPG',
       socials: {
         linkedin: 'https://www.linkedin.com/in/avnish-kaur-77984a211/',
         email: 'kauravnish28@gmail.com'
@@ -201,7 +201,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Vedant Totla',
       role: 'Head of Management',
       tag: 'management',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Vedant%20Totla_dZk7PfRap.HEIC?updatedAt=1735410816828',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/vedant.JPG',
       socials: {
         linkedin: 'https://www.linkedin.com/in/vedant-totla-51a629223/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         email: 'totla.vedant1@gmail.com'
@@ -212,7 +212,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Swaraa Sule',
       role: 'Senior Member',
       tag: 'management',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Swaraa%20Sule_yewr6hcrb.HEIC?updatedAt=1735410815424',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/swara.JPG',
       socials: {
         linkedin: 'https://www.linkedin.com/in/swaraa-sule-814975228/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         email: 'swaraasule@gmail.com'
@@ -223,7 +223,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Aayush Sinha',
       role: 'Senior Member',
       tag: 'management',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Aayush%20Sinha_baEyCvqgu.jpg?updatedAt=1735410808858',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/aayush.JPG',
       socials: {
         linkedin: 'https://www.linkedin.com/in/aayush-sinha-64a631202/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         email: 'sinha.aayush.aayush@gmail.com'
@@ -234,7 +234,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Shubhendu Arya',
       role: 'Senior Member',
       tag: 'management',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Shubhendu%20Arya_Y46KZ0gwB.HEIC?updatedAt=1735410815494',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/shubh.JPG',
       socials: {
         linkedin: 'https://www.linkedin.com/in/shubhendu-arya-003041338/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         email: 'Shubhenduarya96@gmail.com'
@@ -245,7 +245,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Prasanna K',
       role: 'Senior Member',
       tag: 'management',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Prasanna_CjSwxeh_r.HEIC?updatedAt=1735410812110',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/prasanna.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/prasanna-bhat-b259ba285/',
         github: 'https://github.com/Prasannakbhat123',
@@ -257,7 +257,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Adithya M Adiga',
       role: 'Senior Member',
       tag: 'management',
-      image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Adithya%20M%20Adiga_16S6ILxt4L.HEIC?updatedAt=1735410811407',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/adithya.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/adithya-adiga-0b69a61ab/',
         github: 'https://github.com/adithya1107',

@@ -11,7 +11,7 @@ const Projects = ({ onNavigateToProject }) => {
       name: 'Varuna', 
       category: 'Current Project', 
       description: "Varuna is thrustMIT's current flagship project, representing our next generation of high-power rocketry. Stay tuned for more updates as we push the boundaries of innovation and performance.",
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/black_logo.svg', 
+      image: 'question-mark', 
       details: {
         maxAltitude: 'TBA',
         duration: '2025-26',
@@ -156,11 +156,31 @@ const Projects = ({ onNavigateToProject }) => {
                   
                   {/* Image Container */}
                   <div className="relative h-64 flex items-center justify-center border-b border-gray-800/50 overflow-hidden">
-                    <img 
-                      src={project.image} 
-                      alt={`${project.name} logo`}
-                      className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-500"
-                    />
+                    {project.image === 'question-mark' ? (
+                      <div className="relative flex items-center justify-center w-full h-full">
+                        {/* Animated background circles */}
+                        <div className="absolute w-32 h-32 rounded-full bg-blue-600/10 blur-xl group-hover:bg-blue-600/20 transition-all duration-500" />
+                        <div className="absolute w-40 h-40 rounded-full border-2 border-blue-600/20 group-hover:border-blue-600/40 transition-all duration-500 group-hover:scale-110" />
+                        <div className="absolute w-48 h-48 rounded-full border border-blue-600/10 group-hover:border-blue-600/20 transition-all duration-500 group-hover:scale-125" />
+                        
+                        {/* Question mark */}
+                        <div className="relative">
+                          <div className="text-8xl font-black text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-blue-600 group-hover:from-blue-300 group-hover:to-blue-500 transition-all duration-500 group-hover:scale-110" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                            ?
+                          </div>
+                          {/* Glow effect */}
+                          <div className="absolute inset-0 text-8xl font-black text-blue-600 blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                            ?
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <img 
+                        src={project.image} 
+                        alt={`${project.name} logo`}
+                        className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-500"
+                      />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                   </div>
 

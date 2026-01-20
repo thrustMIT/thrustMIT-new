@@ -21,7 +21,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
         totalDiameter: '126 mm',
         totalWeight: '36.80 kg',
         category: '30K COTS',
-        achievement: '4th in 30K COTS, 22nd Overall'
+        achievement: '4th in 30K COTS, 2nd Place SDL Payload Challenge'
       }
     },
     { 

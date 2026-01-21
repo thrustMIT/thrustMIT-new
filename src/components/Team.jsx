@@ -274,6 +274,230 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
         linkedin: 'https://www.linkedin.com/in/srinivas-g-2652a341/?originalSubdomain=in',
         email: 'srinivas.g@manipal.edu'
       }
+    },
+    {
+      id: 24,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 25,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 26,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 27,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 28,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 29,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 30,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 31,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 32,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 33,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 34,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 35,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 36,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 37,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 38,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 39,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 40,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 41,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 42,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 43,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 44,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 45,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 46,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 47,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 48,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 49,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 50,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
+    },
+    {
+      id: 51,
+      name: '',
+      role: '',
+      tag: '',
+      image: '',
+      socials: {}
     }
   ];
 

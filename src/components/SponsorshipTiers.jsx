@@ -253,7 +253,7 @@ const SponsorshipTiers = () => {
                     <td className="p-6 text-center text-purple-600 font-bold text-lg" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>Custom</td>
                   </tr>
                   <tr className="bg-green-900/20">
-                    <td colSpan="5" className="p-4 text-green-400 font-bold text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
+                    <td colSpan="5" className="p-4 text-blue-600 font-bold text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
                       DIGITAL BRANDING
                     </td>
                   </tr>
@@ -294,7 +294,7 @@ const SponsorshipTiers = () => {
                   </tr>
                   
                   <tr className="bg-green-900/20">
-                    <td colSpan="5" className="p-4 text-green-400 font-bold text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
+                    <td colSpan="5" className="p-4 text-blue-600 font-bold text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
                       PHYSICAL BRANDING
                     </td>
                   </tr>
@@ -321,7 +321,7 @@ const SponsorshipTiers = () => {
                   </tr>
 
                   <tr className="bg-green-900/20">
-                    <td colSpan="5" className="p-4 text-green-400 font-bold text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
+                    <td colSpan="5" className="p-4 text-blue-600 font-bold text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
                       STRATEGIC PARTNERSHIP
                     </td>
                   </tr>
@@ -334,7 +334,7 @@ const SponsorshipTiers = () => {
                   </tr>
 
                   <tr className="bg-green-900/20">
-                    <td colSpan="5" className="p-4 text-green-400 font-bold text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
+                    <td colSpan="5" className="p-4 text-blue-600 font-bold text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
                       EXCLUSIVE RIGHTS
                     </td>
                   </tr>

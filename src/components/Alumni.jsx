@@ -1182,49 +1182,67 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
     );
   };
 
-  const AlumniCard = ({ alumni }) => (
-    <div
-      className="group relative bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl overflow-hidden hover:border-blue-600/50 transition-all duration-500 cursor-pointer"
-      onMouseEnter={() => setHoveredAlumni(alumni.id)}
-      onMouseLeave={() => setHoveredAlumni(null)}
-    >
-      {/* Image Container */}
-      <div className="relative h-96 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-blue-800/20">
-          <img 
-            src={alumni.image} 
-            alt={alumni.name}
-            className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
-          />
-        </div>
-        
-        {/* Overlay Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500" />
-        
-        {/* Social Icons - Show on Hover */}
-        <div className={`absolute top-4 right-4 flex flex-col gap-2 transition-all duration-500 ${
-          hoveredAlumni === alumni.id ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
-        }`}>
-          {Object.entries(alumni.socials).map(([type, url]) => (
-            <SocialIcon key={type} type={type} url={url} />
-          ))}
-        </div>
-      </div>
+  const AlumniCard = ({ alumni }) => {
+    const [imageError, setImageError] = useState(false);
+    const hasImage = alumni.image && !imageError;
 
-      {/* Info Section */}
-      <div className="p-6">
-        <h3 className="text-xl font-bold mb-1 group-hover:text-blue-600 transition-colors" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-          {alumni.name}
-        </h3>
-        <p className="text-blue-600 text-sm mb-3" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500, letterSpacing: '0.05em' }}>
-          {alumni.atThrustMIT}
-        </p>
-        <p className="text-gray-400 text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
-          {alumni.currentWork}
-        </p>
+    return (
+      <div
+        className="group relative bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl overflow-hidden hover:border-blue-600/50 transition-all duration-500 cursor-pointer"
+        onMouseEnter={() => setHoveredAlumni(alumni.id)}
+        onMouseLeave={() => setHoveredAlumni(null)}
+      >
+        {/* Image Container */}
+        <div className="relative h-96 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-blue-800/20">
+            {hasImage ? (
+              <img 
+                src={alumni.image} 
+                alt={alumni.name}
+                onError={() => setImageError(true)}
+                className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
+                <div className="text-center">
+                  <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-blue-600/30 to-blue-800/30 flex items-center justify-center border-2 border-blue-600/50">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        
+          {/* Overlay Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500" />
+          
+          {/* Social Icons - Show on Hover */}
+          <div className={`absolute top-4 right-4 flex flex-col gap-2 transition-all duration-500 ${
+            hoveredAlumni === alumni.id ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
+          }`}>
+            {Object.entries(alumni.socials).map(([type, url]) => (
+              <SocialIcon key={type} type={type} url={url} />
+            ))}
+          </div>
+        </div>
+
+        {/* Info Section */}
+        <div className="p-6">
+          <h3 className="text-xl font-bold mb-1 group-hover:text-blue-600 transition-colors" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            {alumni.name}
+          </h3>
+          <p className="text-blue-600 text-sm mb-3" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 500, letterSpacing: '0.05em' }}>
+            {alumni.atThrustMIT}
+          </p>
+          <p className="text-gray-400 text-sm" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
+            {alumni.currentWork}
+          </p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <div className="min-h-screen bg-black text-white">

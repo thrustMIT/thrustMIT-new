@@ -66,7 +66,6 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/ayyan-bhartia-1a8700241/',
-            instagram: '#',
             email: 'ayyanbhartia@gmail.com'
           }
         },
@@ -399,7 +398,6 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
           currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/darpan-theng/',
-            github: '#',
             email: 'theng.darpan@gmail.com'
           }
         },

@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Facebook, Twitter, Instagram, Linkedin, Github, Mail } from 'lucide-react';
 
 const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
-  const [hoveredMember, setHoveredMember] = useState(null);
-
   // Font loading
   useEffect(() => {
     const link = document.createElement('link');
@@ -584,7 +582,66 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
     }
   ];
 
-  const SocialIcon = ({ type, url }) => {
+  const LazyImage = React.memo(({ src, alt }) => {
+    const [isInView, setIsInView] = useState(false);
+    const [imageError, setImageError] = useState(false);
+    const imgRef = useRef(null);
+
+    useEffect(() => {
+      if (!src) return;
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            setIsInView(true);
+            observer.disconnect();
+          }
+        },
+        { rootMargin: '200px' }
+      );
+
+      if (imgRef.current) {
+        observer.observe(imgRef.current);
+      }
+
+      return () => observer.disconnect();
+    }, [src]);
+
+    const hasImage = src && !imageError;
+
+    return (
+      <div ref={imgRef} className="w-full h-full absolute inset-0">
+        {!hasImage ? (
+          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
+            <div className="text-center">
+              <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-blue-600/30 to-blue-800/30 flex items-center justify-center border-2 border-blue-600/50">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <>
+            {!isInView && (
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900" />
+            )}
+            {isInView && (
+              <img
+                src={src}
+                alt={alt}
+                onError={() => setImageError(true)}
+                className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+              />
+            )}
+          </>
+        )}
+      </div>
+    );
+  });
+
+  const SocialIcon = React.memo(({ type, url }) => {
     const icons = {
       linkedin: Linkedin,
       github: Github,
@@ -601,49 +658,30 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
         href={href}
         target={isEmail ? undefined : "_blank"}
         rel={isEmail ? undefined : "noopener noreferrer"}
-        className="w-10 h-10 rounded-full bg-blue-600/20 border border-blue-600/30 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 hover:scale-110 group"
+        className="w-10 h-10 rounded-full bg-blue-600/20 border border-blue-600/30 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 hover:scale-110 group/icon"
         onClick={(e) => e.stopPropagation()}
       >
-        <Icon size={18} className="text-blue-400 group-hover:text-white transition-colors" />
+        <Icon size={18} className="text-blue-400 group-hover/icon:text-white transition-colors" />
       </a>
     );
-  };
+  });
 
-  const MemberCard = ({ member }) => (
-    <div
-      className="group relative bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl overflow-hidden hover:border-blue-600/50 transition-all duration-500 cursor-pointer"
-      onMouseEnter={() => setHoveredMember(member.id)}
-      onMouseLeave={() => setHoveredMember(null)}
-    >
+  const MemberCard = React.memo(({ member }) => (
+    <div className="group relative bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl overflow-hidden hover:border-blue-600/50 transition-all duration-500 cursor-pointer">
       {/* Image Container */}
       <div className="relative h-96 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-blue-800/20">
-          <img 
-            src={member.image} 
-            alt={member.name}
-            className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
-          />
+          <LazyImage src={member.image} alt={member.name} />
         </div>
         
         {/* Overlay Gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500" />
         
-        {/* Social Icons - Show on Hover */}
-        <div className={`absolute top-4 right-4 flex flex-col gap-2 transition-all duration-500 ${
-          hoveredMember === member.id ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
-        }`}>
+        {/* Social Icons - Always rendered, just hidden */}
+        <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200">
           {Object.entries(member.socials).map(([type, url]) => (
             <SocialIcon key={type} type={type} url={url} />
           ))}
-        </div>
-
-        {/* Bio - Show on Hover */}
-        <div className={`absolute inset-x-0 top-1/2 -translate-y-1/2 px-6 transition-all duration-500 ${
-          hoveredMember === member.id ? 'opacity-100' : 'opacity-0'
-        }`}>
-          <p className="text-gray-300 text-sm leading-relaxed text-center" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
-            {member.bio}
-          </p>
         </div>
       </div>
 
@@ -657,13 +695,52 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
         </p>
       </div>
     </div>
-  );
+  ));
+
+  const TeamSection = ({ title, tag, members }) => {
+    const filteredMembers = members.filter(m => m.tag === tag);
+    const count = filteredMembers.length;
+
+    const getGridClass = () => {
+      if (count === 1) {
+        return 'flex justify-center';
+      } else if (count === 2) {
+        return 'grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto';
+      } else {
+        return 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8';
+      }
+    };
+
+    const getCardClass = () => {
+      if (count === 1) {
+        return 'w-full sm:w-80 md:w-96';
+      }
+      return '';
+    };
+
+    if (count === 0) return null;
+
+    return (
+      <div className="mb-16">
+        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+          <span className="text-blue-600">{title}</span>
+        </h2>
+        <div className={getGridClass()}>
+          {filteredMembers.map((member) => (
+            <div key={member.id} className={getCardClass()}>
+              <MemberCard member={member} />
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-black text-white">
       <Header {...headerProps} />
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 overflow-hidden -mt-px" >
+      <section className="relative pt-32 pb-20 px-4 overflow-hidden -mt-px">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
@@ -681,161 +758,15 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
             </p>
           </div>
 
-          {/* Leadership Section */}
-          <div className="mb-16">
-            {(() => {
-              const members = teamMembers.filter(m => m.tag === 'leader');
-              const many = members.length >= 3;
-              return (
-                <div className={many ? 'grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto' : 'flex justify-center flex-wrap gap-8'}>
-                  {members.map((member) => (
-                    <div key={member.id} className={many ? '' : 'w-full sm:w-80 md:w-96'}>
-                      <MemberCard member={member} />
-                    </div>
-                  ))}
-                </div>
-              );
-            })()}
-          </div>
-
-          {/* Aerodynamics Section */}
-          <div className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-              <span className="text-blue-600">Aerodynamics</span>
-            </h2>
-            {(() => {
-              const members = teamMembers.filter(m => m.tag === 'aero');
-              const many = members.length >= 3;
-              return (
-                <div className={many ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'flex justify-center flex-wrap gap-8'}>
-                  {members.map((member) => (
-                    <div key={member.id} className={many ? '' : 'w-full sm:w-80 md:w-96'}>
-                      <MemberCard member={member} />
-                    </div>
-                  ))}
-                </div>
-              );
-            })()}
-          </div>
-
-          {/* Avionics Section */}
-          <div className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-              <span className="text-blue-600">Avionics</span>
-            </h2>
-            {(() => {
-              const members = teamMembers.filter(m => m.tag === 'avionics');
-              const many = members.length >= 3;
-              return (
-                <div className={many ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'flex justify-center flex-wrap gap-8'}>
-                  {members.map((member) => (
-                    <div key={member.id} className={many ? '' : 'w-full sm:w-80 md:w-96'}>
-                      <MemberCard member={member} />
-                    </div>
-                  ))}
-                </div>
-              );
-            })()}
-          </div>
-
-          {/* Payload Section */}
-          <div className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-              <span className="text-blue-600">Payload</span>
-            </h2>
-            {(() => {
-              const members = teamMembers.filter(m => m.tag === 'payload');
-              const many = members.length >= 3;
-              return (
-                <div className={many ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'flex justify-center flex-wrap gap-8'}>
-                  {members.map((member) => (
-                    <div key={member.id} className={many ? '' : 'w-full sm:w-80 md:w-96'}>
-                      <MemberCard member={member} />
-                    </div>
-                  ))}
-                </div>
-              );
-            })()}
-          </div>
-
-          {/* Propulsion Section */}
-          <div className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-              <span className="text-blue-600">Propulsion</span>
-            </h2>
-            {(() => {
-              const members = teamMembers.filter(m => m.tag === 'propulsion');
-              const many = members.length >= 3;
-              return (
-                <div className={many ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'flex justify-center flex-wrap gap-8'}>
-                  {members.map((member) => (
-                    <div key={member.id} className={many ? '' : 'w-full sm:w-80 md:w-96'}>
-                      <MemberCard member={member} />
-                    </div>
-                  ))}
-                </div>
-              );
-            })()}
-          </div>
-
-          {/* Structures Section */}
-          <div className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-              <span className="text-blue-600">Structures</span>
-            </h2>
-            {(() => {
-              const members = teamMembers.filter(m => m.tag === 'structures');
-              const many = members.length >= 3;
-              return (
-                <div className={many ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'flex justify-center flex-wrap gap-8'}>
-                  {members.map((member) => (
-                    <div key={member.id} className={many ? '' : 'w-full sm:w-80 md:w-96'}>
-                      <MemberCard member={member} />
-                    </div>
-                  ))}
-                </div>
-              );
-            })()}
-          </div>
-
-          {/* Management Section */}
-          <div className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-              <span className="text-blue-600">Management</span>
-            </h2>
-            {(() => {
-              const members = teamMembers.filter(m => m.tag === 'management');
-              const many = members.length >= 3;
-              return (
-                <div className={many ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'flex justify-center flex-wrap gap-8'}>
-                  {members.map((member) => (
-                    <div key={member.id} className={many ? '' : 'w-full sm:w-80 md:w-96'}>
-                      <MemberCard member={member} />
-                    </div>
-                  ))}
-                </div>
-              );
-            })()}
-          </div>
-          {/* Faculty Advisors Section */}
-          <div className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-              <span className="text-blue-600">Faculty Advisors</span>
-            </h2>
-            {(() => {
-              const members = teamMembers.filter(m => m.tag === 'advisor');
-              const many = members.length >= 3;
-              return (
-                <div className={many ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'flex justify-center flex-wrap gap-8'}>
-                  {members.map((member) => (
-                    <div key={member.id} className={many ? '' : 'w-full sm:w-80 md:w-96'}>
-                      <MemberCard member={member} />
-                    </div>
-                  ))}
-                </div>
-              );
-            })()}
-          </div>
+          {/* Team Sections */}
+          <TeamSection title="Leadership" tag="leader" members={teamMembers} />
+          <TeamSection title="Aerodynamics" tag="aero" members={teamMembers} />
+          <TeamSection title="Avionics" tag="avionics" members={teamMembers} />
+          <TeamSection title="Payload" tag="payload" members={teamMembers} />
+          <TeamSection title="Propulsion" tag="propulsion" members={teamMembers} />
+          <TeamSection title="Structures" tag="structures" members={teamMembers} />
+          <TeamSection title="Management" tag="management" members={teamMembers} />
+          <TeamSection title="Faculty Advisors" tag="advisor" members={teamMembers} />
 
           {/* Join Team CTA */}
           <div className="mt-20 text-center">
@@ -846,13 +777,17 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
               <p className="text-gray-400 text-lg mb-6 max-w-2xl mx-auto" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 400 }}>
                 We're always looking for passionate individuals who want to push the boundaries of rocket science
               </p>
-              <button onClick={() => {
-                if (headerProps && headerProps.onShowRecruitmentModal) {
-                  headerProps.onShowRecruitmentModal();
-                } else if (onNavigateToJoinTeam) {
-                  onNavigateToJoinTeam();
-                }
-              }} className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50" style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}>
+              <button 
+                onClick={() => {
+                  if (headerProps && headerProps.onShowRecruitmentModal) {
+                    headerProps.onShowRecruitmentModal();
+                  } else if (onNavigateToJoinTeam) {
+                    onNavigateToJoinTeam();
+                  }
+                }} 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50" 
+                style={{ fontFamily: 'Rajdhani, sans-serif', fontWeight: 600 }}
+              >
                 Get in Touch
               </button>
             </div>

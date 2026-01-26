@@ -31,7 +31,7 @@ const Footer = ({
 
       {/* Footer */}
       <footer className="bg-black border-t border-white/10 py-12">
-        <div className="container mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <a href="/" className="flex items-center gap-3 group">

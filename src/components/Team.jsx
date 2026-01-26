@@ -18,7 +18,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Shaunak Purkayastha',
       role: 'Team Leader',
       tag: 'leader',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/shaunak.JPG',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/shaunak.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/shaunakpurkayastha/?originalSubdomain=in',
         email: 'shaunakp1709@gmail.com'
@@ -29,7 +29,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Anushka Prabhutendolkar',
       role: 'Team Manager',
       tag: 'leader',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/anushka.JPG',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/anushka.webp',
       socials: {
         github: 'https://github.com/asprcode',
         email: 'anushkaprabhutendolkar@gmail.com'
@@ -40,7 +40,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Shaurya Mittal',
       role: 'Head of Aerodynamics',
       tag: 'aero',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/shaurya.JPG',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/shaurya.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/shaurya-mittal-744483291/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         github: 'https://github.com/extorc',
@@ -52,7 +52,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Samrudh Raja',
       role: 'Head of Recovery',
       tag: 'aero',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/samrudh.JPG',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/samrudh.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/samrudh-raja-53657728b/',
         email: 'samrudh2204@gmail.com'
@@ -63,7 +63,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Sanskruti Ginde',
       role: 'Head of Avionics',
       tag: 'avionics',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/sanskruti.JPG',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/sanskruti.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/sanskruti-ginde-a512602b2/',
         email: 'sanskrutiginde@gmail.com'
@@ -74,7 +74,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Dhruv Phalod',
       role: 'Head of Ground Systems',
       tag: 'avionics',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/dhruvp.JPG',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/dhruvp.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/dhruv-phalod-b75a51282/',
         github: 'https://github.com/D-Coder-42',
@@ -86,7 +86,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Krishanu Dey',
       role: 'Senior Member',
       tag: 'avionics',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/krishanu.JPG',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/krishanu.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/krishanu-dey-976892275/',
         github: 'https://github.com/krishanu-170605',
@@ -110,7 +110,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Vanshdeep Trivedi',
       role: 'Senior Member',
       tag: 'avionics',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/vansh.JPG',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/vansh.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/vanshdeep-trivedi-8108ab288/',
         github: 'https://github.com/Vel0c1ty04',
@@ -133,7 +133,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Adi Narayan',
       role: 'Senior Member',
       tag: 'payload',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/adi.JPG',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/adi.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/adi-narayan-059ab8241/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         github: 'https://github.com/Adi-Narayan',
@@ -156,7 +156,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Dhruv Jadhav',
       role: 'Head of Propulsion',
       tag: 'propulsion',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/dhruvj.JPG',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/dhruvj.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/dhruv-jadhav/',
         github: 'https://github.com/dhruv-jadhav',
@@ -168,7 +168,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Varun PV',
       role: 'Senior Member',
       tag: 'propulsion',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/varun.JPG',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/varun.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/varun-pv-91b20628a',
         email: 'varunpv44@gmail.com'
@@ -179,7 +179,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Tushit Chatterjee',
       role: 'Head of Structures',
       tag: 'structures',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/tushit.JPG',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/tushit.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/tushitchatterjee/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         email: 'tushitchatterjee1@gmail.com'
@@ -190,7 +190,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Avnish Kaur',
       role: 'Senior Member',
       tag: 'structures',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/avnish.JPG',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/avnish.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/avnish-kaur-77984a211/',
         email: 'kauravnish28@gmail.com'
@@ -201,7 +201,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Vedant Totla',
       role: 'Head of Management',
       tag: 'management',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/vedant.JPG',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/vedant.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/vedant-totla-51a629223/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         email: 'totla.vedant1@gmail.com'
@@ -212,7 +212,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Swaraa Sule',
       role: 'Senior Member',
       tag: 'management',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/swara.JPG',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/swaraa.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/swaraa-sule-814975228/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         email: 'swaraasule@gmail.com'
@@ -223,7 +223,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Aayush Sinha',
       role: 'Senior Member',
       tag: 'management',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/aayush.JPG',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/aayush.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/aayush-sinha-64a631202/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         email: 'sinha.aayush.aayush@gmail.com'
@@ -234,7 +234,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Shubhendu Arya',
       role: 'Senior Member',
       tag: 'management',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/shubh.JPG',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/shubh.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/shubhendu-arya-003041338/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         email: 'Shubhenduarya96@gmail.com'
@@ -257,7 +257,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
       name: 'Adithya M Adiga',
       role: 'Senior Member',
       tag: 'management',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/adithya.webp',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/adiga.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/adithya-adiga-0b69a61ab/',
         github: 'https://github.com/adithya1107',
@@ -277,227 +277,310 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
     },
     {
       id: 24,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Jenna Ann Sonali Sreshta Shetty',
+      role: 'Junior Member',
+      tag: 'payload',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/payload/jenna.webp',
+      socials: {
+        email: 'jenxtra06@gmail.com',
+        github: 'https://github.com/JENX-5'
+      }
     },
     {
       id: 25,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Dev Sharma',
+      role: 'Junior Member',
+      tag: 'payload',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/payload/dev.webp',
+      socials: {
+        email: 'devsharma.techinnovate@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/dev-sharma-092447316/',
+        github: 'https://github.com/DevSharma1903'
+      }
     },
     {
       id: 26,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Yash Patidar',
+      role: 'Junior Member',
+      tag: 'avionics',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/avionics/yash.webp',
+      socials: {
+        email: 'yashpatidar0718@gmail.com',
+        linkedin: 'https://linkedin.com/in/pashyatidar/',
+        github: 'https://github.com/pashyatidar'
+      }
     },
     {
       id: 27,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Badampudi Mytreya',
+      role: 'Junior Member',
+      tag: 'avionics',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/avionics/badampudi.webp',
+      socials: {
+        email: 'badampudimytreya@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/mytreya-badampudi',
+        github: 'https://github.com/BadampudiMytreya'
+      }
     },
     {
       id: 28,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Keshav H Nambiar',
+      role: 'Junior Member',
+      tag: 'propulsion',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/mechanical/keshav.webp',
+      socials: {
+        email: 'keshavnambiar2617@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/keshav-h-nambiar-752165264'
+      }
     },
     {
       id: 29,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Deepshikha Sarangi',
+      role: 'Junior Member',
+      tag: 'avionics',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/avionics/deepshikha.webp',
+      socials: {
+        email: 'deepshikhasarangi13@gmail.com',
+        github: 'https://github.com/deepshikhasarangi'
+      }
     },
     {
       id: 30,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Rishit Kulkarni',
+      role: 'Junior Member',
+      tag: 'avionics',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/avionics/rishit.webp',
+      socials: {
+        email: 'kulkarnirishit26@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/rishit-kulkarni-406018317/',
+        github: 'https://github.com/rishitkulkarni'
+      }
     },
     {
       id: 31,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Anshul Sekuri',
+      role: 'Junior Member',
+      tag: 'payload',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/payload/anshul.webp',
+      socials: {
+        email: 'anshul.sekuri@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/anshul-sekuri-10b3b02b6/',
+        github: 'https://github.com/SpxceMan'
+      }
     },
     {
       id: 32,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Sai Srinivas',
+      role: 'Junior Member',
+      tag: 'structures',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/mechanical/sai.webp',
+      socials: {
+        email: 'sairileck454@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/sai-srinivas-kaipa'
+      }
     },
     {
       id: 33,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Prisha Banerjee',
+      role: 'Junior Member',
+      tag: 'management',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/management/prisha.webp',
+      socials: {
+        email: 'prishaban09@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/prisha-banerjee-4138321ba/'
+      }
     },
     {
       id: 34,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Tejaswinee Gunjal',
+      role: 'Junior Member',
+      tag: 'avionics',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/avionics/tejaswinee.webp',
+      socials: {
+        email: 'tejaswinee2609@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/tejaswinee-gunjal-316055346/',
+        github: 'https://github.com/tejaswinee2609'
+      }
     },
     {
       id: 35,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Sanyukta Dutta',
+      role: 'Junior Member',
+      tag: 'avionics',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/avionics/sanyukta.webp',
+      socials: {
+        email: 'sanyukta.dutta.05@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/sanyukta-dutta-312259329/',
+        github: 'https://github.com/sanyuktadutta'
+      }
     },
     {
       id: 36,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Arya Chatterjee',
+      role: 'Junior Member',
+      tag: 'management',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/management/arya.webp',
+      socials: {
+        email: 'aryachatterjee8715@gmail.com'
+      }
     },
     {
       id: 37,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Devansh Gupta',
+      role: 'Junior Member',
+      tag: 'structures',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/mechanical/devansh.webp',
+      socials: {
+        email: 'devanshgupta0505006@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/devansh-gupta-43b57830a/',
+        github: 'https://github.com/devanshgupta0505006-svg'
+      }
     },
     {
       id: 38,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Sudarsan D Naidu',
+      role: 'Junior Member',
+      tag: 'aero',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/mechanical/sudarshan.webp',
+      socials: {
+        email: 'sdnaidu2007@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/sudarsan-d-naidu-897438383',
+        github: 'https://github.com/scientific-dev'
+      }
     },
     {
       id: 39,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Palak Chhaparwal',
+      role: 'Junior Member',
+      tag: 'payload',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/payload/palak.webp',
+      socials: {
+        email: 'palakchhaparwal11@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/palak-chhaparwal-285953374',
+        github: 'https://github.com/Palakc11'
+      }
     },
     {
       id: 40,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Akshat Richhariya',
+      role: 'Junior Member',
+      tag: 'payload',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/payload/akshat.webp',
+      socials: {
+        email: 'akshat.richh174@gmail.com',
+        linkedin: 'https://in.linkedin.com/in/akshat-richhariya-0b9883322',
+        github: 'https://github.com/oneSevenAR'
+      }
     },
     {
       id: 41,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Ansh Sinha',
+      role: 'Junior Member',
+      tag: 'payload',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/payload/ansh.webp',
+      socials: {
+        email: 'anshsinha468@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/ansh-sinha-20778b34b/',
+        github: 'https://github.com/ansh468'
+      }
     },
     {
       id: 42,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Mahathi Subramanian',
+      role: 'Junior Member',
+      tag: 'management',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/management/mahathi.webp',
+      socials: {
+        email: 'maha38thi@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/mahathi-subramanian-876779345/'
+      }
     },
     {
       id: 43,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Shaunak Saraf',
+      role: 'Junior Member',
+      tag: 'payload',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/payload/shaunaks.webp',
+      socials: {
+        email: 'saraf.shaunak123@gmail.com'
+      }
     },
     {
       id: 44,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Krishna Gund',
+      role: 'Junior Member',
+      tag: 'avionics',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/avionics/krishna.webp',
+      socials: {
+        email: 'krishgund54@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/krishna-gund-46b477310/',
+        github: 'https://github.com/KezP3z'
+      }
     },
     {
       id: 45,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Meghha Rajith',
+      role: 'Junior Member',
+      tag: 'aero',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/mechanical/meghha.webp',
+      socials: {
+        email: 'meghha21@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/meghha-rajith-66500a34a/'
+      }
     },
     {
       id: 46,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Kartik Yadav',
+      role: 'Junior Member',
+      tag: 'propulsion',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/mechanical/kartik.webp',
+      socials: {
+        email: 'eeexxddeee@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/kartik-yadav-840a87324/'
+      }
     },
     {
       id: 47,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Bhumik Chhabra',
+      role: 'Junior Member',
+      tag: 'structures',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/mechanical/bhumik.webp',
+      socials: {
+        email: 'chhabrabhumik0@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/bhumikchhabra',
+        github: 'https://github.com/bhumik5686'
+      }
     },
     {
       id: 48,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Shalik Raj',
+      role: 'Junior Member',
+      tag: 'propulsion',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/mechanical/shalik.webp',
+      socials: {
+        email: 'rajshalik@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/shalik-raj-a0495b1a0/'
+      }
     },
     {
       id: 49,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      name: 'Palak Agrawal',
+      role: 'Junior Member',
+      tag: 'management',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/management/palaka.webp',
+      socials: {
+        email: 'palakk1152@gmail.com'
+      }
     },
     {
       id: 50,
-      name: '',
-      role: '',
-      tag: '',
+      name: 'Prakhar Raj Kharbanda',
+      role: 'Junior Member',
+      tag: 'management',
       image: '',
-      socials: {}
-    },
-    {
-      id: 51,
-      name: '',
-      role: '',
-      tag: '',
-      image: '',
-      socials: {}
+      socials: {
+        email: 'unicornprincessprakhar@gmail.com'
+      }
     }
   ];
 

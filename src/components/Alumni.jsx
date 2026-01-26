@@ -3,7 +3,7 @@ import { Facebook, Twitter, Instagram, Linkedin, Github, Mail } from 'lucide-rea
 import Header from './Header';
 import Footer from './Footer';
 
-const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) => {
+const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps, onScrollToSection, onNavigateToRocketWiki, onNavigateToBlog }) => {
   const [selectedYear, setSelectedYear] = useState(initialYear || '2025');
   const [hoveredAlumni, setHoveredAlumni] = useState(null);
 
@@ -1311,7 +1311,12 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps }) =>
 
         </div>
       </section>
-      <Footer />
+      <Footer 
+        onNavigateHome={onNavigateHome}
+        onScrollToSection={onScrollToSection}
+        onNavigateToRocketWiki={onNavigateToRocketWiki}
+        onNavigateToBlog={onNavigateToBlog}
+      />
     </div>
   );
 };

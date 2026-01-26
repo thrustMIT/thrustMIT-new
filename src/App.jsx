@@ -232,7 +232,10 @@ export default function App() {
         <Team 
           Header={Header}
           Footer={Footer}
-          onNavigateHome={() => navigate('home')}
+          onNavigateHome={navigateHome}
+          onScrollToSection={scrollToSection}
+          onNavigateToRocketWiki={() => navigate('rocket-wiki')}
+          onNavigateToBlog={() => navigate('blog')}
           onNavigateToJoinTeam={() => navigate('join')} 
           headerProps={commonHeaderProps}
         />
@@ -248,7 +251,10 @@ export default function App() {
           Header={Header}
           Footer={Footer}
           initialYear={selectedAlumniYear} 
-          onNavigateHome={() => navigate('home')}
+          onNavigateHome={navigateHome}
+          onScrollToSection={scrollToSection}
+          onNavigateToRocketWiki={() => navigate('rocket-wiki')}
+          onNavigateToBlog={() => navigate('blog')}
           onNavigateToAlumni={(year) => navigate('alumni', year)}
           headerProps={commonHeaderProps}
         />

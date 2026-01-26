@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Facebook, Twitter, Instagram, Linkedin, Github, Mail } from 'lucide-react';
 
-const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
+const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam, onNavigateHome, onScrollToSection, onNavigateToRocketWiki, onNavigateToBlog }) => {
   // Font loading
   useEffect(() => {
     const link = document.createElement('link');
@@ -794,7 +794,12 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam }) => {
           </div>
         </div>
       </section>
-      <Footer />
+      <Footer 
+        onNavigateHome={onNavigateHome}
+        onScrollToSection={onScrollToSection}
+        onNavigateToRocketWiki={onNavigateToRocketWiki}
+        onNavigateToBlog={onNavigateToBlog}
+      />
     </div>
   );
 };

@@ -191,7 +191,10 @@ export default function App() {
           Header={Header}
           Footer={Footer}
           projectId={selectedProjectId}
-          onNavigateHome={() => navigate('home')}
+          onNavigateHome={navigateHome}
+          onScrollToSection={scrollToSection}
+          onNavigateToRocketWiki={() => navigate('rocket-wiki')}
+          onNavigateToBlog={() => navigate('blog')}
           onNavigateToProjects={() => navigateHome('projects')}
           onNavigateToProject={(projectId) => navigate('project-detail', projectId)}
           headerProps={commonHeaderProps}

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Rocket, Clock, Users, MapPin, ChevronRight, ArrowLeft, Gauge, Zap, Package, Layers, ChevronLeft } from 'lucide-react';
 
-const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateToProjects, onNavigateToProject, headerProps }) => {
+const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateToProjects, onNavigateToProject, headerProps, onScrollToSection, onNavigateToRocketWiki, onNavigateToBlog }) => {
   const projects = [
     {
       id: 'vayuvega',
@@ -346,7 +346,12 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
         </div>
       </section>
 
-      <Footer />
+      <Footer 
+        onNavigateHome={onNavigateHome}
+        onScrollToSection={onScrollToSection}
+        onNavigateToRocketWiki={onNavigateToRocketWiki}
+        onNavigateToBlog={onNavigateToBlog}
+      />
 
       {/* Side Navigation Arrows */}
       <button

@@ -374,7 +374,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam, onNavigateHom
       image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/mechanical/sai.webp',
       socials: {
         email: 'sairileck454@gmail.com',
-        linkedin: 'https://www.linkedin.com/in/sai-srinivas-kaipa'
+        linkedin: 'https://www.linkedin.com/in/sai-srinivas-kaipa-745961375/?originalSubdomain=in'
       }
     },
     {

@@ -18,15 +18,6 @@ const Subsystems = () => {
       features: ['CFD simulations across all Mach regimes', 'Fins, nose cone, and transition optimization', 'Flight-path modeling and trajectory analysis', 'Single-bay dual-deployment recovery system']
     },
     {
-      id: 'avionics',
-      name: 'Avionics',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/subsystem/avionics.png', 
-      tagline: 'Avionics',
-      description: 'The brain of the rocket',
-      details: 'The avionics subsystem acts as the brain of the rocket, designing custom flight computers and firmware for reliable operations during flight. Using a combination of sensors like IMUs, barometers, GPS modules, and telemetry modules, we achieve sensor-fusion for state and apogee estimation. Our capabilities include high-rate data logging, live video telemetry, an autonomous antenna-tracking system for real-time flight following, and timely parachute deployment at apogee. We also build control systems such as airbrakes for stability management and design electronics for static-fire tests including wireless ignition systems and real-time telemetry.',
-      features: ['Custom flight computers with sensor fusion', 'Live video telemetry and autonomous tracking', 'Airbrake control systems', 'Static-fire test electronics and wireless ignition']
-    },
-    {
       id: 'propulsion',
       name: 'Propulsion',
       image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/subsystem/prop.png', 
@@ -34,6 +25,24 @@ const Subsystems = () => {
       description: 'End-to-end solid rocket motor development',
       details: 'The Propulsion subsystem specializes in the complete end-to-end development of solid rocket motors, from conceptual design and finite element simulations to in-house manufacturing and rigorous static testing. Our team handles all critical aspects of motor development including propellant grain design, thermal analysis, nozzle optimization, and combustion characterization. We also develop ejection charge systems for reliable recovery deployment. With active research in advanced propellant formulations and hybrid engine architectures, we are working to become one of India\'s first student teams competing in the SRAD category at international competitions.',
       features: ['Complete motor design and FEA simulations', 'In-house manufacturing and static testing', 'Propellant grain design and thermal analysis', 'Research in hybrid engine architectures']
+    },
+    {
+      id: 'structures',
+      name: 'Structures',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/subsystem/structures.png', 
+      tagline: 'Structures',
+      description: 'Engineering the complete framework',
+      details: 'The Structures team engineers the complete framework of the rocket, from metallic assemblies to advanced composite components. This subsystem oversees design, simulation, manufacturing, and testing, ensuring every part remains lightweight, reliable, and flight ready. With safety and precision at the forefront, the team guarantees structural integrity throughout the mission. Our comprehensive approach covers every aspect from initial CAD design through final quality control and testing.',
+      features: ['Design and simulation with FEA analysis', 'Advanced composite manufacturing', 'Quality control and testing protocols', 'Lightweight, flight-ready structural integrity']
+    },
+    {
+      id: 'avionics',
+      name: 'Avionics',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/subsystem/avionics.png', 
+      tagline: 'Avionics',
+      description: 'The brain of the rocket',
+      details: 'The avionics subsystem acts as the brain of the rocket, designing custom flight computers and firmware for reliable operations during flight. Using a combination of sensors like IMUs, barometers, GPS modules, and telemetry modules, we achieve sensor-fusion for state and apogee estimation. Our capabilities include high-rate data logging, live video telemetry, an autonomous antenna-tracking system for real-time flight following, and timely parachute deployment at apogee. We also build control systems such as airbrakes for stability management and design electronics for static-fire tests including wireless ignition systems and real-time telemetry.',
+      features: ['Custom flight computers with sensor fusion', 'Live video telemetry and autonomous tracking', 'Airbrake control systems', 'Static-fire test electronics and wireless ignition']
     },
     {
       id: 'payload',
@@ -52,15 +61,6 @@ const Subsystems = () => {
       description: 'Coordination, communication, and execution',
       details: 'Our management team ensures seamless coordination across all subsystems while maintaining external relationships and project momentum. We handle social media outreach, showcase sponsor contributions, create mission patches and posters, and manage the team website. The team communicates and negotiates with sponsors, manages budgets and procurement, and ensures smooth resource flow. We plan testing and manufacturing schedules, oversee documentation, coordinate with external partners, and maintain clear communication across subsystems while tracking timelines to keep the project on schedule.',
       features: ['Social media, website, and visual communications', 'Sponsor relations and budget management', 'Testing and manufacturing schedule coordination', 'Documentation and cross-subsystem communication']
-    },
-    {
-      id: 'structures',
-      name: 'Structures',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/subsystem/structures.png', 
-      tagline: 'Structures',
-      description: 'Engineering the complete framework',
-      details: 'The Structures team engineers the complete framework of the rocket, from metallic assemblies to advanced composite components. This subsystem oversees design, simulation, manufacturing, and testing, ensuring every part remains lightweight, reliable, and flight ready. With safety and precision at the forefront, the team guarantees structural integrity throughout the mission. Our comprehensive approach covers every aspect from initial CAD design through final quality control and testing.',
-      features: ['Design and simulation with FEA analysis', 'Advanced composite manufacturing', 'Quality control and testing protocols', 'Lightweight, flight-ready structural integrity']
     }
   ];
 

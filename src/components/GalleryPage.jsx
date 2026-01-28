@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
 
-const GalleryPage = ({ Header, Footer, onNavigateHome, headerProps }) => {
+const GalleryPage = ({ Header, Footer, onNavigateHome, headerProps, onScrollToSection, onNavigateToRocketWiki, onNavigateToBlog }) => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const galleryItems = [
@@ -230,7 +230,12 @@ const GalleryPage = ({ Header, Footer, onNavigateHome, headerProps }) => {
         </div>
       )}
 
-      <Footer />
+      <Footer 
+        onNavigateHome={onNavigateHome}
+        onScrollToSection={onScrollToSection}
+        onNavigateToRocketWiki={onNavigateToRocketWiki}
+        onNavigateToBlog={onNavigateToBlog}
+      />
     </div>
   );
 };

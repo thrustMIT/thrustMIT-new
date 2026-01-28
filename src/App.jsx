@@ -300,7 +300,10 @@ export default function App() {
         <GalleryPage
           Header={Header}
           Footer={Footer}
-          onNavigateHome={() => navigate('home')}
+          onNavigateHome={navigateHome}
+          onScrollToSection={scrollToSection}
+          onNavigateToRocketWiki={() => navigate('rocket-wiki')}
+          onNavigateToBlog={() => navigate('blog')}
           headerProps={commonHeaderProps}
         />
         {renderRecruitmentModal()}

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 const Gallery = ({ onNavigateToGallery }) => {
   const [currentImage, setCurrentImage] = useState(0);
-  const [isTimerActive, setIsTimerActive] = useState(false);
+  const [isTimerActive, setIsTimerActive] = useState(true);
+  const [timerKey, setTimerKey] = useState(0); // Key to force timer restart
   
   // Replace these filenames with your actual image filenames from the public folder
   const images = [
@@ -25,6 +26,7 @@ const Gallery = ({ onNavigateToGallery }) => {
   }, []);
 
   // Auto-advance slideshow every 5 seconds - only when timer is active
+  // timerKey in dependency array ensures timer restarts when image is clicked
   useEffect(() => {
     if (!isTimerActive) return;
 
@@ -33,12 +35,12 @@ const Gallery = ({ onNavigateToGallery }) => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [images.length, isTimerActive]);
+  }, [images.length, isTimerActive, timerKey]);
 
   // Function to handle image selection
   const handleImageClick = (index) => {
     setCurrentImage(index);
-    setIsTimerActive(true);
+    setTimerKey(prev => prev + 1); // Increment key to restart timer
   };
 
   return (
@@ -77,7 +79,7 @@ const Gallery = ({ onNavigateToGallery }) => {
             {images.map((img, i) => (
               <button 
                 key={i} 
-                onClick={() => setCurrentImage(i)} 
+                onClick={() => handleImageClick(i)} 
                 className={`aspect-square bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden border-2 transition-all hover:scale-105 group relative ${
                   currentImage === i 
                     ? 'border-blue-600 shadow-lg shadow-blue-600/50' 

@@ -154,7 +154,7 @@ const Contact = () => {
                   </div>
                   
                   <div class="footer">
-                    <p>This email was sent from the THRUST MIT contact form</p>
+                    <p>This email was sent from the thrustMIT contact form</p>
                     <p>Received on ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}</p>
                   </div>
                 </div>

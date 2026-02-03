@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, MapPin, Phone, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
-
+const brevoApi= import.meta.env.VITE_BREVO_API_KEY;
 const Contact = () => {
-  const formRef = useRef();
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -51,20 +50,119 @@ const Contact = () => {
     setSubmitStatus('idle');
 
     try {
-      const formData = new FormData();
-      formData.append('name', form.name);
-      formData.append('email', form.email);
-      formData.append('message', form.message);
-      formData.append('_subject', `New Contact Form Submission from ${form.name}`);
-      formData.append('_captcha', 'false');
-      formData.append('_template', 'table');
-
-      const response = await fetch('https://formsubmit.co/management@thrustmit.in', {
+      // Brevo API endpoint
+      const response = await fetch('https://api.brevo.com/v3/smtp/email', {
         method: 'POST',
-        body: formData,
         headers: {
-          'Accept': 'application/json'
-        }
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'api-key': brevoApi
+        },
+        body: JSON.stringify({
+          sender: {
+            name: form.name,
+            email: 'noreply@thrustmit.in' // Use a verified sender email
+          },
+          to: [
+            {
+              email: 'management@thrustmit.in',
+              name: 'thrustMIT Team'
+            }
+          ],
+          replyTo: {
+            email: form.email,
+            name: form.name
+          },
+          subject: `New Contact Form Message from ${form.name}`,
+          htmlContent: `
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <style>
+                body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+                .container { max-width: 600px; margin: 0 auto; }
+                .header { 
+                  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); 
+                  color: white; 
+                  padding: 30px; 
+                  text-align: center; 
+                  border-radius: 10px 10px 0 0; 
+                }
+                .header h1 { margin: 0; font-size: 24px; }
+                .header p { margin: 10px 0 0 0; opacity: 0.9; }
+                .content { background: #f8f9fa; padding: 30px; border-radius: 0 0 10px 10px; }
+                .field { margin-bottom: 20px; }
+                .label { 
+                  font-weight: bold; 
+                  color: #2563eb; 
+                  margin-bottom: 5px; 
+                  display: block;
+                  font-size: 14px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.5px;
+                }
+                .value { 
+                  background: white; 
+                  padding: 15px; 
+                  border-radius: 5px; 
+                  border-left: 4px solid #2563eb;
+                  color: #333;
+                }
+                .footer { 
+                  text-align: center; 
+                  margin-top: 30px; 
+                  padding-top: 20px;
+                  border-top: 1px solid #ddd;
+                  color: #666; 
+                  font-size: 12px; 
+                }
+                .reply-note {
+                  background: #e0f2fe;
+                  border-left: 4px solid #0284c7;
+                  padding: 12px 15px;
+                  margin-top: 20px;
+                  border-radius: 5px;
+                  font-size: 13px;
+                  color: #0c4a6e;
+                }
+              </style>
+            </head>
+            <body>
+              <div class="container">
+                <div class="header">
+                  <h1>New Contact Form Submission</h1>
+                  <p>thrustMIT Website</p>
+                </div>
+                <div class="content">
+                  <div class="field">
+                    <span class="label">From</span>
+                    <div class="value">${form.name}</div>
+                  </div>
+                  
+                  <div class="field">
+                    <span class="label">Email</span>
+                    <div class="value">${form.email}</div>
+                  </div>
+                  
+                  <div class="field">
+                    <span class="label">Message</span>
+                    <div class="value">${form.message.replace(/\n/g, '<br>')}</div>
+                  </div>
+                  
+                  <div class="reply-note">
+                    <strong>Reply directly</strong> to this email to respond to ${form.name}
+                  </div>
+                  
+                  <div class="footer">
+                    <p>This email was sent from the THRUST MIT contact form</p>
+                    <p>Received on ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}</p>
+                  </div>
+                </div>
+              </div>
+            </body>
+            </html>
+          `
+        })
       });
 
       if (response.ok) {
@@ -80,13 +178,15 @@ const Contact = () => {
           setSubmitStatus('idle');
         }, 5000);
       } else {
-        throw new Error('Failed to send');
+        const errorData = await response.json();
+        console.error('Brevo API Error:', errorData);
+        throw new Error('Failed to send email');
       }
 
     } catch (error) {
       setLoading(false);
       setSubmitStatus('error');
-      console.log(error);
+      console.error('Error:', error);
       
       setTimeout(() => {
         setSubmitStatus('idle');
@@ -107,7 +207,7 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <div>
             <h3 className="text-2xl font-bold mb-6" style={{ fontFamily: 'Orbitron, sans-serif' }}>Send us a Message</h3>
-            <div ref={formRef} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>Name</label>
                 <input 
@@ -148,7 +248,7 @@ const Contact = () => {
                 ></textarea>
               </div>
               <button 
-                onClick={handleSubmit}
+                type="submit"
                 disabled={loading}
                 className={`w-full px-8 py-3 rounded-lg font-semibold transition-all transform shadow-lg flex items-center justify-center gap-2 ${
                   loading 
@@ -179,7 +279,7 @@ const Contact = () => {
                   Something went wrong! Please try again.
                 </div>
               )}
-            </div>
+            </form>
           </div>
 
           <div>

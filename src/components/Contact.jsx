@@ -461,7 +461,7 @@ const Contact = () => {
               {/* Email Confirmation Dialog */}
               {showConfirmation && (
                 <div className="p-4 rounded-lg bg-blue-600/10 border border-blue-600/30 space-y-3">
-                  <p className="text-sm font-semibold text-blue-400" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <p className="text-sm font-semibold text-blue-600" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                     Please verify your email address:
                   </p>
                   <p className="text-lg font-bold text-white" style={{ fontFamily: 'Rajdhani, sans-serif' }}>

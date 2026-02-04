@@ -561,16 +561,6 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam, onNavigateHom
       }
     },
     {
-      id: 49,
-      name: 'Palak Agrawal',
-      role: 'Junior Member',
-      tag: 'management',
-      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/management/palaka.webp',
-      socials: {
-        email: 'palakk1152@gmail.com'
-      }
-    },
-    {
       id: 50,
       name: 'Prakhar Raj Kharbanda',
       role: 'Junior Member',

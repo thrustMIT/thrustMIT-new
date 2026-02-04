@@ -108,7 +108,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps, onSc
           id: 22,
           name: 'Tejas Patil',
           image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Tejas%20Patil_ON9LtSh2k.jpg?updatedAt=1735410793264',
-          atThrustMIT: 'Payload Head',
+          atThrustMIT: 'Payload Co-Head',
           currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/tejas-patil-0b8946246/',
@@ -120,7 +120,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps, onSc
           id: 23,
           name: 'Mohul Podder',
           image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Mohul%20Podder_yUtAOLLBuQ.jpg?updatedAt=1735410790753',
-          atThrustMIT: 'Payload Member',
+          atThrustMIT: 'Payload Co-Head',
           currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/mohul-podder-699940265/',
@@ -132,7 +132,7 @@ const Alumni = ({ Header, Footer, initialYear, onNavigateHome, headerProps, onSc
           id: 12,
           name: 'Aryan Gupta',
           image: 'https://ik.imagekit.io/wns4q4r9n2/2024-25/Aryan%20Gupta_2ufwXM7_J.jpg?updatedAt=1735410790307',
-          atThrustMIT: 'Propulsion Member',
+          atThrustMIT: 'Payload Member',
           currentWork: '',
           socials: {
             linkedin: 'https://www.linkedin.com/in/aryan-gupta-55404826a/?originalSubdomain=in',

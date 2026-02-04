@@ -153,7 +153,7 @@ const Contact = () => {
                   text-align: center; 
                   border-radius: 10px 10px 0 0; 
                 }
-                .header h1 { margin: 0; font-size: 24px; }
+                .header h1 { margin: 0; font-size: 24px; color: #fff; }
                 .header p { margin: 10px 0 0 0; opacity: 0.9; }
                 .content { background: #f8f9fa; padding: 30px; border-radius: 0 0 10px 10px; }
                 .field { margin-bottom: 20px; }

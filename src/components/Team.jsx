@@ -146,6 +146,7 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam, onNavigateHom
       image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/rudra.webp',
       socials: {
         linkedin: 'https://www.linkedin.com/in/rajrudra06?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+        github: 'https://github.com/RajRudra06',
         email: 'rudrarajpurohit06@gmail.com'
       }
     },

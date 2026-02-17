@@ -21,7 +21,7 @@ const Sponsors = () => {
       angle: 144,
     },
     {
-      name: "easyEDA",
+      name: "EasyEDA",
       logo: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/sponsors/easyEDA.png",
       description: "EasyEDA is a web-based EDA tool that allows users to design, simulate, and share electronic circuits and PCBs. It offers an intuitive interface for schematic capture, PCB layout, and circuit simulation, making it accessible for both beginners and professionals in electronics design.",
       angle: 216,

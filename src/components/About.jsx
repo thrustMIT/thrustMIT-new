@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Rocket, Target, Users, TrendingUp } from 'lucide-react';
+import MediaEngagement from './MediaEngagement';
 
 const About = () => {
   // Font loading
@@ -18,7 +19,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="relative py-24 bg-black overflow-hidden">
+    <>
+      <section id="about" className="relative py-24 bg-black overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl" />
@@ -84,8 +86,11 @@ const About = () => {
             <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-600/10 rounded-full blur-2xl" />
           </div>
         </div>
+      <MediaEngagement />
       </div>
-    </section>
+      </section>
+
+    </>
   );
 };
 

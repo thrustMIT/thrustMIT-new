@@ -27,9 +27,9 @@ const Sponsors = () => {
       angle: 216,
     },
     {
-      name: "JCLPCB",
+      name: "JLCPCB",
       logo: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/sponsors/JCL.png",
-      description: "JCLPCB is a leading PCB manufacturer that provides high-quality printed circuit board fabrication and assembly services. With advanced manufacturing capabilities and a commitment to quality, JCLPCB serves customers worldwide, offering fast turnaround times and competitive pricing for PCB production.",
+      description: "JLCPCB is a leading PCB manufacturer that provides high-quality printed circuit board fabrication and assembly services. With advanced manufacturing capabilities and a commitment to quality, JLCPCB serves customers worldwide, offering fast turnaround times and competitive pricing for PCB production.",
       angle: 288,
     }
   ];

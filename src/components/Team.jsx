@@ -561,16 +561,6 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam, onNavigateHom
         linkedin: 'https://www.linkedin.com/in/shalik-raj-a0495b1a0/'
       }
     },
-    {
-      id: 50,
-      name: 'Prakhar Raj Kharbanda',
-      role: 'Junior Member',
-      tag: 'management',
-      image: '',
-      socials: {
-        email: 'unicornprincessprakhar@gmail.com'
-      }
-    }
   ];
 
   const LazyImage = React.memo(({ src, alt }) => {

@@ -119,7 +119,7 @@ const CardShell = ({ item, children, onClick, href }) => {
       {...clickProps}
     >
       {/* Glow border */}
-      <div className="absolute -inset-[1px] bg-blue-600/40 rounded-2xl opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500" />
+      <div className="absolute -inset-[1px] bg-blue-600/40 rounded-2xl opacity-0 group-hover:opacity-100 sm:blur-md transition-opacity duration-500" />
 
       <div className="relative h-full bg-black rounded-2xl overflow-hidden border-2 border-blue-600/30 transition-all duration-500">
         {children(isHovered)}
@@ -127,7 +127,7 @@ const CardShell = ({ item, children, onClick, href }) => {
 
       {/* Parallax shadow */}
       <div
-        className="absolute inset-0 -z-10 bg-blue-600/10 blur-2xl rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        className="absolute inset-0 -z-10 bg-blue-600/10 rounded-2xl opacity-0 group-hover:opacity-100 sm:blur-2xl transition-opacity duration-500"
         style={{ transform: `translate3d(${rotation.y}px, ${rotation.x}px, -30px)` }}
       />
     </Tag>
@@ -136,14 +136,14 @@ const CardShell = ({ item, children, onClick, href }) => {
 
 // Shared caption overlay
 const Caption = ({ title, subtitle }) => (
-  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/95 to-transparent p-5 backdrop-blur-sm">
+  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/95 to-transparent p-5 sm:backdrop-blur-sm">
     <h3
-      className="text-xl font-bold text-white mb-1 tracking-wider"
+      className="text-lg sm:text-xl font-bold text-white mb-1 tracking-wider"
       style={{ fontFamily: 'Orbitron, sans-serif', textShadow: '0 0 20px rgba(59,130,246,0.5)' }}
     >
       <GlitchText>{title}</GlitchText>
     </h3>
-    <p className="text-xs text-blue-400 tracking-[0.3em] font-medium" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+    <p className="text-[10px] sm:text-xs text-blue-400 tracking-[0.3em] font-medium" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
       {subtitle}
     </p>
   </div>
@@ -256,8 +256,8 @@ const MediaEngagement = ({ items = mediaItems }) => {
       <section className="relative min-h-screen w-full py-20 overflow-hidden">
         {/* Background glows */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 left-0 w-72 h-72 sm:w-96 sm:h-96 bg-blue-600/5 rounded-full blur-2xl sm:blur-3xl" />
+          <div className="absolute bottom-1/4 right-0 w-72 h-72 sm:w-96 sm:h-96 bg-blue-600/5 rounded-full blur-2xl sm:blur-3xl" />
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
 

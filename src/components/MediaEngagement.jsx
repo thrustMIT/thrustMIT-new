@@ -73,10 +73,10 @@ const GlitchText = ({ children, className = "" }) => {
 };
 
 const sizeClasses = {
-  large: 'col-span-2 row-span-2',
-  medium: 'col-span-1 row-span-1',
-  small: 'col-span-1 row-span-1',
-  third: 'col-span-1 row-span-1',
+  large: 'col-span-1 md:col-span-2 row-span-1 md:row-span-2',
+  medium: 'col-span-1',
+  small: 'col-span-1',
+  third: 'col-span-1',
 };
 
 // Shared card shell with 3-D tilt
@@ -261,8 +261,8 @@ const MediaEngagement = ({ items = mediaItems }) => {
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
-        <div className="container mx-auto px-6 relative z-10 max-w-7xl">
-          <div className="grid grid-cols-3 gap-6 auto-rows-[300px]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 auto-rows-[220px] sm:auto-rows-[260px] lg:auto-rows-[300px]">
             {items.map((item, idx) => (
               <MediaCard key={idx} item={item} />
             ))}

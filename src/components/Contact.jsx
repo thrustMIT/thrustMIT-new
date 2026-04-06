@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, MapPin, Phone, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
-const brevoApi= import.meta.env.VITE_BREVO_API_KEY;
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -114,234 +113,22 @@ const Contact = () => {
     setLoading(true);
     setSubmitStatus('idle');
 
-    try {
-      // Send email to team
-      const teamEmailResponse = await fetch('https://api.brevo.com/v3/smtp/email', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'api-key': brevoApi
-        },
-        body: JSON.stringify({
-          sender: {
-            name: form.name,
-            email: 'noreply@thrustmit.in'
-          },
-          to: [
-            {
-              email: 'management@thrustmit.in',
-              name: 'thrustMIT Team'
-            }
-          ],
-          replyTo: {
-            email: form.email,
-            name: form.name
-          },
-          subject: `New Contact Form Message from ${form.name}`,
-          htmlContent: `
-            <!DOCTYPE html>
-            <html>
-            <head>
-              <style>
-                body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
-                .container { max-width: 600px; margin: 0 auto; }
-                .header { 
-                  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); 
-                  color: white; 
-                  padding: 30px; 
-                  text-align: center; 
-                  border-radius: 10px 10px 0 0; 
-                }
-                .header h1 { margin: 0; font-size: 24px; color: #fff; }
-                .header p { margin: 10px 0 0 0; opacity: 0.9; color: #fff; }
-                .content { background: #f8f9fa; padding: 30px; border-radius: 0 0 10px 10px; }
-                .field { margin-bottom: 20px; }
-                .label { 
-                  font-weight: bold; 
-                  color: #2563eb; 
-                  margin-bottom: 5px; 
-                  display: block;
-                  font-size: 14px;
-                  text-transform: uppercase;
-                  letter-spacing: 0.5px;
-                }
-                .value { 
-                  background: white; 
-                  padding: 15px; 
-                  border-radius: 5px; 
-                  border-left: 4px solid #2563eb;
-                  color: #333;
-                }
-                .footer { 
-                  text-align: center; 
-                  margin-top: 30px; 
-                  padding-top: 20px;
-                  border-top: 1px solid #ddd;
-                  color: #666; 
-                  font-size: 12px; 
-                }
-                .reply-note {
-                  background: #e0f2fe;
-                  border-left: 4px solid #0284c7;
-                  padding: 12px 15px;
-                  margin-top: 20px;
-                  border-radius: 5px;
-                  font-size: 13px;
-                  color: #0c4a6e;
-                }
-              </style>
-            </head>
-            <body>
-              <div class="container">
-                <div class="header">
-                  <h1>New Contact Form Submission</h1>
-                  <p>thrustMIT Website</p>
-                </div>
-                <div class="content">
-                  <div class="field">
-                    <span class="label">From</span>
-                    <div class="value">${form.name}</div>
-                  </div>
-                  
-                  <div class="field">
-                    <span class="label">Email</span>
-                    <div class="value">${form.email}</div>
-                  </div>
-                  
-                  <div class="field">
-                    <span class="label">Message</span>
-                    <div class="value">${form.message.replace(/\n/g, '<br>')}</div>
-                  </div>
-                  
-                  <div class="reply-note">
-                    <strong>Reply directly</strong> to this email to respond to ${form.name}
-                  </div>
-                  
-                  <div class="footer">
-                    <p>This email was sent from the thrustMIT contact form</p>
-                    <p>Received on ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}</p>
-                  </div>
-                </div>
-              </div>
-            </body>
-            </html>
-          `
-        })
-      });
+    const response = await fetch('/api/send-email', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ name: form.name, email: form.email, message: form.message })
+});
 
-      // Send confirmation email to user
-      const userConfirmationResponse = await fetch('https://api.brevo.com/v3/smtp/email', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'api-key': brevoApi
-        },
-        body: JSON.stringify({
-          sender: {
-            name: 'thrustMIT',
-            email: 'noreply@thrustmit.in'
-          },
-          to: [
-            {
-              email: form.email,
-              name: form.name
-            }
-          ],
-          subject: 'Message Received - thrustMIT',
-          htmlContent: `
-            <!DOCTYPE html>
-            <html>
-            <head>
-              <style>
-                body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
-                .container { max-width: 600px; margin: 0 auto; }
-                .header { 
-                  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); 
-                  color: white; 
-                  padding: 30px; 
-                  text-align: center; 
-                  border-radius: 10px 10px 0 0; 
-                }
-                .header h1 { margin: 0; font-size: 24px; }
-                .content { background: #f8f9fa; padding: 30px; border-radius: 0 0 10px 10px; }
-                .message-box {
-                  background: white;
-                  padding: 20px;
-                  border-radius: 5px;
-                  border-left: 4px solid #2563eb;
-                  margin: 20px 0;
-                }
-                .footer { 
-                  text-align: center; 
-                  margin-top: 30px; 
-                  padding-top: 20px;
-                  border-top: 1px solid #ddd;
-                  color: #666; 
-                  font-size: 12px; 
-                }
-              </style>
-            </head>
-            <body>
-              <div class="container">
-                <div class="header">
-                  <h1>Thank You for Contacting Us!</h1>
-                </div>
-                <div class="content">
-                  <p>Hi <strong>${form.name}</strong>,</p>
-                  <p>Thank you for reaching out to thrustMIT! We've received your message and will get back to you as soon as possible.</p>
-                  
-                  <div class="message-box">
-                    <strong>Your message:</strong><br><br>
-                    ${form.message.replace(/\n/g, '<br>')}
-                  </div>
-                  
-                  <p>Our team typically responds within 24-48 hours. If you have any urgent queries, feel free to reach out to us directly at <a href="mailto:management@thrustmit.in">management@thrustmit.in</a>.</p>
-                  
-                  <p>Best regards,<br><strong>The thrustMIT Team</strong></p>
-                  
-                  <div class="footer">
-                    <p>This is an automated confirmation email from thrustMIT</p>
-                    <p>Bay No. 11, Techshila, Manipal Institute of Technology, Manipal</p>
-                  </div>
-                </div>
-              </div>
-            </body>
-            </html>
-          `
-        })
-      });
-
-      if (teamEmailResponse.ok && userConfirmationResponse.ok) {
-        setLoading(false);
-        setSubmitStatus('success');
-        setEmailConfirmed(false);
-        setShowConfirmation(false);
-        setForm({
-          name: '',
-          email: '',
-          message: ''
-        });
-
-        setTimeout(() => {
-          setSubmitStatus('idle');
-        }, 5000);
-      } else {
-        const errorData = teamEmailResponse.ok ? await userConfirmationResponse.json() : await teamEmailResponse.json();
-        console.error('Brevo API Error:', errorData);
-        throw new Error('Failed to send email');
-      }
-
-    } catch (error) {
-      setLoading(false);
-      setSubmitStatus('error');
-      console.error('Error:', error);
-      
-      setTimeout(() => {
-        setSubmitStatus('idle');
-      }, 5000);
-    }
+if (response.ok) {
+  setLoading(false);
+  setSubmitStatus('success');
+  setEmailConfirmed(false);
+  setShowConfirmation(false);
+  setForm({ name: '', email: '', message: '' });
+  setTimeout(() => setSubmitStatus('idle'), 5000);
+} else {
+  throw new Error('Failed to send email');
+}
   };
 
   const confirmEmail = () => {

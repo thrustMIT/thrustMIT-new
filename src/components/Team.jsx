@@ -561,6 +561,18 @@ const Team = ({ Header, Footer, headerProps, onNavigateToJoinTeam, onNavigateHom
         linkedin: 'https://www.linkedin.com/in/shalik-raj-a0495b1a0/'
       }
     },
+    {
+      id: 49,
+      name: 'Adithya Krishna Suji',
+      role: 'Junior Member',
+      tag: 'payload',
+      image: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/team/payload/adithya.webp',
+      socials: {
+        email: 'A6ithyasuji@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/adithya-krishna-suji-089597319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'
+      }
+
+    }
   ];
 
   const LazyImage = React.memo(({ src, alt }) => {

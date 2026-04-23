@@ -75,6 +75,7 @@ const ProjectDetail = ({ Header, Footer, projectId, onNavigateHome, onNavigateTo
       category: '10K COTS', 
       description: "Rayquaza was thrustMIT's 4th developed rocket and project entry to the 2022 Spaceport America Cup. Comprising a carbon fibre airframe and Aluminium 6063 internal structure, Project Rayquaza was our first ever rocket to reach 10,000 ft. Rayquaza came 4th in the James Barrowman Award with a percentage error of less than 0.3%.",
       image: 'https://ik.imagekit.io/wns4q4r9n2/Projects/Renders/rayquaza_2-xs2pG3B.png?updatedAt=1753914869235',
+      reportUrl: 'https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/technical-report/rayquaza.pdf',
       details: {
         maxAltitude: '11,662 ft',
         duration: '2021-22',

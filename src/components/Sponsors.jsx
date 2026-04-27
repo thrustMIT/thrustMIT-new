@@ -39,7 +39,7 @@ const Sponsors = () => {
     },
     {
       name: "Funique Composites",
-      logo: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/sponsors/Funique-Logo.png",
+      logo: "https://pub-5e90a2f5e8c44905a47c1b15177024fe.r2.dev/public/sponsors/funique.png",
       description: "Funique Composites is a leading provider of advanced composite materials and solutions for aerospace, automotive, and industrial applications. With a focus on innovation and sustainability, Funique delivers high-performance composites that enable lighter, stronger, and more efficient products across various industries.",
       angle: 257,
       website: "",
